@@ -1,0 +1,120 @@
+:host {
+  --tiny-code-editor-min-height: 460px;
+  --tiny-code-editor-padding: 1rem;
+  --tiny-code-editor-border: 0;
+  --tiny-code-editor-border-radius: 0;
+  --tiny-code-editor-background: transparent;
+  --tiny-code-editor-color: light-dark(#10141f, #d8dee9);
+  --tiny-code-editor-background: Canvas;
+  --tiny-code-editor-caret-color: var(--accent, #fff);
+  --tiny-code-editor-font: 14px/1.5 "Google Sans Code", monospace;
+  --tiny-code-editor-focus-border-color: transparent;
+  --tiny-code-token-comment: light-dark(#6a737d, #7f8ea3);
+  --tiny-code-token-keyword: light-dark(#d73a49, #ff7b72);
+  --tiny-code-token-string: light-dark(#032f62, #a5d6ff);
+  --tiny-code-token-number: light-dark(#005cc5, #79c0ff);
+  --tiny-code-token-tag: light-dark(#119a26, #7ee787);
+  --tiny-code-token-attr: light-dark(#6f42c1, #d2a8ff);
+  --tiny-code-token-punctuation: light-dark(#119a26, #7ee787);
+  --tiny-code-token-color: light-dark(#e36209, #ffa657);
+
+  display: block;
+  min-width: 0;
+  height: 100%;
+  background-color: var(--tiny-code-editor-background);
+}
+
+.editor {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: var(--tiny-code-editor-padding, 16px 32px 16px 16px);
+  border: 0;
+  border-radius: var(--tiny-code-editor-border-radius, 12px);
+  outline: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  overflow-wrap: normal;
+  overscroll-behavior-x: none;
+  background: var(--tiny-code-editor-background, Canvas);
+  color: var(--tiny-code-editor-color, CanvasText);
+  caret-color: var(--tiny-code-editor-caret-color, currentColor);
+  font: var(--tiny-code-editor-font,
+      14px/1.6 ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      "Liberation Mono",
+      "Courier New",
+      monospace);
+  white-space: pre;
+  word-break: normal;
+  tab-size: 2;
+}
+
+@media (max-width: 47rem) {
+  @supports (-webkit-touch-callout: none) {
+    :host {
+      --tiny-code-editor-font: 16px/1.5 "Google Sans Code", monospace;
+    }
+  }
+}
+
+.editor * {
+  overflow-wrap: normal;
+  white-space: pre;
+  word-break: normal;
+}
+
+.editor:focus {
+  border-color: var(--tiny-code-editor-focus-border-color,
+      color-mix(in srgb, CanvasText 55%, transparent));
+}
+
+.editor::selection {
+  background: var(--tiny-code-editor-selection-background, rgb(88 166 255 / 35%));
+}
+
+.token-comment {
+  color: var(--tiny-code-token-comment, #6a737d);
+  font-style: italic;
+}
+
+.token-keyword {
+  color: var(--tiny-code-token-keyword, #d73a49);
+}
+
+.token-string {
+  color: var(--tiny-code-token-string, #032f62);
+}
+
+.token-number,
+.token-global {
+  color: var(--tiny-code-token-number, #005cc5);
+}
+
+.token-tag,
+.token-selector {
+  color: var(--tiny-code-token-tag, #22863a);
+}
+
+.token-attr,
+.token-property,
+.token-at-rule {
+  color: var(--tiny-code-token-attr, #6f42c1);
+}
+
+.token-punctuation {
+  color: var(--tiny-code-token-punctuation, color-mix(in srgb, CanvasText 72%, transparent));
+}
+
+.token-color {
+  color: var(--tiny-code-token-color, #e36209);
+}
+
+:host([readonly]) .editor {
+  opacity: 0.75;
+  cursor: default;
+}

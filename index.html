@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js-project</title>
+</head>
+
+<body>
+  <main>
+    <header></header>
+    <section style="margin-block:15vh;display:grid;gap:15vh">
+      <live-code ui-view="mini" height="25rem" file-path="/live-codes/example"
+        styles-path="/live-codes/styels/utils.css" modules-path="/live-codes/modules/index.js"></live-code>
+
+      <article-code language="html">
+        <main>
+          <h1>Hello World!</h1>
+          <p>Edit the code and see the preview.</p>
+          <button commandfor="view" command="--toggle" data-inert-view>Click me</button>
+          <div id="view" class="ui-view" inert>
+            <button commandfor="view" command="--toggle">Close</button>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nobis, sequi similique, eum quas
+              voluptatum rem
+              tempora, nihil blanditiis incidunt reiciendis reprehenderit. Velit eius error ipsa quidem reiciendis quos
+              laboriosam.
+            </p>
+          </div>
+        </main>
+      </article-code>
+
+      <article-code language="css">
+        :where(main) {
+          width: 100%;
+          margin: 0 auto;
+          max-width: 30rem;
+          padding: 1rem;
+        }
+
+        :where(button) {
+          padding: 0.25rem 1rem;
+          border: 0;
+          border-radius: 2rem;
+          corner-shape: squircle;
+          background-color: ButtonFace;
+          color: ButtonText;
+          cursor: pointer;
+        }
+      </article-code>
+
+      <article-code language="js">
+        document.querySelector('button')?.addEventListener('click', () => {
+          console.log('Hello from JavaScript!');
+        });
+
+        const button = document.querySelector('.button');
+        button?.classList.add('test');
+      </article-code>
+    </section>
+    <footer></footer>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

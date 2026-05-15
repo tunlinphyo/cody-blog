@@ -1,0 +1,40 @@
+:where(h1) {
+  color: royalblue;
+}
+
+:where(p) {
+  margin-block: 1rem;
+}
+
+:where([inert]) {
+  display: none;
+}
+
+:where(main) {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 30rem;
+  padding: 1rem;
+}
+
+:where(button) {
+  padding: 0.25rem 1rem;
+  border: 0;
+  border-radius: 2rem;
+  corner-shape: squircle;
+  background-color: ButtonFace;
+  color: ButtonText;
+  cursor: pointer;
+}
+
+
+:where(.ui-view) {
+  padding: 1px 1rem;
+  background-color: oklch(from CanvasText l c h / 0.1);
+  border-radius: 2rem;
+  corner-shape: squircle;
+
+  & button {
+    margin-top: 1rem;
+  }
+}

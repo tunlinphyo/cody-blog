@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url(./reset.css);
+
+:root {
+  color-scheme: light dark;
+}
+
+:where(html, body) {
+  margin: 0;
+  padding: 0;
+  background: Canvas;
+  color: color-mix(in oklab, CanvasText, Canvas 10%);
+
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+}

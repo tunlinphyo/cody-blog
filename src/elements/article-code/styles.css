@@ -13,10 +13,14 @@
   grid-template-rows: auto 1fr;
   position: relative;
   border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
   overflow: hidden;
   background-color: Canvas;
-  /* color-scheme: dark; */
+
+  border-radius: 1rem;
+  @supports(corner-shape: squircle) {
+    border-radius: 2rem;
+    corner-shape: squircle;
+  }
 }
 
 .header {
@@ -73,8 +77,18 @@ pre {
     "Google Sans Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     monospace;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
   tab-size: 2;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (max-width: 47rem) {
+  @supports (-webkit-touch-callout: none) {
+    pre {
+      font-size: 16px;
+    }
+  }
 }
 
 code {

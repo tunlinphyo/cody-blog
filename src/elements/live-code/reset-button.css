@@ -1,0 +1,22 @@
+:host {
+  display: grid;
+  width: 2rem;
+  aspect-ratio: 1;
+}
+
+.run {
+  appearance: none;
+  width: 2rem;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  color: oklch(from CanvasText l c h / 0.8);
+  cursor: pointer;
+  font: inherit;
+}
+
+.run:is(:hover, :focus-visible) {
+  animation: shake-custom-z 1s var(--ease-in-out-3);
+}

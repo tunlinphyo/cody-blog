@@ -1,0 +1,16 @@
+article {
+  margin-block: 15vh;
+  display:grid;
+  gap:15vh;
+}
+
+header {
+  padding-block-start: 15vh;
+  padding-inline: 1rem;
+
+  & h1 {
+    font-size: clamp(2rem, 10vw, 5rem);
+    font-weight: 400;
+    font-variation-settings: "GRAD" -50;
+  }
+}

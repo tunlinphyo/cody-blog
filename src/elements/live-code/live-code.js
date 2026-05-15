@@ -4,6 +4,7 @@ import utilsStyles from "../../assets/styles/utils.css?inline";
 import liveCodeStyles from "./live-code.css?inline";
 import { litStaticStyles } from "../utils";
 import "./live-code-preview.js";
+import "./reset-button.js";
 import "./tiny-code-editor.js";
 import {
   buildPreviewDocument,
@@ -109,8 +110,8 @@ export class LiveCode extends LitElement {
 
   render() {
     const playPause = this.autorun
-      ? "M 3 6 Q 3 3 6 3 L 18 3 Q 21 3 21 6 L 21 18 Q 21 21 18 21 L 6 21 Q 3 21 3 18 Z"
-      : "M 4 5 Q 4 1 8 3 L 19 10 Q 21 11 21 12 L 21 12 Q 21 13 19 14 L 8 21 Q 4 23 4 19 Z";
+      ? "M3 6Q3 3 6 3L18 3Q21 3 21 6L21 18Q21 21 18 21L6 21Q3 21 3 18Z"
+      : "M4 5Q4 1 8 3L19 10Q21 11 21 12L21 12Q21 13 19 14L8 21Q4 23 4 19Z";
     return html`
       <div class="editor-panel">
         <div class="toolbar">
@@ -120,19 +121,10 @@ export class LiveCode extends LitElement {
           </div>
 
           <div class="actions">
-            <button class="run" type="button" @click=${this.handleReloadDefaultsClick}>
-              <svg viewBox="0 0 28 28" width="19" height="19" xmlns="http://www.w3.org/2000/svg">
-                <mask id="circle-cutout-mask:002">
-                  <rect x="0" y="0" width="28" height="28" fill="white" />
-                  <rect x="12" y="4" width="4" height="24" fill="black" transform="rotate(30 14 14)" />
-                  <rect x="12" y="0" width="4" height="24" fill="black" transform="rotate(30 14 14)" />
-                </mask>
-                <circle cx="14" cy="14" r="10" mask="url(#circle-cutout-mask:002)" stroke="currentColor" stroke-width="2" fill="none" />
-                <polygon points="13 0 13 8 19 4" fill="currentColor" transform="rotate(15 13 4)" />
-                <polygon points="9 24 15 20 15 28" fill="currentColor" transform="rotate(15 15 24)" />
-              </svg>
-              <span screenreader-only>Reset Code</span>
-            </button>
+            <reset-button
+              @reset-hint=${this.handleResetHint}
+              @reset-code=${this.handleResetCode}
+            ></reset-button>
             <button class="run play-pause" type="button" data-play="${this.autorun}" @click=${this.handleRunClick}>
               <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" stroke="currentColor" stroke-width="1.8" d=${playPause} />
@@ -237,11 +229,11 @@ export class LiveCode extends LitElement {
       : "mini";
   };
 
-  handleReloadDefaultsClick = (event) => {
+  async resetToDefaults() {
     window.clearTimeout(this.updateTimer);
 
     if (this.filePath) {
-      void this.loadCodeFiles();
+      await this.loadCodeFiles();
     } else {
       this.htmlCode = this.defaultHtmlCode;
       this.cssCode = this.defaultCssCode;
@@ -250,19 +242,23 @@ export class LiveCode extends LitElement {
     }
 
     this.showToast("Code Reset");
+  }
 
-    const button = event.currentTarget;
-    button.disabled = true;
-    button.classList.add("is-reloading");
+  handleResetHint = (event) => {
+    this.showToast(event.detail.message);
+  };
 
-    button.addEventListener(
-      "animationend",
-      () => {
-        button.classList.remove("is-reloading");
-        button.disabled = false;
-      },
-      { once: true },
-    );
+  handleResetCode = async (event) => {
+    const resetButton = event.currentTarget;
+
+    try {
+      await this.resetToDefaults();
+    } catch (error) {
+      console.error(error);
+      this.showToast("Reset Failed");
+    } finally {
+      resetButton.stopReloadAnimation();
+    }
   };
 
   handleInput(event) {

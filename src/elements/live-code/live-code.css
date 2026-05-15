@@ -12,12 +12,17 @@
   width: 100%;
   height: var(--block-height);
   border: 1px solid var(--border-color, CanvasText);
-  border-radius: 0.5rem;
   background: Canvas;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+
+  border-radius: 1rem;
+  @supports(corner-shape: squircle) {
+    border-radius: 2rem;
+    corner-shape: squircle;
+  }
 }
 
 :host([ui-view="full"]) {
@@ -121,10 +126,6 @@
   }
 }
 
-.run.is-reloading svg {
-  animation: reload-rotate 0.4s ease-out;
-}
-
 .play-pause {
   path {
     transition: d 160ms ease-out;
@@ -169,12 +170,6 @@
 .toast-message[hidden] {
   opacity: 0;
   transform: translate(-50%, -1rem) scale(0.5);
-}
-
-@keyframes reload-rotate {
-  to {
-    rotate: 360deg;
-  }
 }
 
 .editor-wrap {

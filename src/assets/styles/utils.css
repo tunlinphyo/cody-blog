@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light dark;
-  --accent: light-dark(deeppink, deepskyblue);
+  --accent: light-dark(deeppink, chartreuse);
   --border-color: color-mix(in srgb, Canvas, CanvasText 50%);
 }
 

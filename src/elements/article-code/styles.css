@@ -16,11 +16,13 @@
   overflow: hidden;
   background-color: Canvas;
 
-  border-radius: 1rem;
-  @supports(corner-shape: squircle) {
-    border-radius: 2rem;
-    corner-shape: squircle;
-  }
+  border-radius: 0.2rem;
+}
+
+:host([mini]) {
+  display: inline-grid;
+  border-color: oklch(from CanvasText l c h / 0.2);
+  background-color: color-mix(in oklab, Canvas, CanvasText 8%);
 }
 
 .header {
@@ -44,14 +46,17 @@
     gap: 0.25rem;
     padding: 0.25rem;
     border-radius: 0.25rem;
+    color: oklch(from CanvasText l c h / 0.5);
 
     & span {
       font-size: 13px;
       font-weight: 600;
-      color: oklch(from CanvasText l c h / 0.7);
+      color: currentColor;
     }
 
     &:is(:hover, :focus-visible) {
+      color: oklch(from CanvasText l c h / 0.8);
+
       .shake-1 {
         animation: shake-xy 0.75s var(--ease-out-1);
       }
@@ -68,6 +73,14 @@
   padding: 1rem;
   padding-block-start: 0;
   overscroll-behavior-x: none;
+  
+  &.mini {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+:host([overscroll]) .scroll-view {
+  overscroll-behavior-x: auto;
 }
 
 pre {
@@ -81,11 +94,12 @@ pre {
   tab-size: 2;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  color: oklch(from CanvasText l c h / 0.9);
 }
 
 @media (max-width: 47rem) {
   @supports (-webkit-touch-callout: none) {
-    pre {
+    :host(:not([mini])) pre {
       font-size: 16px;
     }
   }
@@ -104,15 +118,14 @@ code {
   left: 50%;
   z-index: 1;
   transform: translate(-50%, 0);
-  padding: 0.6rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 100vh;
-  background: oklch(from CanvasText l c h / 0.7);
+  background: oklch(from Canvas l c h / 0.7);
   border: 1px solid oklch(from CanvasText l c h / 0.3);
   backdrop-filter: blur(5px);
-  box-shadow: 0 0.5rem 1.5rem oklch(from CanvasText l c h / 0.16);
-  color: oklch(from Canvas l c h / 0.8);
+  /* box-shadow: 0 0.5rem 1.5rem oklch(from CanvasText l c h / 0.16); */
+  color: oklch(from CanvasText l c h / 0.8);
   font-size: 0.85rem;
-  font-weight: 500;
   white-space: nowrap;
 
   transition:

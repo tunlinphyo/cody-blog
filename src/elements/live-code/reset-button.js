@@ -1,11 +1,10 @@
 import { LitElement, html } from "lit";
-import resetStyles from "../../assets/styles/reset.css?inline";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import resetButtonStyles from "./reset-button.css?inline";
 import { litStaticStyles } from "../utils";
 
 export class ResetButton extends LitElement {
-  static styles = litStaticStyles(resetStyles, utilsStyles, resetButtonStyles);
+  static styles = litStaticStyles(utilsStyles, resetButtonStyles);
 
   constructor() {
     super();

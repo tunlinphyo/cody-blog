@@ -1,0 +1,10 @@
+
+:host {
+  display: grid;
+  place-content: center;
+  padding-block: 5vh 20vh;
+}
+
+a, svg {
+  color: color-mix(in oklab, CanvasText, Canvas 50%);
+}

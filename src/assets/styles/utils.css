@@ -1,11 +1,15 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,GRAD,ROND@6..144,-10..0,25..151,1..1000,0..100,0..100&display=swap');
 @import "open-props/style";
+@import url(./reset.css);
+@import url(./colors.css);
 
 :root {
-  color-scheme: light dark;
-  --accent: light-dark(deeppink, chartreuse);
-  --border-color: color-mix(in srgb, Canvas, CanvasText 50%);
+  color-scheme: dark;
+  --accent: light-dark(deeppink, var(--blue));
+  --border-color: oklch(from CanvasText l c h / 0.4);
+  --padding: clamp(1.5rem, 4vw, 4rem);
 }
 
 :where(html, body) {
@@ -14,12 +18,26 @@
   background: Canvas;
   color: color-mix(in oklab, CanvasText, Canvas 10%);
 
-  font-family: "Google Sans", sans-serif;
+  font-family: "Google Sans Flex", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 450;
   font-style: normal;
   font-variation-settings:
-    "GRAD" 0;
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "ROND" 0;
+}
+
+:where(h1,h2,h3,h4,h5,h6) {
+  margin: 0;
+  color: oklch(from CanvasText l c h / 0.9);
+  font-weight: 450;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 101,
+    "GRAD" 0,
+    "ROND" 0;
 }
 
 :where([screenreader-only]) {

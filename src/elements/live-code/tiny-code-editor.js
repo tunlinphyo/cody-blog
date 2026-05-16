@@ -1,6 +1,5 @@
 import { LitElement, html } from "lit";
 import { CodeJar } from "codejar";
-import resetStyles from "../../assets/styles/reset.css?inline";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import editorStyles from "./tiny-code-editor.css?inline";
 import { litStaticStyles } from "../utils.js";
@@ -13,7 +12,7 @@ export class TinyCodeEditor extends LitElement {
     readonly: { type: Boolean, reflect: true },
   };
 
-  static styles = litStaticStyles(resetStyles, utilsStyles, editorStyles);
+  static styles = litStaticStyles(utilsStyles, editorStyles);
 
   constructor() {
     super();

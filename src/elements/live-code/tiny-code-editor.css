@@ -4,7 +4,7 @@
   --tiny-code-editor-border: 0;
   --tiny-code-editor-border-radius: 0;
   --tiny-code-editor-background: transparent;
-  --tiny-code-editor-color: light-dark(#10141f, #d8dee9);
+  --tiny-code-editor-color: oklch(from CanvasText l c h / 0.9); /* light-dark(#10141f, #d8dee9); */
   --tiny-code-editor-background: Canvas;
   --tiny-code-editor-caret-color: var(--accent, #fff);
   --tiny-code-editor-font: 14px/1.5 "Google Sans Code", monospace;

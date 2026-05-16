@@ -1,23 +1,38 @@
 import { LitElement, html } from "lit";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import resetStyles from "../../assets/styles/reset.css?inline";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import previewStyles from "./styles.css?inline";
 import { litStaticStyles } from "../utils.js";
 import { highlightCss, highlightHtml, highlightJs } from "./utils.js";
 
+const htmlEscapeChars = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;",
+};
+
+function highlightText(code) {
+  return code.replace(/[&<>"']/g, (char) => htmlEscapeChars[char]) || "<br>";
+}
+
 export class ArticleCode extends LitElement {
+  static plainTextLanguages = new Set(["text", "txt", "plain", "plaintext", "text/plain"]);
+
   static properties = {
-    language: { type: String, attribute: "language" }, // html | css | js
+    language: { type: String, attribute: "language" }, // html | css | js | text
+    mini: { type: Boolean, attribute: "mini" },
     code: { state: true },
     toastMessage: { state: true },
   };
 
-  static styles = litStaticStyles(resetStyles, utilsStyles, previewStyles);
+  static styles = litStaticStyles(utilsStyles, previewStyles);
 
   constructor() {
     super();
-    this.language = "js";
+    this.language = "html";
+    this.mini = false;
     this.code = "";
     this.toastMessage = "";
     this.toastTimer = undefined;
@@ -47,10 +62,25 @@ export class ArticleCode extends LitElement {
   }
 
   serializeCodeNode(node) {
-    if (node.nodeType === Node.ELEMENT_NODE) return node.outerHTML;
+    if (node.nodeType === Node.ELEMENT_NODE) return this.serializeElementNode(node);
     if (node.nodeType === Node.COMMENT_NODE) return `<!--${node.textContent || ""}-->`;
 
     return node.textContent || "";
+  }
+
+  serializeElementNode(node) {
+    const tagName = node.localName;
+    const attributes = Array.from(node.attributes, (attribute) => {
+      const value = attribute.value.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
+
+      return ` ${attribute.name}="${value}"`;
+    }).join("");
+
+    if (!node.childNodes.length) return `<${tagName}${attributes} />`;
+
+    const children = Array.from(node.childNodes, (child) => this.serializeCodeNode(child)).join("");
+
+    return `<${tagName}${attributes}>${children}</${tagName}>`;
   }
 
   normalizeCodeIndent(code) {
@@ -76,6 +106,7 @@ export class ArticleCode extends LitElement {
 
     if (language === "html") return highlightHtml(this.code);
     if (language === "css") return highlightCss(this.code);
+    if (ArticleCode.plainTextLanguages.has(language)) return highlightText(this.code);
 
     return highlightJs(this.code);
   }
@@ -85,9 +116,10 @@ export class ArticleCode extends LitElement {
       html: "HTML",
       css: "CSS",
       js: "JavaScript",
+      text: "Text",
     };
 
-    return languages[this.language] || "Unknow";
+    return languages[this.language?.toLowerCase()] || "Unknow";
   }
 
   handleCopyClick = async () => {
@@ -104,7 +136,7 @@ export class ArticleCode extends LitElement {
   }
 
   render() {
-    return html` <div class="header">
+    return html`${!this.mini ? html`<div class="header">
         <div class="language">${this.lang}</div>
         <button class="copy-code" type="button" @click=${this.handleCopyClick}>
           <svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -113,8 +145,8 @@ export class ArticleCode extends LitElement {
           </svg>
           <span>Copy</span>
         </button>
-      </div>
-      <div class="scroll-view">
+      </div>` : ""}
+      <div class="scroll-view ${this.mini ? 'mini' : ''}">
         <pre><code><slot hidden @slotchange=${this.handleSlotChange}>
           </slot>${unsafeHTML(this.highlightedCode)}</code></pre>
       </div>

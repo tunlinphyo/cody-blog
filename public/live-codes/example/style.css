@@ -1,5 +1,5 @@
 :where(h1) {
-  color: royalblue;
+  color: var(--indigo);
 }
 
 :where(p) {

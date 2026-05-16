@@ -20,17 +20,28 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0 1rem;
+  container-type: inline-size;
 
   .searchbar {
     max-width: 20rem;
     flex: 1;
-    height: 1.8rem;
+    height: 1.5rem;
     background-color: oklch(from CanvasText l c h / 0.1);
     border-radius: 100vh;
   }
 
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @container (width > 32rem) {
+      flex: 0.25;
+    }
+  }
+
   & button {
-    width: 2rem;
+    width: 1.5rem;
     aspect-ratio: 1;
     border-radius: 50%;
     display: grid;
@@ -77,8 +88,9 @@
 }
 
 .lights {
+  flex: 0.25;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
 

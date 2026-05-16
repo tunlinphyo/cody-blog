@@ -1,5 +1,4 @@
-import { LitElement, html } from "lit";
-import resetStyles from "../../assets/styles/reset.css?inline";
+import { LitElement, html, nothing } from "lit";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import liveCodeStyles from "./live-code.css?inline";
 import { litStaticStyles } from "../utils";
@@ -29,6 +28,8 @@ export class LiveCode extends LitElement {
     previewDocument: { state: true },
     toastMessage: { state: true },
   };
+
+  static styles = litStaticStyles(utilsStyles, liveCodeStyles);
 
   setEditorHeight() {
     if (this.height) {
@@ -106,8 +107,6 @@ export class LiveCode extends LitElement {
     }
   }
 
-  static styles = litStaticStyles(resetStyles, utilsStyles, liveCodeStyles);
-
   render() {
     const playPause = this.autorun
       ? "M3 6Q3 3 6 3L18 3Q21 3 21 6L21 18Q21 21 18 21L6 21Q3 21 3 18Z"
@@ -145,7 +144,7 @@ export class LiveCode extends LitElement {
             </svg>
             <span screenreader-only>Open Preview</span>
           </button>`
-        : ""
+        : nothing
       }
           </div>
         </div>
@@ -224,9 +223,10 @@ export class LiveCode extends LitElement {
   };
 
   handleOpenView = () => {
-    this.uiView = window.matchMedia("(max-width: 48rem) and (orientation: portrait)").matches
-      ? "full"
-      : "mini";
+    this.uiView = "mini";
+    // window.matchMedia("(max-width: 48rem) and (orientation: portrait)").matches
+    //   ? "full"
+    //   : "mini";
   };
 
   async resetToDefaults() {

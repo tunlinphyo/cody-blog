@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js-project</title>
+</head>
+
+<body>
+  <main>
+    <article-header date="2026-04-08">
+      Scalable Vector Graphics
+    </article-header>
+
+    <article>
+      <article-slide>
+        <article-slide-item>
+          <div class="card cover-one" data-about="SVG">
+            <h2 style="color:var(--blue);">What is Scalable Vector Graphics?</h2>
+            <p>
+              Scalable Vector Graphics, known as <code>SVG</code>, is an XML-based image format used to create sharp, resolution-independent graphics on the web.
+            </p>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card" style="--bg:var(--blue);">
+            <div>
+              <p data-my-2>
+                SVG stays crisp at any size, supports CSS styling and animations, and is perfect for icons, logos, illustrations, and charts.
+              </p>
+
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <rect x="1" y="2" width="22" height="20" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
+                <g fill="currentColor">
+                  <circle cx="6" cy="6" r="1.5"></circle>
+                  <circle cx="10" cy="6" r="1.5" style="animation-delay: 0.1s"></circle>
+                  <circle cx="14" cy="6" r="1.5" style="animation-delay: 0.2s"></circle>
+                </g>
+              </svg>
+
+              <article-code language="html" mini overscroll>
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <rect x="1" y="2" rx="4" width="22" height="20" stroke="currentColor" stroke-width="2" fill="none" />
+                  <g fill="currentColor">
+                    <circle cx="6" cy="6" r="1.5"></circle>
+                    <circle cx="10" cy="6" r="1.5"></circle>
+                    <circle cx="14" cy="6" r="1.5"></circle>
+                  </g>
+                </svg>
+              </article-code>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <h3 style="color:var(--green);">&lt;svg&gt;</h3>
+            <p>
+              The root element of an SVG graphic. It defines the drawing area and contains all shapes, paths, text, and groups.
+            </p>
+            <h3 style="color:var(--purple);">viewBox</h3>
+            <p>
+              The viewBox defines the internal coordinate system of the SVG. It controls how the graphic scales inside its container.
+            </p>
+            <article-code language="html" mini overscroll>
+              <svg viewBox="0 0 100 100">...</svg>
+            </article-code>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <div>
+              <h3 style="color:var(--mint);">&lt;rect&gt;</h3>
+              <p>
+                Draws rectangles and squares. You can control its position, width, height, corner radius, fill, and stroke.
+              </p>
+              <h3 style="color:var(--indigo);">&lt;line&gt;</h3>
+              <p>
+                Draws a straight line between two points. It becomes visible when a stroke is applied.
+              </p>
+              <article-code language="html" mini overscroll>
+                <svg viewBox="0 0 100 100">
+                  <rect x="10" y="10" width="80" height="50" rx="8" />
+                  <line x1="10" y1="10" x2="90" y2="70" stroke="currentColor" />
+                </svg>
+              </article-code>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <div>
+              <h3 style="color:var(--yellow);">&lt;circle&gt;</h3>
+              <p>
+                Draws a circle using its center position and radius.
+              </p>
+              <h3 style="color:var(--blue);">&lt;ellipse&gt;</h3>
+              <p>
+                Draws an oval shape. Unlike a circle, it has separate horizontal and vertical radii.
+              </p>
+              <article-code language="html" mini overscroll>
+                <svg viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="30" />
+                  <ellipse cx="60" cy="40" rx="45" ry="25" />
+                </svg>
+              </article-code>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <div>
+              <h3 style="color:var(--cyan);">&lt;polyline&gt;</h3>
+              <p>
+                Draws a connected series of lines. It does not automatically close the shape.
+              </p>
+              <h3 style="color:var(--orange);">&lt;polygon&gt;</h3>
+              <p>
+                Draws a closed shape made from multiple connected points.
+              </p>
+              <article-code language="html" mini overscroll>
+                <svg viewBox="0 0 100 100">
+                  <polyline points="10,60 40,20 70,60 100,20" />
+                  <polygon points="50,10 90,80 10,80" />
+                </svg>
+              </article-code>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <div>
+              <h3 style="color:var(--cyan);">&lt;path&gt;</h3>
+              <p>
+                The most powerful SVG shape. It can draw lines, curves, arcs, and complex custom illustrations using path commands.
+              </p>
+              <p>
+                This is a great editor for working with 
+                <a href="https://yqnn.github.io/svg-path-editor/" target="_blank" rel="noopener noreferrer">SVG paths</a>.
+              </p>
+              <article-code language="html" mini overscroll>
+                <svg viewBox="0 0 100 100">
+                  <path d="M10 80 C40 10, 65 10, 95 80" />
+                </svg>
+              </article-code>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <div>
+              <h3 style="color:var(--green);">&lt;g&gt;</h3>
+              <p>
+                Groups multiple SVG elements together so they can share styles, transforms, or animations.
+              </p>
+              <h3 style="color:var(--cyan);">&lt;defs&gt;</h3>
+              <p>
+                Stores reusable definitions such as gradients, filters, masks, and symbols without displaying them directly.
+              </p>
+              <article-code language="html" mini>
+                <svg viewBox="0 0 100 100">
+                  <defs>...</defs>
+                  <g fill="currentColor">...</g>
+                </svg>
+              </article-code>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <div>
+              <h3 style="color:var(--green);">&lt;clipPath&gt;</h3>
+              <p>
+                A clipPath hides parts of an element outside the clipping shape.
+              </p>
+              <h3 style="color:var(--cyan);">&lt;mask&gt;</h3>
+              <p>
+                A mask controls transparency. White reveals, black hides, and gray creates partial transparency.
+              </p>
+              <article-code language="html" mini style="margin-top: -1rem;">
+                <clipPath id="circle-cut">
+                  <circle cx="50" cy="50" r="35"></circle>
+                </clipPath>
+                <mask id="fade">
+                  <rect width="100%" height="100%" fill="white"></rect>
+                  <circle cx="50" cy="50" r="20" fill="black"></circle>
+                </mask>
+              </article-code>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <div>
+              <h3 style="color:var(--orange);">Transform</h3>
+              <p>
+                Moves, rotates, scales, or skews SVG elements.
+              </p>
+              <h3 style="color:var(--mint);">Gradient</h3>
+              <p>
+                SVG gradients create smooth color transitions and can be reused by referencing their id.
+              </p>
+              <article-code language="html" mini style="margin-top: -0.5rem;">
+                <rect fill="url(#paint)" transform="rotate(45 40 40)" x="20" y="20" width="40" height="40"></rect>
+                <linearGradient id="paint">
+                  <stop offset="0%" stop-color="hotpink"></stop>
+                  <stop offset="100%" stop-color="blue"></stop>
+                </linearGradient>
+              </article-code>
+            </div>
+          </div>
+        </article-slide-item>
+        <!-- <article-slide-item>
+          <div class="card card-start">
+            <div>
+              <h2 style="color:var(--accent);">Thank You</h2>
+              <p>Scroll down to learn more about <code>SVG</code></p>
+            </div>
+          </div>
+        </article-slide-item> -->
+      </article-slide>
+
+      <section>
+        <p>
+          Let's create a sample SVG menu icon using <code>&lt;rect&gt;</code> and <code>&lt;line&gt;</code>.
+        </p>
+      </section>
+
+      <article-slide>
+        <article-slide-item>
+          <div class="card card-two_box" data-about="01">
+            <div class="box-start">
+              <p>
+                First, create an <code>&lt;svg&gt;</code> element with a viewBox of <code>0 0 24 24</code>. 
+                This means the drawing area starts at <code>x=0, y=0</code> and has a width and height of <code>24 units</code>.
+              </p>
+              <article-code language="html" mini overscroll>
+                <svg viewBox="0 0 24 24"></svg>
+              </article-code>
+            </div>
+            <div class="box-end">
+              <svg-display></svg-display>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card card-two_box" data-about="02">
+            <div class="box-start">
+              <p>
+                Add a <code>&lt;line&gt;</code> element from <code>x1="5" y1="12"</code> to <code>x2="19" y2="12"</code>, 
+                then set its <code>stroke</code> color and <code>stroke-width</code>.
+              </p>
+              <article-code language="html" mini overscroll>
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
+                </svg>
+              </article-code>
+            </div>
+            <div class="box-end">
+              <svg-display step="1"></svg-display>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card card-two_box" data-about="03">
+            <div class="box-start">
+              <p>
+                And then add two more <code>&lt;line&gt;</code>s width difference <code>y</code> units.
+              </p>
+              <article-code language="html" mini overscroll>
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="7" x2="19" y2="7" stroke="CanvasText" stroke-width="1"></line>
+                  <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
+                  <line x1="5" y1="17" x2="19" y2="17" stroke="CanvasText" stroke-width="1"></line>
+                </svg>
+              </article-code>
+            </div>
+            <div class="box-end">
+              <svg-display step="2"></svg-display>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card card-two_box" data-about="04">
+            <div class="box-start">
+              <p>
+                Add a <code>&lt;rect&gt;</code> element for the border box with <code>x="1", y="1"</code>, and a width and height of <code>22 units</code>.
+              </p>
+              <article-code language="html" mini overscroll class="maxh-8">
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="7" x2="19" y2="7" stroke="CanvasText" stroke-width="1"></line>
+                  <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
+                  <line x1="5" y1="17" x2="19" y2="17" stroke="CanvasText" stroke-width="1"></line>
+                  <rect x="1" y="1" width="22" height="22" stroke="CanvasText" stroke-width="1" fill="none"></rect>
+                </svg>
+              </article-code>
+            </div>
+            <div class="box-end">
+              <svg-display step="3"></svg-display>
+            </div>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card card-two_box" data-about="05">
+            <div class="box-start">
+              <p style="margin:0.5rem">
+                Finally, group the duplicated attributes using <code>&lt;g&gt;</code>, then add <code>stroke-linecap="round"</code> and 
+                <code>rx="4"</code> to the <code>&lt;rect&gt;</code> for a rounded look.
+              </p>
+              <article-code language="html" mini overscroll class="maxh-8">
+                <svg viewBox="0 0 24 24">
+                  <g stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                    <line x1="5" y1="7" x2="19" y2="7" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <line x1="5" y1="17" x2="19" y2="17" />
+                    <rect x="1" y="1" width="22" height="22" rx="4" fill="none" />
+                  </g>
+                </svg>
+              </article-code>
+            </div>
+            <div class="box-end">
+              <svg-display step="4"></svg-display>
+            </div>
+          </div>
+        </article-slide-item>
+      </article-slide>
+
+      <section>
+        <p>
+          Use the editor below to practice drawing SVG shapes. Change the element values 
+          and see how attributes like position, size, fill, and stroke update the preview.
+        </p>
+      </section>
+
+      <live-code ui-view="mini" height="25rem" file-path="/live-codes/svg/elements" styles-path="/live-codes/styels/utils.css"></live-code>
+
+      <section>
+        <h2>Gradient</h2>
+        <p>
+          Put reusable gradients in <code>&lt;defs&gt;</code>, give each one a unique <code>id</code>, 
+          and reference it with <code>url(#id)</code>. For strokes on lines, 
+          <code>gradientUnits="userSpaceOnUse"</code> keeps the gradient coordinates aligned with the SVG viewBox.
+        </p>
+        <p>
+          Use 
+          <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient" target="_blank" rel="noopener noreferrer"><code>&lt;radialGradient&gt;</code></a> 
+          when the color should spread outward from a center point. 
+          The <code>cx</code>, <code>cy</code>, and <code>r</code> attributes control the outer circle of the gradient, 
+          while <code>fx</code>, <code>fy</code>, and <code>fr</code> can move or resize the starting point.
+        </p>
+        <div data-flex="start">
+          <svg viewBox="0 0 24 24" width="32" height="32">
+            <defs>
+              <linearGradient id="example-icon-gradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="var(--green)" />
+                <stop offset="100%" stop-color="var(--blue)" />
+              </linearGradient>
+            </defs>
+            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+              <rect x="2" y="3" width="20" height="5" rx="2" fill="none" />
+              <line x1="4" y1="5.5" x2="8" y2="5.5" />
+              <circle cx="19" cy="5.5" r="0.5" fill="var(--pink)" stroke="var(--pink)" class="on-off" />
+            </g>
+            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+              <rect x="2" y="9.5" width="20" height="5" rx="2" fill="none" />
+              <line x1="4" y1="12" x2="8" y2="12" />
+            </g>
+            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+              <rect x="2" y="16" width="20" height="5" rx="2" fill="none" />
+              <line x1="4" y1="18.5" x2="8" y2="18.5" />
+            </g>
+          </svg>
+          <svg viewBox="0 0 24 24" width="32" height="32">
+            <rect x="2" y="2" width="20" height="20" rx="4" stroke="url(#example-icon-gradient)" stroke-width="1" fill="none" />
+            <line x1="7" y1="2" x2="7" y2="22" stroke="url(#example-icon-gradient)" stroke-width="1" />
+            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+              <line x1="10" y1="7" x2="18" y2="7" />
+              <line x1="10" y1="10" x2="14" y2="10" />
+            </g>
+          </svg>
+          <svg viewBox="0 0 24 24" width="32" height="32" class="clock">
+            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+              <circle cx="12" cy="12" r="11" fill="none" />
+              <line x1="12" y1="12" x2="12" y2="6" class="hour-hand" />
+              <line x1="12" y1="12" x2="12" y2="4" class="minute-hand" />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <article-code language="html">
+        <svg viewBox="0 0 24 24" width="32" height="32">
+          <defs>
+            <linearGradient id="book-icon-gradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="hotpink" />
+              <stop offset="100%" stop-color="blue" />
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="4" stroke="url(#book-icon-gradient)" stroke-width="1" fill="none" />
+          <line x1="7" y1="2" x2="7" y2="22" stroke="url(#book-icon-gradient)" stroke-width="1" />
+          <g stroke="url(#book-icon-gradient)" stroke-width="1">
+            <line x1="10" y1="7" x2="18" y2="7" />
+            <line x1="10" y1="10" x2="14" y2="10" />
+          </g>
+        </svg>
+      </article-code>
+
+      <section>
+        <h2>Mask</h2>
+        <p>
+          Creating masks in SVG can be a little tricky. Start by drawing the mask shapes 
+          outside the <code>&lt;mask&gt;</code> so you can preview them, then move those 
+          shapes into the mask once they look right. A simple way to think about masks is 
+          that <code>white</code> keeps the area visible, while <code>black</code> cuts it out.
+        </p>
+      </section>
+
+      <section>
+        <p>
+          SVG gives you a small set of elements that can scale from simple icons to detailed illustrations. 
+          To go deeper into each element and its attributes, explore the 
+          <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element" target="_blank" rel="noopener noreferrer">MDN SVG element reference</a>.
+        </p>
+      </section>
+
+      <article-code language="text">
+        Circle:
+          cx | cy | r
+        Ellipes:
+          cx | cy | rx | ry
+        Line:
+          x1 | y1 | x2 | y2
+        Rect: 
+          x | y | width | height | rx | ry
+        Path:
+          d
+        Polyline | Polygion:
+          points
+      </article-code>
+    </article>
+
+    <article-footer></article-footer>
+  </main>
+  <script type="module" src="/src/notebook/main.js"></script>
+</body>
+
+</html>

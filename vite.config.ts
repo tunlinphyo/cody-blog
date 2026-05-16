@@ -3,6 +3,20 @@ import path from "node:path";
 import type { Connect } from "vite-plus";
 import { defineConfig } from "vite-plus";
 
+const notebookInputs = Object.fromEntries(
+  fs
+    .readdirSync("notebook", { withFileTypes: true })
+    .filter(
+      (entry) =>
+        entry.isDirectory() &&
+        fs.existsSync(path.resolve("notebook", entry.name, "index.html")),
+    )
+    .map((entry) => [
+      entry.name,
+      path.resolve("notebook", entry.name, "index.html"),
+    ]),
+);
+
 function directoryTrailingSlash(root: string): Connect.NextHandleFunction {
   return (req, res, next) => {
     const pathname = req.url?.split("?")[0];
@@ -43,7 +57,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve("index.html"),
-        anchor: path.resolve("notebook/anchor/index.html"),
+        ...notebookInputs,
       },
     },
   },

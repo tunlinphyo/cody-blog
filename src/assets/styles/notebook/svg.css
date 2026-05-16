@@ -1,0 +1,28 @@
+.clock {
+  .minute-hand,
+  .hour-hand {
+    transform-origin: 12px 12px;
+    transform-box: view-box;
+    transition: transform 300ms ease-out;
+  }
+  .hour-hand {
+    animation: hand-rotate 96s linear infinite;
+  }
+  .minute-hand {
+    animation: hand-rotate 8s linear infinite;
+  }
+}
+
+@keyframes hand-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.on-off {
+  animation: on-off 1.2s steps(1, end) infinite;
+}
+
+@keyframes on-off {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}

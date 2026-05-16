@@ -1,0 +1,47 @@
+:where(main) {
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+  grid-gap: 4px;
+}
+
+.center {
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  outline: 1px dotted oklch(from CanvasText l c h / 0.2);
+}
+
+#clock {
+  .minute-hand,
+  .hour-hand {
+    transform-origin: 12px 12px;
+    transform-box: view-box;
+    transition: transform 300ms ease-out;
+  }
+  .hour-hand {
+    animation: hand-rotate 48s linear infinite;
+  }
+  .minute-hand {
+    animation: hand-rotate 4s linear infinite;
+  }
+}
+
+.server-light {
+  animation: on-off 1.2s steps(1, end) infinite;
+}
+
+@keyframes hand-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes on-off {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}

@@ -1,0 +1,105 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.slide-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  padding-inline: 1px;
+  
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: none;
+
+  /* outline: 1px dotted hotpink; */
+}
+
+.bullets, .bullets > li {
+  all: unset;
+}
+
+.bullets {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  & button {
+    width: 10px;
+    height: 10px;
+    border-radius: 100vh;
+    background-color: oklch(from CanvasText l c h / 0.5);
+    transition: width 0.3s var(--ease-1);
+
+    &[aria-current="true"] {
+      width: 20px;
+      background-color: var(--accent);
+    }
+
+    &:is(:hover,:focus-visible):not([aria-current="true"]) {
+      animation: var(--animation-shake-y);
+    }
+  }
+}
+
+.scroll-button {
+  position: absolute;
+  z-index: 1;
+
+  width: 3rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  border: 1px solid oklch(from CanvasText l c h / 0.1);
+  background-color: color-mix(in oklab, Canvas, CanvasText 5%);
+  color: contrast-color(var(--active-slide-card-bg, Canvas));
+  border-color: oklch(from contrast-color(var(--active-slide-card-bg, Canvas)) l c h / 0.1);
+  background-color: oklch(from contrast-color(var(--active-slide-card-bg, Canvas)) l c h / 0.1);
+
+  opacity: 0.25;
+  bottom: 2.75rem;
+  right: 1rem;
+
+  &[data-type="prev"] {
+    right: 4.5rem;
+  }
+
+  &:disabled {
+    pointer-events: none;
+
+    & svg {
+      opacity: 0.2;
+    }
+  }
+}
+
+:host(:hover),
+:host(:focus-visible) {
+  .scroll-button {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .scroll-button {
+    display: none;
+  }
+}

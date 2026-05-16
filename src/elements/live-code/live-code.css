@@ -18,11 +18,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
-  border-radius: 1rem;
-  @supports(corner-shape: squircle) {
-    border-radius: 2rem;
-    corner-shape: squircle;
-  }
+  border-radius: 0.2rem;
 }
 
 :host([ui-view="full"]) {
@@ -113,7 +109,7 @@
 }
 
 .run {
-  width: 2rem;
+  width: 1.5rem;
   aspect-ratio: 1;
   border-radius: 50%;
 
@@ -144,15 +140,14 @@
   left: 50%;
   z-index: 1;
   transform: translate(-50%, 0);
-  padding: 0.6rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 100vh;
-  background: oklch(from CanvasText l c h / 0.7);
+  background: oklch(from Canvas l c h / 0.7);
   border: 1px solid oklch(from CanvasText l c h / 0.3);
   backdrop-filter: blur(5px);
-  box-shadow: 0 0.5rem 1.5rem oklch(from CanvasText l c h / 0.16);
-  color: oklch(from Canvas l c h / 0.8);
+  /* box-shadow: 0 0.5rem 1.5rem oklch(from CanvasText l c h / 0.16); */
+  color: oklch(from CanvasText l c h / 0.8);
   font-size: 0.85rem;
-  font-weight: 500;
   white-space: nowrap;
 
   transition:

@@ -1,13 +1,13 @@
-@import url(./assets/styles/reset.css);
 @import url(./assets/styles/utils.css);
 @import url(./assets/styles/article.css);
+@import url(./assets/styles/slide.css);
 
 body {
   padding: 3rem 0;
 }
 
 main {
-  width: min(100%, 48rem);
+  width: min(100%, 50rem);
   margin: 0 auto;
   padding: 0.1rem;
 }

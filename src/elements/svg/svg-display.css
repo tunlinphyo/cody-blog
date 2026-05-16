@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  aspect-ratio: 1;
+}
+
+svg {
+  width: 100%;
+  max-width: 15rem;
+  color: oklch(from CanvasText l c h / 0.7);
+}

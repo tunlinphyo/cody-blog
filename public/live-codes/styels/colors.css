@@ -1,0 +1,14 @@
+:root {
+  --red: rgb(255,56,60);
+  --orange: rgb(255,141,40);
+  --yellow: rgb(255,204,0);
+  --green: rgb(52,199,89);
+  --mint: rgb(0,200,179);
+  --teal: rgb(0,195,208);
+  --cyan: rgb(0,192,232);
+  --blue: rgb(0,136,255);
+  --indigo: rgb(97,85,245);
+  --purple: rgb(203,48,224);
+  --pink: rgb(255,45,85);
+  --brown: rgb(172,127,94);
+}

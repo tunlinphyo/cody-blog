@@ -11,25 +11,48 @@
 <body>
   <main>
     <header>
+      <div class="date">
+        <div class="day">05</div>
+        <div class="month">May</div>
+        <div class="year">2026</div>
+      </div>
       <h1>Animation Timeline</h1>
     </header>
+
     <article>
-      <live-code ui-view="full" height="25rem" file-path="/live-codes/animation-timeline"
+      <article-slide>
+        <article-slide-item>
+          <div class="card">
+            <h1>One</h1>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <h1>Two</h1>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <h1>Three</h1>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="card">
+            <h1>Four</h1>
+          </div>
+        </article-slide-item>
+      </article-slide>
+
+      <live-code ui-view="mini" height="25rem" file-path="/live-codes/animation-timeline"
         styles-path="/live-codes/animation-timeline/keyframes.css" modules-path="/live-codes/modules/index.js"></live-code>
 
       <section>
-        <h2>Subtitle go here</h2>
+        <h2>Anchor subtitle go here</h2>
 
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint ad accusamus dicta obcaecati
           autem qui soluta voluptatem blanditiis, sit quas, perspiciatis quibusdam earum omnis <code>tempora</code>
           incidunt voluptatum iusto atque voluptate?
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quos officiis voluptate sequi minima,
-          sed beatae temporibus iste vero consectetur velit perspiciatis quis libero omnis placeat iure,
-          officia exercitationem. Doloribus.
         </p>
       </section>
 
@@ -50,6 +73,14 @@
         </main>
       </article-code>
 
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quos officiis voluptate sequi minima,
+          sed beatae temporibus iste vero consectetur velit perspiciatis quis libero omnis placeat iure,
+          officia exercitationem. Doloribus.
+        </p>
+      </section>
+
       <article-code language="css">
         :where(main) {
           width: 100%;
@@ -69,6 +100,14 @@
         }
       </article-code>
 
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quos officiis voluptate sequi minima,
+          sed beatae temporibus iste vero consectetur velit perspiciatis quis libero omnis placeat iure,
+          officia exercitationem. Doloribus.
+        </p>
+      </section>
+
       <article-code language="js">
         document.querySelector('button')?.addEventListener('click', () => {
           console.log('Hello from JavaScript!');
@@ -77,8 +116,38 @@
         const button = document.querySelector('.button');
         button?.classList.add('test');
       </article-code>
+
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quos officiis voluptate sequi minima,
+          sed beatae temporibus iste vero consectetur velit perspiciatis quis libero omnis placeat iure,
+          officia exercitationem. Doloribus.
+        </p>
+      </section>
     </article>
-    <footer></footer>
+
+    <footer>
+      <a href="/notebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="64">
+          <g stroke="currentColor" fill="none">
+            <path stroke-width="1.6" d="M9 1L4 15" />
+            <path stroke-width="1.6" d="M1 6L20 2" />
+            <path stroke-width="1.4" d="M9 6L8 9Q7 13 11 8T12.5 8T14 8Q18 2 17 7T18 8" />
+            <text
+              x="12.5"
+              y="15"
+              text-anchor="middle"
+              font-family="Google Sans, sans-serif"
+              font-size="2.8"
+              font-weight="700"
+              letter-spacing="0.15"
+              fill="currentColor"
+              stroke="none"
+              pathLength="100">UI.DEV</text>
+          </g>
+        </svg>
+      </a>
+    </footer>
   </main>
   <script type="module" src="/src/main.js"></script>
 </body>

@@ -1,5 +1,4 @@
 import { LitElement, html } from "lit";
-import resetStyles from "../../assets/styles/reset.css?inline";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import previewStyles from "./traffic-light.css?inline";
 import { litStaticStyles } from "../utils.js";
@@ -11,7 +10,7 @@ export class TrafficLight extends LitElement {
     disabled: { type: Boolean, reflect: true }
   };
 
-  static styles = litStaticStyles(resetStyles, utilsStyles, previewStyles);
+  static styles = litStaticStyles(utilsStyles, previewStyles);
 
   willUpdate(changedProperties) {
     if (changedProperties.has("uiView") || changedProperties.has("lightType")) {

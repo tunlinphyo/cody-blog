@@ -97,6 +97,10 @@ article-slide-item {
   h2 {
     margin-block: 2rem;
   }
+
+  .actions {
+    width: 100%;
+  }
 }
 
 .card-two_box {
@@ -124,6 +128,13 @@ article-slide-item {
       max-height: 8rem;
     }
   }
+    
+  .cover-one {
+    .actions {
+      margin-bottom: 2rem;
+    }
+  }
+
   .card-two_box {
     flex-direction: column-reverse;
     height: 40rem;

@@ -50,6 +50,25 @@
   border: 0;
 }
 
+
+a {
+  color: var(--accent);
+}
+
+a[href^="http"] {
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: calc(100% - 5px) 1px;
+
+  &:is(:hover) {
+    --link-line-offset: translate(-8px, 7px);
+    --link-arrow-offset: translate(-8px, 7px);
+  }
+}
+
+
 @keyframes shake-custom-z {
   0%, 100% { transform: rotate(0deg) }
   20% { transform: rotate(-10deg) }

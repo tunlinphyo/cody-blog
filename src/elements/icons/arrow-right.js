@@ -21,10 +21,10 @@ export class ArrowRight extends LitElement {
   render() {
     return svg`
       <svg viewBox="0 0 24 24" width=${this.size} height=${this.size}>
-        <g stroke="currentColor" stroke-width="1">
+        <g stroke="currentColor" stroke-width="1.5">
           <line x1="2" y1="12" x2="22" y2="12" style="transform: translateX(var(--arrow-line-offset, 0));" />
-          <line x1="13" y1="7" x2="22" y2="12" part="arrow-top" stroke-width="1.1" style="transform: translateX(var(--arrow-top-offset, 0));" />
-          <line x1="13" y1="17" x2="22" y2="12" part="arrow-top" stroke-width="1.1" style="transform: translateX(var(--arrow-top-offset, 0));" />
+          <line x1="13" y1="7" x2="22" y2="12" part="arrow-top" stroke-width="1.5" style="transform: translateX(var(--arrow-top-offset, 0));" />
+          <line x1="13" y1="17" x2="22" y2="12" part="arrow-top" stroke-width="1.5" style="transform: translateX(var(--arrow-top-offset, 0));" />
         </g>
       </svg>
     `

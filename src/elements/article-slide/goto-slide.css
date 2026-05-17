@@ -1,4 +1,7 @@
 :host {
+  --_button-bg: var(--button-bg, transparent);
+  --_button-border-color: var(--button-border-color, var(--accent));
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -6,24 +9,27 @@
   font-size: 1rem;
   padding: 0.4rem 1rem;
   border-radius: 0.2rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--_button-border-color);
   cursor: pointer;
-}
-
-:host,
-::slotted(*) {
-  color: var(--accent);
+  background-color: var(--_button-bg);
+  color: contrast-color(var(--_button-bg));
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
 }
 
+:host([data-theme=fill]) {
+  --_button-bg: var(--accent);
+  --_button-border-color: var(--accent);
+}
+
 :host(:hover) {
-  border-color: var(--accent);
+  --_bg: color-mix(in oklab, var(--_button-bg), CanvasText 10%);
+  background-color: var(--_bg);
 }
 
 :host(:hover) ::slotted(arrow-right) {
   --arrow-top-offset: 2px;
-  --arrow-line-offset: -6px;
+  --arrow-line-offset: -10px;
 }

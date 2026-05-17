@@ -23,7 +23,7 @@
               Scalable Vector Graphics, known as <code>SVG</code>, is an XML-based image format used to create sharp, resolution-independent graphics on the web.
             </p>
             <div class="actions">
-              <goto-slide goto-index="2" style="min-width: 10rem;">
+              <goto-slide goto-index="2" data-theme="fill" style="min-width: 10rem;">
                 <span>Learn more</span>
                 <arrow-right size="20"></arrow-right>
               </goto-slide>
@@ -353,7 +353,7 @@
               <article-code language="html" mini overscroll class="maxh-8">
                 <template>
                   <svg viewBox="0 0 24 24">
-                    <g stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                    <g stroke="CanvasText" stroke-width="1" stroke-linecap="round">
                       <line x1="5" y1="7" x2="19" y2="7" />
                       <line x1="5" y1="12" x2="19" y2="12" />
                       <line x1="5" y1="17" x2="19" y2="17" />
@@ -496,7 +496,7 @@
               <article-code language="html" mini overscroll>
                 <template>
                   <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1" fill="none"></circle>
+                    <circle cx="12" cy="12" r="10" stroke="CanvasText" stroke-width="1" fill="none"></circle>
                   </svg>
                 </template>
               </article-code>
@@ -579,12 +579,12 @@
               <p style="margin:0.5rem">
                 Draw a triangle with a <code>&lt;polygon&gt;</code> by passing three coordinate pairs to
                 <code>points</code>, such as <code>points="x1 y1 x2 y2 x3 y3"</code>. Then rotate it around a
-                center point with <code>transform="rotate(degree x y)"</code>.
+                left center point with <code>transform="rotate(degree x y)"</code>.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
                   ...
-                  <polygon points="10 0 10 4 14 2" fill="currentColor" transform="rotate(4 10 2)"></polygon>
+                  <polygon points="10 0 10 4 14 2" fill="CanvasText" transform="rotate(4 10 2)"></polygon>
                 </template>
               </article-code>
             </div>
@@ -606,9 +606,9 @@
                       <rect x="0" y="0" width="24" height="24" fill="white" />
                       <polygon points="12 0 16.5 0 7.5 24 12 24" fill="black" />
                     </mask>
-                    <circle mask="url(#reload-circle-mas:001)" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1" fill="none" />
-                    <polygon points="10 0 10 4 14 2" fill="currentColor" transform="rotate(4 10 2)" />
-                    <polygon points="14 24 14 20 10 22" fill="currentColor" transform="rotate(4 14 22)" />
+                    <circle mask="url(#reload-circle-mas:001)" cx="12" cy="12" r="10" stroke="CanvasText" stroke-width="1" fill="none" />
+                    <polygon points="10 0 10 4 14 2" fill="CanvasText" transform="rotate(4 10 2)" />
+                    <polygon points="14 24 14 20 10 22" fill="CanvasText" transform="rotate(4 14 22)" />
                   </svg>
                 </template>
               </article-code>

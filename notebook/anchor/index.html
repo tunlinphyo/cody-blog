@@ -10,14 +10,9 @@
 
 <body>
   <main>
-    <header>
-      <div class="date">
-        <div class="day">05</div>
-        <div class="month">May</div>
-        <div class="year">2026</div>
-      </div>
-      <h1>Animation Timeline</h1>
-    </header>
+    <article-header date="2026-05-05">
+      Animation Timeline
+    </article-header>
 
     <article>
       <article-slide>
@@ -57,20 +52,22 @@
       </section>
 
       <article-code language="html">
-        <main>
-          <h1>Hello World!</h1>
-          <p>Edit the code and see the preview.</p>
-          <button commandfor="view" command="--toggle" data-inert-view>Click me</button>
-          <div id="view" class="ui-view" inert>
-            <button commandfor="view" command="--toggle">Close</button>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nobis, sequi similique, eum quas
-              voluptatum rem
-              tempora, nihil blanditiis incidunt reiciendis reprehenderit. Velit eius error ipsa quidem reiciendis quos
-              laboriosam.
-            </p>
-          </div>
-        </main>
+        <template>
+          <main>
+            <h1>Hello World!</h1>
+            <p>Edit the code and see the preview.</p>
+            <button commandfor="view" command="--toggle" data-inert-view>Click me</button>
+            <div id="view" class="ui-view" inert>
+              <button commandfor="view" command="--toggle">Close</button>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nobis, sequi similique, eum quas
+                voluptatum rem
+                tempora, nihil blanditiis incidunt reiciendis reprehenderit. Velit eius error ipsa quidem reiciendis quos
+                laboriosam.
+              </p>
+            </div>
+          </main>
+        </template>
       </article-code>
 
       <section>
@@ -82,22 +79,24 @@
       </section>
 
       <article-code language="css">
-        :where(main) {
-          width: 100%;
-          margin: 0 auto;
-          max-width: 30rem;
-          padding: 1rem;
-        }
+        <template>
+          :where(main) {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 30rem;
+            padding: 1rem;
+          }
 
-        :where(button) {
-          padding: 0.25rem 1rem;
-          border: 0;
-          border-radius: 2rem;
-          corner-shape: squircle;
-          background-color: ButtonFace;
-          color: ButtonText;
-          cursor: pointer;
-        }
+          :where(button) {
+            padding: 0.25rem 1rem;
+            border: 0;
+            border-radius: 2rem;
+            corner-shape: squircle;
+            background-color: ButtonFace;
+            color: ButtonText;
+            cursor: pointer;
+          }
+        </template>
       </article-code>
 
       <section>
@@ -109,12 +108,14 @@
       </section>
 
       <article-code language="js">
-        document.querySelector('button')?.addEventListener('click', () => {
-          console.log('Hello from JavaScript!');
-        });
+        <template>
+          document.querySelector('button')?.addEventListener('click', () => {
+            console.log('Hello from JavaScript!');
+          });
 
-        const button = document.querySelector('.button');
-        button?.classList.add('test');
+          const button = document.querySelector('.button');
+          button?.classList.add('test');
+        </template>
       </article-code>
 
       <section>
@@ -126,28 +127,7 @@
       </section>
     </article>
 
-    <footer>
-      <a href="/notebook">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="64">
-          <g stroke="currentColor" fill="none">
-            <path stroke-width="1.6" d="M9 1L4 15" />
-            <path stroke-width="1.6" d="M1 6L20 2" />
-            <path stroke-width="1.4" d="M9 6L8 9Q7 13 11 8T12.5 8T14 8Q18 2 17 7T18 8" />
-            <text
-              x="12.5"
-              y="15"
-              text-anchor="middle"
-              font-family="Google Sans, sans-serif"
-              font-size="2.8"
-              font-weight="700"
-              letter-spacing="0.15"
-              fill="currentColor"
-              stroke="none"
-              pathLength="100">UI.DEV</text>
-          </g>
-        </svg>
-      </a>
-    </footer>
+    <article-footer></article-footer>
   </main>
   <script type="module" src="/src/main.js"></script>
 </body>

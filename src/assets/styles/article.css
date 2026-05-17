@@ -1,3 +1,8 @@
+article-header {
+  max-width: 64ch;
+  margin: 0 auto;
+}
+
 article {
   margin-block: 20vh;
   display: grid;
@@ -6,7 +11,7 @@ article {
 
 section {
   width: 100%;
-  max-width: 70ch;
+  max-width: 64ch;
   padding-inline: 1rem;
   margin: 0 auto;
   display: grid;
@@ -17,7 +22,7 @@ section {
   }
 
   & h2 {
-    font-size: clamp(1.5rem, 6vw, 3rem);
+    font-size: clamp(1.8rem, 6vw, 3rem);
   }
 
   p {

@@ -1,4 +1,5 @@
 import "./article"
 import "./article-code"
 import "./article-slide"
+import "./icons"
 import "./live-code"

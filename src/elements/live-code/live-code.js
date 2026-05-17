@@ -1,10 +1,12 @@
 import { LitElement, html, nothing } from "lit";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import liveCodeStyles from "./live-code.css?inline";
-import { litStaticStyles } from "../utils";
+import { litStaticStyles } from "../utils.js";
+import "../utils/article-toast.js";
 import "./live-code-preview.js";
 import "./reset-button.js";
 import "./tiny-code-editor.js";
+
 import {
   buildPreviewDocument,
   escapeAttribute,
@@ -26,7 +28,6 @@ export class LiveCode extends LitElement {
     autorun: { type: Boolean },
     activeTab: { state: true },
     previewDocument: { state: true },
-    toastMessage: { state: true },
   };
 
   static styles = litStaticStyles(utilsStyles, liveCodeStyles);
@@ -57,13 +58,6 @@ export class LiveCode extends LitElement {
     this.defaultCssCode = "";
     this.defaultJsCode = "";
     this.height = "";
-    this.toastMessage = "";
-    this.toastTimer = undefined;
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    window.clearTimeout(this.toastTimer);
   }
 
   // Runs once after the first render
@@ -162,9 +156,7 @@ export class LiveCode extends LitElement {
         @toggle-view=${this.handleFullPreviewToggle}
       ></live-code-preview>
 
-      <div class="toast-message" role="status" aria-live="polite" ?hidden=${!this.toastMessage}>
-        ${this.toastMessage}
-      </div>
+      <article-toast></article-toast>
     `;
   }
 
@@ -207,11 +199,7 @@ export class LiveCode extends LitElement {
   };
 
   showToast(message) {
-    window.clearTimeout(this.toastTimer);
-    this.toastMessage = message;
-    this.toastTimer = window.setTimeout(() => {
-      this.toastMessage = "";
-    }, 2000);
+    this.renderRoot.querySelector("article-toast")?.show(message);
   }
 
   normalizeUiView(uiView) {

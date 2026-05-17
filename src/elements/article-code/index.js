@@ -3,6 +3,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import previewStyles from "./styles.css?inline";
 import { litStaticStyles } from "../utils.js";
+import "../utils/article-toast.js";
 import { highlightCss, highlightHtml, highlightJs } from "./utils.js";
 
 const htmlEscapeChars = {
@@ -24,7 +25,6 @@ export class ArticleCode extends LitElement {
     language: { type: String, attribute: "language" }, // html | css | js | text
     mini: { type: Boolean, attribute: "mini" },
     code: { state: true },
-    toastMessage: { state: true },
   };
 
   static styles = litStaticStyles(utilsStyles, previewStyles);
@@ -34,18 +34,11 @@ export class ArticleCode extends LitElement {
     this.language = "html";
     this.mini = false;
     this.code = "";
-    this.toastMessage = "";
-    this.toastTimer = undefined;
     this.handleSlotChange = () => this.updateCode();
   }
 
   connectedCallback() {
     super.connectedCallback();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    window.clearTimeout(this.toastTimer);
   }
 
   firstUpdated() {
@@ -55,10 +48,18 @@ export class ArticleCode extends LitElement {
   updateCode() {
     const slot = this.renderRoot.querySelector("slot");
     const code = (slot?.assignedNodes({ flatten: true }) || [])
-      .map((node) => this.serializeCodeNode(node))
+      .map((node) => this.serializeAssignedCodeNode(node))
       .join("");
 
     this.code = this.normalizeCodeIndent(code);
+  }
+
+  serializeAssignedCodeNode(node) {
+    if (node.nodeType === Node.ELEMENT_NODE && node.localName === "template") {
+      return Array.from(node.content.childNodes, (child) => this.serializeCodeNode(child)).join("");
+    }
+
+    return this.serializeCodeNode(node);
   }
 
   serializeCodeNode(node) {
@@ -128,11 +129,7 @@ export class ArticleCode extends LitElement {
   };
 
   showToast(message) {
-    window.clearTimeout(this.toastTimer);
-    this.toastMessage = message;
-    this.toastTimer = window.setTimeout(() => {
-      this.toastMessage = "";
-    }, 2000);
+    this.renderRoot.querySelector("article-toast")?.show(message);
   }
 
   render() {
@@ -150,9 +147,7 @@ export class ArticleCode extends LitElement {
         <pre><code><slot hidden @slotchange=${this.handleSlotChange}>
           </slot>${unsafeHTML(this.highlightedCode)}</code></pre>
       </div>
-      <div class="toast-message" role="status" aria-live="polite" ?hidden=${!this.toastMessage}>
-        ${this.toastMessage}
-      </div>`;
+      <article-toast></article-toast>`;
   }
 }
 

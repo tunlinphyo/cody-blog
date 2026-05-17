@@ -33,7 +33,7 @@
   }
 }
 
-@media (max-width: 48rem) and (orientation: portrait) {
+@media (max-width: 40rem) and (orientation: portrait) {
   :host {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -134,37 +134,8 @@
   }
 }
 
-.toast-message {
-  position: absolute;
-  top: 3.25rem;
-  left: 50%;
-  z-index: 1;
-  transform: translate(-50%, 0);
-  padding: 0.5rem 1.5rem;
-  border-radius: 100vh;
-  background: oklch(from Canvas l c h / 0.7);
-  border: 1px solid oklch(from CanvasText l c h / 0.3);
-  backdrop-filter: blur(5px);
-  /* box-shadow: 0 0.5rem 1.5rem oklch(from CanvasText l c h / 0.16); */
-  color: oklch(from CanvasText l c h / 0.8);
-  font-size: 0.85rem;
-  white-space: nowrap;
-
-  transition:
-    display 0.2s var(--ease-sine-out) allow-discrete,
-    opacity 0.2s var(--ease-sine-out),
-    transform 0.2s var(--ease-sine-out);
-  transition-behavior: allow-discrete;
-
-  @starting-style {
-    opacity: 0;
-    transform: translate(-50%, -1rem) scale(0.5);
-  }
-}
-
-.toast-message[hidden] {
-  opacity: 0;
-  transform: translate(-50%, -1rem) scale(0.5);
+article-toast {
+  --article-toast-top: 3.25rem;
 }
 
 .editor-wrap {

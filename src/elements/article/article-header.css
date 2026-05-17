@@ -1,6 +1,5 @@
 :host {
-  max-width: 70ch;
-  margin: 0 auto;
+  width: 100%;
   padding-block-start: 15vh;
   padding-inline: 1rem;
   display: grid;

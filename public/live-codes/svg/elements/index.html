@@ -9,7 +9,7 @@
       <g stroke="currentColor" stroke-width="1">
         <rect x="2" y="3" width="20" height="5" rx="2" fill="none" />
         <line x1="4" y1="5.5" x2="8" y2="5.5" />
-        <circle cx="19" cy="5.5" r="0.5" fill="#28c840" stroke="var(--pink)" class="server-light" />
+        <circle cx="19" cy="5.5" r="0.5" fill="#28c840" stroke="var(--pink)" />
       </g>
       <g stroke="currentColor" stroke-width="1">
         <rect x="2" y="9.5" width="20" height="5" rx="2" fill="none" />
@@ -39,10 +39,55 @@
     </svg>
   </div>
   <div class="center">
-    <svg viewBox="0 0 24 24" width="24" height="24" id="clock">
+    <svg viewBox="0 0 24 24" width="24" height="24">
       <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1" fill="none" />
-      <line x1="12" y1="12" x2="12" y2="6" stroke="currentColor" stroke-width="1" class="hour-hand" />
-      <line x1="12" y1="12" x2="12" y2="4" stroke="currentColor" stroke-width="1" class="minute-hand" />
+      <line x1="12" y1="12" x2="12" y2="6" stroke="currentColor" stroke-width="1" />
+      <line x1="12" y1="12" x2="12" y2="4" stroke="currentColor" stroke-width="1" transform="rotate(120 12 12)" />
+    </svg>
+  </div>
+  <div class="center">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <mask id="reload-mask:002">
+        <rect x="0" y="0" width="24" height="24" rx="0" stroke-width="0" fill="white" />
+        <polygon points="13 2 21 2 3 22 11 22" fill="black" />
+      </mask>
+      <g stroke="currentColor" stroke-width="1">
+        <circle mask="url(#reload-mask:002)" cx="12" cy="12" r="7.5" fill="none" stroke-width="1.5" />
+        <polygon points="11 2.5 11 6.5 14.5 4.5" fill="currentColor" transform="rotate(12 11 4.5)" />
+        <polygon points="13 21.5 13 17.5 9.5 19.5" fill="currentColor" transform="rotate(12 13 19.5)" />
+      </g>
+    </svg>
+  </div>
+  <div class="center">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <mask id="reload-mask:003">
+        <rect x="0" y="0" width="24" height="24" rx="0" stroke-width="0" fill="white" />
+        <polygon points="22 8 22 16 16 13 16 11" fill="black" />
+      </mask>
+      <g stroke="currentColor" stroke-width="1">
+        <circle mask="url(#reload-mask:003)" cx="12" cy="12" r="7.5" fill="none" stroke-width="1.5" />
+        <polygon points="17 4 17 10 20.5 7" fill="currentColor" transform="rotate(45 17 7)" />
+      </g>
+    </svg>
+  </div>
+  <div class="center">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path d="M 5 7 Q 5 5 7 5 L 17 5 Q 19 5 19 7 L 19 17 Q 19 19 17 19 L 7 19 Q 5 19 5 17 Z" stroke="currentColor" stroke-width="1.5" fill="none" />
+    </svg>
+  </div>
+  <div class="center">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path d="M 6 7 Q 6 3 9.5 5 L 18 10 Q 19.5 11 19.5 12 L 19.5 12 Q 19.5 13 18 14 L 9.5 19 Q 6 21 6 17 Z" stroke="currentColor" stroke-width="1.5" fill="none" />
+    </svg>
+  </div>
+  <div class="center">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.5" fill="none" />
+      <g fill="currentColor">
+        <circle cx="6.5" cy="8.5" r="1.4"></circle>
+        <circle cx="10.5" cy="8.5" r="1.4"></circle>
+        <circle cx="14.5" cy="8.5" r="1.4"></circle>
+      </g>
     </svg>
   </div>
 </main>

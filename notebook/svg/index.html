@@ -15,28 +15,30 @@
     </article-header>
 
     <article>
-      <article-slide>
+      <article-slide id="svg">
         <article-slide-item>
-          <div class="card cover-one" data-about="SVG">
+          <hero-card data-about="SVG">
             <h2 style="color:var(--blue);">What is Scalable Vector Graphics?</h2>
             <p>
-              Scalable Vector Graphics, known as <code>SVG</code>, is an XML-based image format used to create sharp, resolution-independent graphics on the web.
+              Scalable Vector Graphics, known as <code>SVG</code>, is an XML-based image format used to create sharp,
+              resolution-independent graphics on the web.
             </p>
-            <div class="actions">
+            <div>
               <goto-slide goto-index="2" data-theme="fill" style="min-width: 10rem;">
                 <span>Learn more</span>
                 <arrow-right size="20"></arrow-right>
               </goto-slide>
             </div>
-          </div>
+          </hero-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card" style="--bg:var(--blue);">
-            <div>
-              <p data-my-2>
-                SVG stays crisp at any size, supports CSS styling and animations, and is perfect for icons, logos, illustrations, and charts.
-              </p>
+          <slide-card background="blue">
+            <p>
+              SVG stays crisp at any size, supports CSS styling and animations, and is perfect for icons, logos,
+              illustrations, and charts.
+            </p>
 
+            <div data-mb-0>
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <rect x="1" y="2" width="22" height="20" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
                 <g fill="currentColor">
@@ -45,213 +47,201 @@
                   <circle cx="14" cy="6" r="1.5" style="animation-delay: 0.2s"></circle>
                 </g>
               </svg>
-
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <rect x="1" y="2" rx="4" width="22" height="20" stroke="currentColor" stroke-width="2" fill="none" />
-                    <g fill="currentColor">
-                      <circle cx="6" cy="6" r="1.5"></circle>
-                      <circle cx="10" cy="6" r="1.5"></circle>
-                      <circle cx="14" cy="6" r="1.5"></circle>
-                    </g>
-                  </svg>
-                </template>
-              </article-code>
             </div>
-          </div>
+
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <rect x="1" y="2" rx="4" width="22" height="20" stroke="currentColor" stroke-width="2" fill="none" />
+                  <g fill="currentColor">
+                    <circle cx="6" cy="6" r="1.5"></circle>
+                    <circle cx="10" cy="6" r="1.5"></circle>
+                    <circle cx="14" cy="6" r="1.5"></circle>
+                  </g>
+                </svg>
+              </template>
+            </article-code>
+          </slide-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card">
+          <slide-card>
             <h3 style="color:var(--green);">&lt;svg&gt;</h3>
             <p>
-              The root element of an SVG graphic. It defines the drawing area and contains all shapes, paths, text, and groups.
+              The root element of an SVG graphic. It defines the drawing area and contains all shapes, paths,
+              text, and groups.
             </p>
             <h3 style="color:var(--purple);">viewBox</h3>
             <p>
-              The viewBox defines the internal coordinate system of the SVG. It controls how the graphic scales inside its container.
+              The viewBox defines the internal coordinate system of the SVG. It controls how the graphic
+              scales inside its container.
             </p>
             <article-code language="html" mini overscroll>
               <template>
                 <svg viewBox="0 0 100 100">...</svg>
               </template>
             </article-code>
-          </div>
+          </slide-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card">
-            <div>
-              <h3 style="color:var(--mint);">&lt;rect&gt;</h3>
-              <p>
-                Draws rectangles and squares. You can control its position, width, height, corner radius, fill, and stroke.
-              </p>
-              <h3 style="color:var(--indigo);">&lt;line&gt;</h3>
-              <p>
-                Draws a straight line between two points. It becomes visible when a stroke is applied.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 100 100">
-                    <rect x="10" y="10" width="80" height="50" rx="8" />
-                    <line x1="10" y1="10" x2="90" y2="70" stroke="currentColor" />
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-          </div>
+          <slide-card>
+            <h3 style="color:var(--mint);">&lt;rect&gt;</h3>
+            <p>
+              Draws rectangles and squares. You can control its position, width, height, corner radius,
+              fill, and stroke.
+            </p>
+            <h3 style="color:var(--indigo);">&lt;line&gt;</h3>
+            <p>
+              Draws a straight line between two points. It becomes visible when a stroke is applied.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 100 100">
+                  <rect x="10" y="10" width="80" height="50" rx="8" />
+                  <line x1="10" y1="10" x2="90" y2="70" stroke="currentColor" />
+                </svg>
+              </template>
+            </article-code>
+          </slide-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card">
-            <div>
-              <h3 style="color:var(--yellow);">&lt;circle&gt;</h3>
-              <p>
-                Draws a circle using its center position and radius.
-              </p>
-              <h3 style="color:var(--blue);">&lt;ellipse&gt;</h3>
-              <p>
-                Draws an oval shape. Unlike a circle, it has separate horizontal and vertical radii.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="30" />
-                    <ellipse cx="60" cy="40" rx="45" ry="25" />
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-          </div>
+          <slide-card>
+            <h3 style="color:var(--yellow);">&lt;circle&gt;</h3>
+            <p>
+              Draws a circle using its center position and radius.
+            </p>
+            <h3 style="color:var(--blue);">&lt;ellipse&gt;</h3>
+            <p>
+              Draws an oval shape. Unlike a circle, it has separate horizontal and vertical radii.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="30" />
+                  <ellipse cx="60" cy="40" rx="45" ry="25" />
+                </svg>
+              </template>
+            </article-code>
+          </slide-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card">
-            <div>
-              <h3 style="color:var(--cyan);">&lt;polyline&gt;</h3>
-              <p>
-                Draws a connected series of lines. It does not automatically close the shape.
-              </p>
-              <h3 style="color:var(--orange);">&lt;polygon&gt;</h3>
-              <p>
-                Draws a closed shape made from multiple connected points.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 100 100">
-                    <polyline points="10,60 40,20 70,60 100,20" />
-                    <polygon points="50,10 90,80 10,80" />
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-          </div>
+          <slide-card>
+            <h3 style="color:var(--cyan);">&lt;polyline&gt;</h3>
+            <p>
+              Draws a connected series of lines. It does not automatically close the shape.
+            </p>
+            <h3 style="color:var(--orange);">&lt;polygon&gt;</h3>
+            <p>
+              Draws a closed shape made from multiple connected points.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 100 100">
+                  <polyline points="10,60 40,20 70,60 100,20" />
+                  <polygon points="50,10 90,80 10,80" />
+                </svg>
+              </template>
+            </article-code>
+          </slide-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card">
-            <div>
-              <h3 style="color:var(--cyan);">&lt;path&gt;</h3>
-              <p>
-                The most powerful SVG shape. It can draw lines, curves, arcs, and complex custom illustrations using path commands.
-              </p>
-              <p>
-                This is a great editor for working with 
-                <a href="https://yqnn.github.io/svg-path-editor/" target="_blank" rel="noopener noreferrer">
-                  SVG paths
-                  <external-link></external-link>
-                </a>.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 100 100">
-                    <path d="M10 80 C40 10, 65 10, 95 80" />
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-          </div>
+          <slide-card>
+            <h3 style="color:var(--cyan);">&lt;path&gt;</h3>
+            <p>
+              The most powerful SVG shape. It can draw lines, curves, arcs, and complex custom illustrations
+              using path commands.
+            </p>
+            <p>
+              This is a great editor for working with
+              <a href="https://yqnn.github.io/svg-path-editor/" target="_blank" rel="noopener noreferrer">
+                SVG paths
+                <external-link></external-link>
+              </a>.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 100 100">
+                  <path d="M10 80 C40 10, 65 10, 95 80" />
+                </svg>
+              </template>
+            </article-code>
+          </slide-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card">
-            <div>
-              <h3 style="color:var(--green);">&lt;g&gt;</h3>
-              <p>
-                Groups multiple SVG elements together so they can share styles, transforms, or animations.
-              </p>
-              <h3 style="color:var(--cyan);">&lt;defs&gt;</h3>
-              <p>
-                Stores reusable definitions such as gradients, filters, masks, and symbols without displaying them directly.
-              </p>
-              <article-code language="html" mini>
-                <template>
-                  <svg viewBox="0 0 100 100">
-                    <defs>...</defs>
-                    <g fill="currentColor">...</g>
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-          </div>
+          <slide-card>
+            <h3 style="color:var(--green);">&lt;g&gt;</h3>
+            <p>
+              Groups multiple SVG elements together so they can share styles, transforms, or animations.
+            </p>
+            <h3 style="color:var(--cyan);">&lt;defs&gt;</h3>
+            <p>
+              Stores reusable definitions such as gradients, filters, masks, and symbols without displaying them directly.
+            </p>
+            <article-code language="html" mini>
+              <template>
+                <svg viewBox="0 0 100 100">
+                  <defs>...</defs>
+                  <g fill="currentColor">...</g>
+                </svg>
+              </template>
+            </article-code>
+          </slide-card>
         </article-slide-item>
+        <!-- <article-slide-item>
+          <slide-card>
+            <h3 style="color:var(--green);">&lt;clipPath&gt;</h3>
+            <p>
+              A clipPath hides parts of an element outside the clipping shape.
+            </p>
+            <h3 style="color:var(--cyan);">&lt;mask&gt;</h3>
+            <p>
+              A mask controls transparency. White reveals, black hides, and gray creates partial transparency.
+            </p>
+            <article-code language="html" mini>
+              <template>
+                <clipPath id="circle-cut">
+                  <circle cx="50" cy="50" r="35"></circle>
+                </clipPath>
+                <mask id="fade">
+                  <rect width="100%" height="100%" fill="white"></rect>
+                  <circle cx="50" cy="50" r="20" fill="black"></circle>
+                </mask>
+              </template>
+            </article-code>
+          </slide-card>
+        </article-slide-item> -->
+        <!-- <article-slide-item>
+          <slide-card>
+            <h3 style="color:var(--orange);">Transform</h3>
+            <p>
+              Moves, rotates, scales, or skews SVG elements.
+            </p>
+            <h3 style="color:var(--mint);">Gradient</h3>
+            <p>
+              SVG gradients create smooth color transitions and can be reused by referencing their id.
+            </p>
+            <article-code language="html" mini>
+              <template>
+                <rect fill="url(#paint)" transform="rotate(45 40 40)" x="20" y="20" width="40" height="40"></rect>
+                <linearGradient id="paint">
+                  <stop offset="0%" stop-color="hotpink"></stop>
+                  <stop offset="100%" stop-color="blue"></stop>
+                </linearGradient>
+              </template>
+            </article-code>
+          </slide-card>
+        </article-slide-item> -->
         <article-slide-item>
-          <div class="card">
-            <div>
-              <h3 style="color:var(--green);">&lt;clipPath&gt;</h3>
-              <p>
-                A clipPath hides parts of an element outside the clipping shape.
-              </p>
-              <h3 style="color:var(--cyan);">&lt;mask&gt;</h3>
-              <p>
-                A mask controls transparency. White reveals, black hides, and gray creates partial transparency.
-              </p>
-              <article-code language="html" mini style="margin-top: -1rem;">
-                <template>
-                  <clipPath id="circle-cut">
-                    <circle cx="50" cy="50" r="35"></circle>
-                  </clipPath>
-                  <mask id="fade">
-                    <rect width="100%" height="100%" fill="white"></rect>
-                    <circle cx="50" cy="50" r="20" fill="black"></circle>
-                  </mask>
-                </template>
-              </article-code>
-            </div>
-          </div>
-        </article-slide-item>
-        <article-slide-item>
-          <div class="card">
-            <div>
-              <h3 style="color:var(--orange);">Transform</h3>
-              <p>
-                Moves, rotates, scales, or skews SVG elements.
-              </p>
-              <h3 style="color:var(--mint);">Gradient</h3>
-              <p>
-                SVG gradients create smooth color transitions and can be reused by referencing their id.
-              </p>
-              <article-code language="html" mini style="margin-top: -0.5rem;">
-                <template>
-                  <rect fill="url(#paint)" transform="rotate(45 40 40)" x="20" y="20" width="40" height="40"></rect>
-                  <linearGradient id="paint">
-                    <stop offset="0%" stop-color="hotpink"></stop>
-                    <stop offset="100%" stop-color="blue"></stop>
-                  </linearGradient>
-                </template>
-              </article-code>
-            </div>
-          </div>
-        </article-slide-item>
-        <article-slide-item>
-          <div class="card">
-            <div>
-              <h2 style="color:var(--yellow)">And More...</h2>
-              <p>
-                To go deeper into each element and its attributes, explore the 
-                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element" 
-                  target="_blank" rel="noopener noreferrer">
-                  MDN SVG element reference
-                  <external-link></external-link>
-                </a>.
-              </p>
-            </div>
-          </div>
+          <slide-card>
+            <h2 style="color:var(--yellow)">And More...</h2>
+            <p>
+              To go deeper into each element and its attributes, explore the
+              <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element"
+                target="_blank" rel="noopener noreferrer">
+                MDN SVG element reference
+                <external-link></external-link>
+              </a>.
+            </p>
+          </slide-card>
         </article-slide-item>
       </article-slide>
 
@@ -261,12 +251,12 @@
         </p>
       </section>
 
-      <article-slide>
+      <article-slide id="menu-icon">
         <article-slide-item>
-          <div class="card card-two_box" data-about="01">
-            <div class="box-start">
+          <slide-demo-card data-about="01">
+            <div slot="description">
               <p>
-                First, create an <code>&lt;svg&gt;</code> element with a viewBox of <code>0 0 24 24</code>. 
+                First, create an <code>&lt;svg&gt;</code> element with a viewBox of <code>0 0 24 24</code>.
                 This means the drawing area starts at <code>x=0, y=0</code> and has a width and height of <code>24 units</code>.
               </p>
               <article-code language="html" mini overscroll>
@@ -275,16 +265,16 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-display></svg-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="02">
-            <div class="box-start">
+          <slide-demo-card data-about="02">
+            <div slot="description">
               <p>
-                Add a <code>&lt;line&gt;</code> element from <code>x1="5" y1="12"</code> to <code>x2="19" y2="12"</code>, 
+                Add a <code>&lt;line&gt;</code> element from <code>x1="5" y1="12"</code> to <code>x2="19" y2="12"</code>,
                 then set its <code>stroke</code> color and <code>stroke-width</code>.
               </p>
               <article-code language="html" mini overscroll>
@@ -295,14 +285,14 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-display step="1"></svg-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="03">
-            <div class="box-start">
+          <slide-demo-card data-about="03">
+            <div slot="description">
               <p>
                 And then add two more <code>&lt;line&gt;</code>s width difference <code>y</code> units.
               </p>
@@ -316,18 +306,18 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-display step="2"></svg-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="04">
-            <div class="box-start">
+          <slide-demo-card data-about="04">
+            <div slot="description">
               <p>
                 Add a <code>&lt;rect&gt;</code> element for the border box with <code>x="1", y="1"</code>, and a width and height of <code>22 units</code>.
               </p>
-              <article-code language="html" mini overscroll class="maxh-8">
+              <article-code language="html" mini overscroll mobile-max-height="8rem">
                 <template>
                   <svg viewBox="0 0 24 24">
                     <line x1="5" y1="7" x2="19" y2="7" stroke="CanvasText" stroke-width="1"></line>
@@ -338,19 +328,19 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-display step="3"></svg-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="05">
-            <div class="box-start">
-              <p style="margin:0.5rem">
-                Finally, group the duplicated attributes using <code>&lt;g&gt;</code>, then add <code>stroke-linecap="round"</code> and 
+          <slide-demo-card data-about="05">
+            <div slot="description">
+              <p>
+                Finally, group the duplicated attributes using <code>&lt;g&gt;</code>, then add <code>stroke-linecap="round"</code> and
                 <code>rx="4"</code> to the <code>&lt;rect&gt;</code> for a rounded look.
               </p>
-              <article-code language="html" mini overscroll class="maxh-8">
+              <article-code language="html" mini overscroll mobile-max-height="8rem">
                 <template>
                   <svg viewBox="0 0 24 24">
                     <g stroke="CanvasText" stroke-width="1" stroke-linecap="round">
@@ -363,39 +353,39 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-display step="4"></svg-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
       </article-slide>
 
       <section>
         <p>
-          Use the editor below to practice drawing SVG shapes. Change the element values 
-          and see how attributes like position, size, fill, and stroke update the preview.
+          Change the element values and see how attributes like position, size, fill, and stroke update the preview.
         </p>
       </section>
 
-      <live-code ui-view="mini" height="25rem" file-path="/live-codes/svg/elements" styles-path="/live-codes/styels/utils.css"></live-code>
+      <live-code id="live-code" height="25rem"
+        file-path="/live-codes/svg/elements" styles-path="/live-codes/styels/utils.css"></live-code>
 
       <section>
         <h2>Gradient</h2>
         <p>
-          Put reusable gradients in <code>&lt;defs&gt;</code>, give each one a unique <code>id</code>, 
-          and reference it with <code>url(#id)</code>. For strokes on lines, 
-          <code>gradientUnits="userSpaceOnUse"</code> keeps the gradient coordinates aligned with the SVG viewBox.
+          Put reusable gradients in <code>&lt;defs&gt;</code>, give each one a unique <code>id</code>,
+          and reference it with <code>url(#id)</code>. <code>gradientUnits="userSpaceOnUse"</code> keeps
+          the gradient coordinates aligned with the SVG viewBox.
         </p>
-        <p>
-          Use 
+        <!-- <p>
+          Use
           <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient" target="_blank" rel="noopener noreferrer">
             <code>&lt;radialGradient&gt;</code>
             <external-link></external-link>
-          </a> 
-          when the color should spread outward from a center point. 
-          The <code>cx</code>, <code>cy</code>, and <code>r</code> attributes control the outer circle of the gradient, 
+          </a>
+          when the color should spread outward from a center point.
+          The <code>cx</code>, <code>cy</code>, and <code>r</code> attributes control the outer circle of the gradient,
           while <code>fx</code>, <code>fy</code>, and <code>fr</code> can move or resize the starting point.
-        </p>
+        </p> -->
         <div data-flex="start">
           <svg viewBox="0 0 24 24" width="32" height="32">
             <defs>
@@ -458,36 +448,29 @@
       <section id="mask">
         <h2>Mask</h2>
         <p>
-          Creating masks in SVG can be a little tricky. Start by drawing the mask shapes 
-          outside the <code>&lt;mask&gt;</code> so you can preview them, then move those 
-          shapes into the mask once they look right. A simple way to think about masks is 
-          that <code>white</code> keeps the area visible, while <code>black</code> cuts it out.
+          Creating masks in SVG can be a little tricky. Start by drawing the mask shapes
+          outside the <code>&lt;mask&gt;</code> so you can preview them, then move those
+          shapes into the mask once they look right.
         </p>
       </section>
 
       <article-slide>
         <article-slide-item>
-          <div class="card card-two_box" data-about="01">
-            <div class="box-start">
+          <slide-demo-card data-about="01">
+            <div slot="description">
               <h2 style="color:var(--cyan)">Masking</h2>
               <p>
                 Let's create a reload icon using <code>&lt;mask&gt;</code>. Check out the step-by-step implementation.
               </p>
-              <div>
-                <goto-slide goto-index="2" style="min-width: 10rem;">
-                  <span>Next slide</span>
-                  <arrow-right size="20"></arrow-right>
-                </goto-slide>
-              </div>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-mask-display></svg-mask-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="02">
-            <div class="box-start">
+          <slide-demo-card data-about="02">
+            <div slot="description">
               <p>
                 Start by creating a circle with <code>&lt;circle&gt;</code>, using <code>cx="12"</code> and
                 <code>cy="12"</code> to center it in the 24 by 24 viewBox, and <code>r="10"</code> to set
@@ -501,18 +484,17 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-mask-display step="1"></svg-mask-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="03">
-            <div class="box-start">
-              <p style="margin:0.5rem">
-                Then draw the area to keep with a <code>&lt;rect&gt;</code>. In this example, 
-                it covers the whole view box from <code>x="0", y="0"</code> with a width and 
-                height of <code>24 units</code> and fill it with <code>white</code>.
+          <slide-demo-card data-about="03">
+            <div slot="description">
+              <p>
+                Then draw the area to keep with a <code>&lt;rect&gt;</code>. Make it cover the whole view box from
+                <code>x="0", y="0"</code> with a width and height of <code>24 units</code> and fill it with <code>white</code>.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -523,16 +505,16 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-mask-display step="2"></svg-mask-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="04">
-            <div class="box-start">
-              <p style="margin:0.5rem">
-                Then draw the area to cut out using <code>&lt;polygon&gt;</code>. Set the
+          <slide-demo-card data-about="04">
+            <div slot="description">
+              <p>
+                Then draw the area to cut out. Here, use <code>&lt;polygon&gt;</code>, set the
                 <code>points</code> in viewport coordinates like <code>x y | x y | ...</code>,
                 and fill it with <code>black</code>.
               </p>
@@ -546,15 +528,15 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-mask-display step="3"></svg-mask-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="05">
-            <div class="box-start">
-              <p style="margin:0.5rem">
+          <slide-demo-card data-about="05">
+            <div slot="description">
+              <p>
                 Wrap the <code>&lt;rect&gt; and &lt;polygon&gt;</code> inside a <code>&lt;mask&gt;</code>
                 with a unique <code>id</code>, then apply it to the <code>&lt;circle&gt;</code> with <code>mask="url(#id)"</code>.
               </p>
@@ -568,15 +550,15 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-mask-display step="4"></svg-mask-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="06">
-            <div class="box-start">
-              <p style="margin:0.5rem">
+          <slide-demo-card data-about="06">
+            <div slot="description">
+              <p>
                 Draw a triangle with a <code>&lt;polygon&gt;</code> by passing three coordinate pairs to
                 <code>points</code>, such as <code>points="x1 y1 x2 y2 x3 y3"</code>. Then rotate it around a
                 left center point with <code>transform="rotate(degree x y)"</code>.
@@ -588,18 +570,18 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-mask-display step="5"></svg-mask-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
         <article-slide-item>
-          <div class="card card-two_box" data-about="07">
-            <div class="box-start">
-              <p style="margin:0.5rem">
+          <slide-demo-card data-about="07">
+            <div slot="description">
+              <p>
                 Finally, add another <code>&lt;polygon&gt;</code> to complete the reload SVG icon.
               </p>
-              <article-code language="html" mini overscroll class="maxh-8">
+              <article-code language="html" mini overscroll mobile-max-height="9rem">
                 <template>
                   <svg viewBox="0 0 24 24">
                     <mask id="reload-circle-mas:001">
@@ -613,17 +595,17 @@
                 </template>
               </article-code>
             </div>
-            <div class="box-end">
+            <div slot="demo">
               <svg-mask-display step="6"></svg-mask-display>
             </div>
-          </div>
+          </slide-demo-card>
         </article-slide-item>
       </article-slide>
 
       <section>
         <p>
-          SVG gives you a small set of elements that can scale from simple icons to detailed illustrations. 
-          To go deeper into each element and its attributes, explore the 
+          SVG gives you a small set of elements that can scale from simple icons to detailed illustrations.
+          To go deeper into each element and its attributes, explore the
           <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element" target="_blank" rel="noopener noreferrer">
             MDN SVG element reference
             <external-link></external-link>
@@ -639,7 +621,7 @@
             cx | cy | rx | ry
           Line:
             x1 | y1 | x2 | y2
-          Rect: 
+          Rect:
             x | y | width | height | rx | ry
           Path:
             d

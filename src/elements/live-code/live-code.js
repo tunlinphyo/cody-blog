@@ -103,8 +103,8 @@ export class LiveCode extends LitElement {
 
   render() {
     const playPause = this.autorun
-      ? "M3 6Q3 3 6 3L18 3Q21 3 21 6L21 18Q21 21 18 21L6 21Q3 21 3 18Z"
-      : "M4 5Q4 1 8 3L19 10Q21 11 21 12L21 12Q21 13 19 14L8 21Q4 23 4 19Z";
+      ? "M5 7Q5 5 7 5L17 5Q19 5 19 7L19 17Q19 19 17 19L7 19Q5 19 5 17Z"
+      : "M6 7Q6 3 9.5 5L18 10Q19.5 11 19.5 12L19.5 12Q19.5 13 18 14L9.5 19Q6 21 6 17Z";
     return html`
       <div class="editor-panel">
         <div class="toolbar">
@@ -119,8 +119,8 @@ export class LiveCode extends LitElement {
               @reset-code=${this.handleResetCode}
             ></reset-button>
             <button class="run play-pause" type="button" data-play="${this.autorun}" @click=${this.handleRunClick}>
-              <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                <path fill="none" stroke="currentColor" stroke-width="1.8" d=${playPause} />
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" stroke="currentColor" stroke-width="1.5" d=${playPause} />
               </svg>
               <span screenreader-only>Play/Pause</span>
             </button>
@@ -128,12 +128,12 @@ export class LiveCode extends LitElement {
             ${this.uiView === "closed"
         ? html`
           <button class="run open-full" type="button" @click=${this.handleOpenView}>
-            <svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-              <rect x="1" y="2" width="22" height="20" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.5" fill="none" />
               <g fill="currentColor">
-                <circle cx="6" cy="6" r="1.5"></circle>
-                <circle cx="10" cy="6" r="1.5" style="animation-delay: 0.1s"></circle>
-                <circle cx="14" cy="6" r="1.5" style="animation-delay: 0.2s"></circle>
+                <circle cx="6.5" cy="8.5" r="1.4"></circle>
+                <circle cx="10.5" cy="8.5" r="1.4" style="animation-delay: 0.1s"></circle>
+                <circle cx="14.5" cy="8.5" r="1.4" style="animation-delay: 0.2s"></circle>
               </g>
             </svg>
             <span screenreader-only>Open Preview</span>

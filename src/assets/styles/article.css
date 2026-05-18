@@ -1,3 +1,9 @@
+:where(article) {
+  --header-font-size: clamp(2rem, 6vw, 2.5rem);
+  --paragraph-font-size: 1.05rem;
+  --paragraph-max-width: 34rem;
+}
+
 article-header {
   max-width: 64ch;
   margin: 0 auto;
@@ -7,6 +13,23 @@ article {
   margin-block: 20vh;
   display: grid;
   gap: 20vh;
+
+  & h2 {
+    font-size: var(--header-font-size);
+  }
+
+  p {
+    font-size: var(--paragraph-font-size);
+    color: oklch(from CanvasText l c h / 0.95);
+  }
+
+  a {
+    color: var(--accent);
+  }
+}
+
+article-slide p {
+  color: currentColor;
 }
 
 section {
@@ -21,26 +44,25 @@ section {
     margin: 0;
   }
 
-  & h2 {
-    font-size: clamp(1.8rem, 6vw, 3rem);
-  }
-
-  p {
-    font-size: 1.05rem;
-    color: oklch(from CanvasText l c h / 0.8);
-  }
-
-  a {
-    color: var(--accent);
-  }
-
   [data-flex] {
     display: flex;
     gap: 1rem;
   }
-  
+
   [data-flex="start"] {
     justify-content: flex-start;
     align-items: center;
+  }
+}
+
+section,
+article-slide-item {
+  code {
+    display: inline;
+    font-family: "Google Sans Code", monospace;
+    padding: 0 0.5rem;
+    background-color: oklch(from CanvasText l c h / 0.1);
+    border-radius: 0.3rem;
+    color: var(--accent);
   }
 }

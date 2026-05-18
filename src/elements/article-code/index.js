@@ -25,6 +25,7 @@ export class ArticleCode extends LitElement {
     language: { type: String, attribute: "language" }, // html | css | js | text
     mini: { type: Boolean, attribute: "mini" },
     code: { state: true },
+    mobileMaxHeight: { type: String, attribute: "mobile-max-height" },
   };
 
   static styles = litStaticStyles(utilsStyles, previewStyles);
@@ -43,6 +44,18 @@ export class ArticleCode extends LitElement {
 
   firstUpdated() {
     this.updateCode();
+  }
+
+  willUpdate(changedProperties) {
+    if (!changedProperties.has("mobileMaxHeight")) {
+      return;
+    }
+
+    if (this.mobileMaxHeight) {
+      this.style.setProperty("--mobile-max-height", `${this.mobileMaxHeight}`);
+    } else {
+      this.style.removeProperty("--mobile-max-height");
+    }
   }
 
   updateCode() {

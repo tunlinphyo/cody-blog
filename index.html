@@ -11,27 +11,38 @@
 <body>
   <main>
     <header>
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="72">
         <g stroke="currentColor" fill="none">
-          <path d="M9 1L4 15" />
-          <path d="M1 6L20 2" />
-          <path d="M9 6L8 9Q7 13 11 8T12.5 8T14 8Q18 2 17 7T18 8" />
+          <line x1="9" y1="1" x2="4" y2="15" stroke-width="1.6" />
+          <line x1="1" y1="6" x2="20" y2="2" stroke-width="1.6" />
+          <path stroke-width="1.2" d="M9 6L8 9Q7 13 11 8T12.5 8T14 8Q18 2 17 7T18.5 8" />
           <text
             x="12.5"
             y="15"
             text-anchor="middle"
-            font-family="Google Sans, sans-serif"
+            font-family="Google Sans Flex, sans-serif"
             font-size="2.8"
-            font-weight="700"
+            font-weight="900"
             letter-spacing="0.15"
             fill="currentColor"
             stroke="none"
             pathLength="100">UI.DEV</text>
         </g>
-      </svg> -->
+      </svg>
+      </svg>
       <h1>Cody</h1>
     </header>
     <article>
+
+      <ul>
+        <li>
+          <a href="/notebook/anchor/">Anchor</a>
+        </li>
+        <li>
+          <a href="/notebook/svg/">Scalable Vector Graphics</a>
+        </li>
+      </ul>
+
       <live-code ui-view="mini" height="25rem" file-path="/live-codes/example"
         styles-path="/live-codes/styels/utils.css" modules-path="/live-codes/modules/index.js"></live-code>
 
@@ -80,26 +91,7 @@
         button?.classList.add('test');
       </article-code>
     </article>
-    <footer>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="64">
-        <g stroke="currentColor" fill="none">
-            <path stroke-width="1.6" d="M9 1L4 15" />
-            <path stroke-width="1.6" d="M1 6L20 2" />
-            <path stroke-width="1.4" d="M9 6L8 9Q7 13 11 8T12.5 8T14 8Q18 2 17 7T18 8" />
-          <text
-            x="12.5"
-            y="15"
-            text-anchor="middle"
-            font-family="Google Sans Flex, sans-serif"
-            font-size="2.8"
-            font-weight="900"
-            letter-spacing="0.15"
-            fill="currentColor"
-            stroke="none"
-            pathLength="100">UI.DEV</text>
-        </g>
-      </svg>
-    </footer>
+    <article-footer></article-footer>
   </main>
   <script type="module" src="/src/main.js"></script>
 </body>

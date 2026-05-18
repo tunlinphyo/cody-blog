@@ -1,3 +1,6 @@
 import "./article-slide"
 import "./article-slide-item"
 import "./goto-slide"
+import "./hero-card"
+import "./slide-card"
+import "./slide-demo-card"

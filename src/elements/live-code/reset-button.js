@@ -33,15 +33,16 @@ export class ResetButton extends LitElement {
         @pointercancel=${this.cancelLongPress}
         @pointerleave=${this.cancelLongPress}
       >
-        <svg viewBox="0 0 28 28" width="19" height="19" xmlns="http://www.w3.org/2000/svg">
-          <mask id="circle-cutout-mask:002">
-            <rect x="0" y="0" width="28" height="28" fill="white" />
-            <rect x="12" y="4" width="4" height="24" fill="black" transform="rotate(30 14 14)" />
-            <rect x="12" y="0" width="4" height="24" fill="black" transform="rotate(30 14 14)" />
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <mask id="reload-mask:000">
+            <rect x="0" y="0" width="24" height="24" rx="0" stroke-width="0" fill="white" />
+            <polygon points="13 2 21 2 3 22 11 22" fill="black" />
           </mask>
-          <circle cx="14" cy="14" r="10" mask="url(#circle-cutout-mask:002)" stroke="currentColor" stroke-width="2" fill="none" />
-          <polygon points="13 0 13 8 19 4" fill="currentColor" transform="rotate(15 13 4)" />
-          <polygon points="9 24 15 20 15 28" fill="currentColor" transform="rotate(15 15 24)" />
+          <g stroke="currentColor" stroke-width="1">
+            <circle mask="url(#reload-mask:000)" cx="12" cy="12" r="7.5" fill="none" stroke-width="1.5" />
+            <polygon points="11 2.5 11 6.5 14.5 4.5" fill="currentColor" transform="rotate(12 11 4.5)" />
+            <polygon points="13 21.5 13 17.5 9.5 19.5" fill="currentColor" transform="rotate(12 13 19.5)" />
+          </g>
         </svg>
         <span screenreader-only>Reset Code</span>
       </button>

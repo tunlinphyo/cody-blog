@@ -27,13 +27,15 @@ export class LiveCodePreview extends LitElement {
         <div class="searchbar"></div>
         <div class="actions">
           <button class="reload" @click=${this.handleReloadClick}>
-            <svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-              <mask id="circle-cutout-mask:001">
-                <rect x="0" y="0" width="24" height="24" fill="white" />
-                <rect x="18" y="6" width="10" height="10" fill="black" transform="rotate(45 20 12)" />
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <mask id="reload-mask:001">
+                <rect x="0" y="0" width="24" height="24" rx="0" stroke-width="0" fill="white" />
+                <polygon points="22 8 22 16 16 13 16 11" fill="black" />
               </mask>
-              <circle cx="12" cy="12" r="10" mask="url(#circle-cutout-mask:001)" stroke="currentColor" stroke-width="2" fill="none" />
-              <polygon points="17 3 17 13 24 8" fill="currentColor" transform="rotate(50 20 11)" />
+              <g stroke="currentColor" stroke-width="1">
+                <circle mask="url(#reload-mask:001)" cx="12" cy="12" r="7.5" fill="none" stroke-width="1.5" />
+                <polygon points="17 4 17 10 20.5 7" fill="currentColor" transform="rotate(45 17 7)" />
+              </g>
             </svg>
             <span screenreader-only>Reload Preview</span>
           </button>

@@ -84,7 +84,7 @@ export class ArticleSlide extends LitElement {
   }
 
   updateActiveSlideCardBg() {
-    const card = this.slideItems[this.activeIndex]?.querySelector(":scope > .card");
+    const card = this.slideItems[this.activeIndex]?.querySelector(":scope > *");
     const cardStyles = card ? getComputedStyle(card) : null;
     const cardBg = cardStyles?.getPropertyValue("--bg").trim() || cardStyles?.backgroundColor;
 
@@ -121,6 +121,22 @@ export class ArticleSlide extends LitElement {
     const isLastSlide = this.activeIndex >= this.slideCount - 1;
 
     return html`
+      <button type="button" class="scroll-button" data-type="prev" ?disabled=${isFirstSlide} @click=${() => this.goToPrev()}>
+        <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" />
+          <line x1="10" y1="4" x2="2" y2="12" stroke="currentColor" stroke-width="1.4" class="top-arrow" />
+          <line x1="10" y1="20" x2="2" y2="12" stroke="currentColor" stroke-width="1.4" class="bottom-arrow" />
+        </svg>
+        <span screenreader-only>Previous</span>
+      </button>
+      <button type="button" class="scroll-button" data-type="next" ?disabled=${isLastSlide} @click=${() => this.goToNext()}>
+        <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" />
+          <line x1="14" y1="4" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" class="top-arrow" />
+          <line x1="14" y1="20" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" class="bottom-arrow" />
+        </svg>
+        <span screenreader-only>Next</span>
+      </button>
       <section
         class="slide-container"
         @article-slide-item-active=${(event) => this.handleActiveSlide(event)}
@@ -145,22 +161,6 @@ export class ArticleSlide extends LitElement {
           `,
         )}
       </ul>
-      <button type="button" class="scroll-button" data-type="prev" ?disabled=${isFirstSlide} @click=${() => this.goToPrev()}>
-        <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" />
-          <line x1="10" y1="4" x2="2" y2="12" stroke="currentColor" stroke-width="1.4" class="top-arrow" />
-          <line x1="10" y1="20" x2="2" y2="12" stroke="currentColor" stroke-width="1.4" class="bottom-arrow" />
-        </svg>
-        <span screenreader-only>Previous</span>
-      </button>
-      <button type="button" class="scroll-button" data-type="next" ?disabled=${isLastSlide} @click=${() => this.goToNext()}>
-        <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" />
-          <line x1="14" y1="4" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" class="top-arrow" />
-          <line x1="14" y1="20" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" class="bottom-arrow" />
-        </svg>
-        <span screenreader-only>Next</span>
-      </button>
     `;
   }
 }

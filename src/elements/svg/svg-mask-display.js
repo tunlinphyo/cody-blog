@@ -1,4 +1,4 @@
-import { LitElement, html, nothing, svg } from "lit";
+import { LitElement, nothing, svg } from "lit";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import previewStyles from "./svg-display.css?inline";
 import { litStaticStyles } from "../utils.js";
@@ -35,7 +35,8 @@ export class SvgMaskDisplay extends LitElement {
           <polygon points="120 0 165 0 75 240 120 240" fill="black" />
         </mask>
         ${this.stepNumber === 0 ? svg`
-          <circle mask="url(#cut-out-for-reload:001)" cx="120" cy="120" r="100" stroke="color-mix(in oklab, CanvasText, Canvas 15%)" stroke-width="10" fill="none" />
+          <circle mask="url(#cut-out-for-reload:001)" cx="120" cy="120" r="100"
+            stroke="color-mix(in oklab, CanvasText, Canvas 15%)" stroke-width="10" fill="none" />
           <polygon points="100 0 100 40 140 20" fill="color-mix(in oklab, CanvasText, Canvas 15%)" transform="rotate(4 100 20)" />
           <polygon points="140 240 140 200 100 220" fill="color-mix(in oklab, CanvasText, Canvas 15%)" transform="rotate(4 140 220)" />
         ` : nothing}

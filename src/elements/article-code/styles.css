@@ -73,7 +73,7 @@
   padding: 1rem;
   padding-block-start: 0;
   overscroll-behavior-x: none;
-  
+
   &.mini {
     padding: 0.5rem 0.75rem;
   }
@@ -98,6 +98,9 @@ pre {
 }
 
 @media (max-width: 47rem) {
+  :host {
+    max-height: var(--mobile-max-height, auto);
+  }
   @supports (-webkit-touch-callout: none) {
     :host(:not([mini])) pre {
       font-size: 16px;

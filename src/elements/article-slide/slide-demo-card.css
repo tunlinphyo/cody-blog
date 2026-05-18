@@ -1,0 +1,66 @@
+:host {
+  display: flex;
+  padding: 0;
+  gap: 0;
+}
+
+slot[name="demo"],
+slot[name="description"] {
+  flex: 1;
+  padding: var(--padding);
+  position: relative;
+  z-index: 1;
+}
+
+slot[name="description"] {
+  display: block;
+}
+
+::slotted([slot="description"]) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+slot[name="demo"] {
+  display: grid;
+  place-content: center;
+}
+
+@media (max-width: 40rem) and (orientation: portrait) {
+  :host {
+    flex-direction: column-reverse;
+    height: 40rem;
+  }
+
+  :host([data-about])::before {
+    right: initial;
+    left: 1.5rem;
+  }
+
+  slot[name="demo"] {
+    padding-bottom: 0;
+  }
+
+  ::slotted(.maxh-8) {
+    max-height: 8rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  :host {
+    flex-direction: row;
+  }
+
+  slot[name="description"] {
+    padding-right: 0;
+  }
+
+  ::slotted([slot="description"]) {
+    justify-content: center;
+  }
+
+}

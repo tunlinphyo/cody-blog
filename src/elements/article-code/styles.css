@@ -21,8 +21,8 @@
 
 :host([mini]) {
   display: inline-grid;
-  border-color: oklch(from CanvasText l c h / 0.2);
-  background-color: color-mix(in oklab, Canvas, CanvasText 8%);
+  /* border-color: oklch(from CanvasText l c h / 0.2); */
+  /* background-color: color-mix(in oklab, Canvas, CanvasText 8%); */
 }
 
 .header {

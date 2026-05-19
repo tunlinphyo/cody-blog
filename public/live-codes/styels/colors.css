@@ -16,7 +16,8 @@
   --text-color: color-mix(in oklab, CanvasText, Canvas 5%);
   --accent: light-dark(var(--orange), var(--blue));
 
-  --gray: color-mix(in oklab, CanvasText, Canvas 50%);
-  --darkgray: color-mix(in oklab, Canvas, CanvasText 6%);
-  --lightgray: color-mix(in oklab, CanvasText, Canvas 90%);
+  --gray: oklch(from CanvasText l c h / 0.5);
+  --darkgray: oklch(from CanvasText l c h / 0.04);
+  --lightgray: oklch(from CanvasText l c h / 0.2);
+  --toast-bg: color-mix(in oklab, CanvasText, Canvas 70%);
 }

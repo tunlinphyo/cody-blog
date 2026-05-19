@@ -5,6 +5,7 @@ import { litStaticStyles } from "../utils.js";
 
 export class ArticleDetails extends LitElement {
   static properties = {
+    detailTitle: { type: String, attribute: 'detail-title' },
     activeIndex: { type: Number },
     summaryCount: { state: true },
   };
@@ -13,6 +14,8 @@ export class ArticleDetails extends LitElement {
 
   constructor() {
     super();
+    this.detailTitle = "Attributes"
+    this.activeIndex = null;
     this.summaryTitle = "";
     this.summaryCount = 0;
   }
@@ -25,15 +28,27 @@ export class ArticleDetails extends LitElement {
   }
 
   handleSlotChange = () => {
+    let activeIndex = null;
+
     this.getSummaries().forEach((summary, index) => {
       summary.index = index;
+
+      if (summary.hasAttribute("open")) {
+        activeIndex = index;
+      }
     });
+
+    this.activeIndex = activeIndex;
   };
 
   handleSummaryOpen = (event) => {
     const summaries = this.getSummaries();
     const target = event.composedPath().find((element) => element.localName === "article-summary");
     const activeIndex = event.detail.index ?? summaries.indexOf(target);
+
+    if (activeIndex < 0) {
+      return;
+    }
 
     summaries.forEach((summary, index) => {
       summary.toggleAttribute("open", index === activeIndex);
@@ -42,8 +57,27 @@ export class ArticleDetails extends LitElement {
     this.activeIndex = activeIndex;
   };
 
+  handleCloseClick = () => {
+    this.getSummaries().forEach((summary) => {
+      summary.removeAttribute("open");
+    });
+
+    this.activeIndex = null;
+  };
+
   render() {
     return html`
+      <button type="button" ?disabled=${this.activeIndex === null} @click=${this.handleCloseClick}>
+        <svg viewBox="0 0 24 24" width="24">
+          <g  stroke="currentColor" stroke-width="1.4" fill="none">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="18" y1="6" x2="6" y2="18" />
+          </g>
+        </svg>
+      </button>
+      <div class="detail">
+        <h2 class="title">${this.detailTitle}</h2>
+      </div>
       <div class="summary-container" @article-summary-open=${this.handleSummaryOpen}>
         <slot @slotchange=${this.handleSlotChange}></slot>
       </div>

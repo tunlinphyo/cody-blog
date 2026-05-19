@@ -1,4 +1,6 @@
 :root {
+  color-scheme: dark;
+
   --red: rgb(255,56,60);
   --orange: rgb(255,141,40);
   --yellow: rgb(255,204,0);
@@ -16,8 +18,8 @@
   --text-color: color-mix(in oklab, CanvasText, Canvas 5%);
   --accent: light-dark(var(--orange), var(--blue));
 
-  --gray: color-mix(in oklab, CanvasText, Canvas 50%);
-  --darkgray: color-mix(in oklab, Canvas, CanvasText 6%);
-  --lightgray: color-mix(in oklab, CanvasText, Canvas 90%);
-  --toast-bg: color-mix(in oklab, CanvasText, Canvas 80%);
+  --gray: color-mix(in oklab, Canvas 60%, CanvasText 40%);
+  --darkgray: oklch(from CanvasText l c h / 0.1);
+  --lightgray: oklch(from CanvasText l c h / 0.05);
+  --toast-bg: color-mix(in oklab, CanvasText, Canvas 70%);
 }

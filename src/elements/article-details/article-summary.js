@@ -1,6 +1,7 @@
 import { LitElement, html } from "lit";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import previewStyles from "./article-summary.css?inline";
+import { HostSizeAnimation } from "./animation.js";
 import { litStaticStyles } from "../utils.js";
 
 export class ArticleSummary extends LitElement {
@@ -12,9 +13,30 @@ export class ArticleSummary extends LitElement {
 
   static styles = litStaticStyles(utilsStyles, previewStyles);
 
+  #hostSizeAnimation;
+
   constructor() {
     super();
     this.summaryTitle = "";
+    this.#hostSizeAnimation = new HostSizeAnimation(this);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.#hostSizeAnimation.cancel();
+  }
+
+  firstUpdated() {
+    this.#hostSizeAnimation.saveHostBounds();
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has("open")) {
+      this.#hostSizeAnimation.animateHostSizeChange();
+      return;
+    }
+
+    this.#hostSizeAnimation.saveHostBounds();
   }
 
   handleOpenClick = () => {
@@ -27,7 +49,16 @@ export class ArticleSummary extends LitElement {
 
   render() {
     return html`
-      <button type="button" class="opener" @click=${this.handleOpenClick}>${this.summaryTitle}</button>
+      <button type="button" class="opener" @click=${this.handleOpenClick}>
+        <svg viewBox="0 0 24 24" width="22">
+          <g stroke="var(--gray)" stroke-width="1.5" fill="none">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="7" y1="12" x2="17" y2="12" />
+            <line x1="12" y1="7" x2="12" y2="17" />
+          </g>
+        </svg>
+        ${this.summaryTitle}
+      </button>
       <div class="details">
         <slot></slot>
       </div>

@@ -20,6 +20,16 @@
   gap: 0.5rem;
   opacity: 1;
   white-space: nowrap;
+
+  & svg line {
+    transform-origin: 12px 12px;
+    transform-box: view-box;
+    transition: transform 0.3s var(--ease-out-1);
+  }
+
+  &:is(:hover) svg line {
+    transform: rotate(90deg);
+  }
 }
 
 .details {

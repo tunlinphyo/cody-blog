@@ -3,7 +3,6 @@
   .hour-hand {
     transform-origin: 12px 12px;
     transform-box: view-box;
-    transition: transform 300ms ease-out;
   }
   .hour-hand {
     animation: hand-rotate 96s linear infinite;

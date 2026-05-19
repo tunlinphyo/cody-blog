@@ -49,24 +49,43 @@
   gap: 0.2rem;
 }
 
+.button-container {
+  position: absolute;
+  z-index: 9;
+  top: 1rem;
+  right: 1rem;
+  height: 80%;
+}
+
 button {
-  width: 2.2rem;
+  width: 2.5rem;
   aspect-ratio: 1;
   border-radius: 50%;
   display: grid;
   place-content: center;
   background-color: var(--surface);
   border: 1px solid var(--border-color);
-  position: absolute;
-  z-index: 9;
+  position: sticky;
   top: 1rem;
-  right: 1rem;
   opacity: 1;
   transition: opacity 0.25s var(--ease-1);
 
   & svg {
     scale: 1;
     transition: scale 0.4s var(--ease-spring-1)
+  }
+
+  & .top-line,
+  & .bottom-line {
+    transform-origin: 12px 12px;
+    transform-box: view-box;
+  }
+
+  &:hover:not(:disabled) .top-line {
+    animation: top-rotate 0.3s var(--ease-out-1);
+  }
+  &:hover:not(:disabled) .bottom-line {
+    animation: bottom-rotate 0.3s var(--ease-out-1);
   }
 
   &:disabled {
@@ -76,4 +95,14 @@ button {
       scale: 0;
     }
   }
+}
+
+@keyframes top-rotate {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(-12deg); }
+}
+
+@keyframes bottom-rotate {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(12deg); }
 }

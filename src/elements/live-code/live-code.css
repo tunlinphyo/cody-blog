@@ -35,14 +35,14 @@
   :host {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    height: calc(min(var(--block-height), 40vh) * 2);
+    height: calc(min(var(--block-height), 45vh) * 2);
   }
 
   :host([ui-view="full"]) {
     grid-template-rows: 0 1fr;
 
     & live-code-preview {
-      height: calc(min(var(--block-height), 40vh) * 2)
+      height: calc(min(var(--block-height), 45vh) * 2)
     }
   }
 

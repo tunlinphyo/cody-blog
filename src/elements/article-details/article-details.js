@@ -67,14 +67,16 @@ export class ArticleDetails extends LitElement {
 
   render() {
     return html`
-      <button type="button" ?disabled=${this.activeIndex === null} @click=${this.handleCloseClick}>
-        <svg viewBox="0 0 24 24" width="24">
-          <g  stroke="currentColor" stroke-width="1.4" fill="none">
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="18" y1="6" x2="6" y2="18" />
-          </g>
-        </svg>
-      </button>
+      <div class="button-container">
+        <button type="button" ?disabled=${this.activeIndex === null} @click=${this.handleCloseClick}>
+          <svg viewBox="0 0 24 24" width="24">
+            <g  stroke="currentColor" stroke-width="1.4" fill="none">
+              <line class="top-line" x1="5" y1="5" x2="19" y2="19" />
+              <line class="bottom-line" x1="19" y1="5" x2="5" y2="19" />
+            </g>
+          </svg>
+        </button>
+      </div>
       <div class="detail">
         <h2 class="title">${this.detailTitle}</h2>
       </div>

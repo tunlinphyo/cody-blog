@@ -50,7 +50,7 @@ export class ArticleSummary extends LitElement {
   render() {
     return html`
       <button type="button" class="opener" @click=${this.handleOpenClick}>
-        <svg viewBox="0 0 24 24" width="22">
+        <svg viewBox="0 0 24 24" width="22" height="22">
           <g stroke="var(--gray)" stroke-width="1.5" fill="none">
             <circle cx="12" cy="12" r="10" />
             <line x1="7" y1="12" x2="17" y2="12" />

@@ -262,8 +262,8 @@
       <article-details>
         <article-summary summary-title="viewBox">
           <p>
-            The <code>viewBox</code> defines the internal coordinate system of the SVG.
-            It controls how the graphic scales inside its container.
+            The <code>viewBox</code> defines internal coordinate system and 
+            determines how graphics scale within the container.
           </p>
           <article-code language="html" mini overscroll>
             <template>
@@ -273,7 +273,7 @@
         </article-summary>
         <article-summary summary-title="fill">
           <p>
-            The <code>fill</code> attribute sets a shape's paint color and gradients.
+            The <code>fill</code> applies colors or gradients to a shape.
           </p>
           <div data-flex="start" data-gap="m">
             <svg viewBox="0 0 24 24" width="42">
@@ -294,7 +294,7 @@
         </article-summary>
         <article-summary summary-title="stroke">
           <p>
-            The <code>stroke</code> attribute sets the outline color of a shape, including gradients and patterns.
+            The <code>stroke</code> specifies the outline color of a shape, including gradients.
           </p>
           <div data-flex="start" data-gap="m">
             <svg viewBox="0 0 24 24" width="42">
@@ -327,7 +327,7 @@
         </article-summary>
         <article-summary summary-title="stroke-width">
           <p>
-            The <code>stroke-width</code> attribute sets the width of a shape or text outline and can be inherited from elements like <g>.
+            The <code>stroke-width</code> determines the thickness of a shape or text outline.
           </p>
           <div data-flex="start" data-gap="m">
             <svg viewBox="0 0 24 24" width="42">
@@ -337,13 +337,13 @@
               </g>
             </svg>
             <svg viewBox="0 0 24 24" width="42">
-              <g stroke-width="1" stroke="url(#example-fill-gradient:001)">
+              <g stroke-width="1.5" stroke="url(#example-fill-gradient:001)">
                 <circle cx="12" cy="12" r="10" fill="none" />
                 <line x1="6" y1="12" x2="18" y2="12" />
               </g>
             </svg>
             <svg viewBox="0 0 24 24" width="42">
-              <g stroke-width="1" stroke="url(#example-fill-gradient:002)">
+              <g stroke-width="2" stroke="url(#example-fill-gradient:002)">
                 <circle cx="12" cy="12" r="10" fill="none" />
                 <line x1="6" y1="12" x2="18" y2="12" />
               </g>
@@ -357,7 +357,7 @@
         </article-summary>
         <article-summary summary-title="stroke-dasharray">
           <p>
-            The <code>stroke-dasharray</code> attribute defines the dash and gap pattern of a shape's outline.
+            The <code>stroke-dasharray</code> creates dash and gap patterns along an outline.
           </p>
           <div data-flex="start" data-gap="m">
             <svg viewBox="0 0 24 24" width="42">
@@ -381,15 +381,13 @@
           </div>
           <article-code language="html" mini overscroll>
             <template>
-              <circle stroke-dasharray="4" stroke-width="1" stroke="var(--indigo)" ...></circle>
-              <circle stroke-dasharray="4 1" stroke-width="1" stroke="var(--indigo)" ...></circle>
               <circle stroke-dasharray="4 1 1 1" stroke-width="1" stroke="var(--indigo)" ...></circle>
             </template>
           </article-code>
         </article-summary>
         <article-summary summary-title="stroke-linecap">
           <p>
-            The <code>stroke-linecap</code> attribute defines the shape of the ends of stroked lines.
+            The <code>stroke-linecap</code> controls the appearance of the ends of stroke.
           </p>
           <div data-flex="start" data-gap="l">
             <svg viewBox="0 0 24 24" width="42">

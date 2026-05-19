@@ -56,7 +56,7 @@
 
 @media (max-width: 35rem) {
   :host([open]) {
-    margin-inline: -1rem !important;
+    margin-inline: -1.25rem !important;
   }
   :host([open]) .details {
     padding: 1.5rem;

@@ -1,5 +1,6 @@
 import "./article"
 import "./article-code"
+import "./article-details"
 import "./article-slide"
 import "./icons"
 import "./live-code"

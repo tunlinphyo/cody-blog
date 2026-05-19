@@ -12,7 +12,7 @@
   border-radius: 50%;
   display: grid;
   place-content: center;
-  color: oklch(from CanvasText l c h / 0.8);
+  color: var(--text-color);
   cursor: pointer;
   font: inherit;
 }

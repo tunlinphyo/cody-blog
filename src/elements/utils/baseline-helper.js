@@ -36,7 +36,7 @@ export function getBaselineStatusTitle(status, date) {
   if (status === "newly") {
     return html`
       <strong>Baseline</strong>Newly available
-      <em>${date.split(" ")[1]}<em>`
+      <em>${date.split(" ")[1]}</em>`
   }
   if (status === "widely") {
     return html `<strong>Baseline</strong>Widely available`
@@ -48,13 +48,22 @@ export function getBaselineStatusTitle(status, date) {
 export function getBaselineBrowsers(feature, status) {
   const implementations = feature.browser_implementations || {};
 
+  const chrome = getBrowserSupport(implementations, BROWSERS[0].keys);
+  const edge = getBrowserSupport(implementations, BROWSERS[1].keys);
+  const firefox = getBrowserSupport(implementations, BROWSERS[2].keys);
+  const safari = getBrowserSupport(implementations, BROWSERS[3].keys);
+
   return html`
-    ${BROWSERS.map(browser => {
-      const support = getBrowserSupport(implementations, browser.keys);
-      return html`
-        <div class="browser" data-browser="${browser.icon}" data-support=${support} data-status=${status}></div>
-      `
-    })}
+    <div class="browser-group">
+      <div class="browser" data-browser="${BROWSERS[0].icon}" data-support=${chrome} data-status=${status}></div>
+      <div class="browser" data-browser="${BROWSERS[1].icon}" data-support=${edge} data-status=${status}></div>
+    </div>
+    <div class="browser-group">
+      <div class="browser" data-browser="${BROWSERS[2].icon}" data-support=${firefox} data-status=${status}></div>
+    </div>
+    <div class="browser-group">
+      <div class="browser" data-browser="${BROWSERS[3].icon}" data-support=${safari} data-status=${status}></div>
+    </div>
   `
 }
 
@@ -98,7 +107,7 @@ export function renderActions(feature, resolvedFeatureId) {
     <div class="actions">
       <a
         href="https://github.com/web-platform-dx/web-features/blob/main/features/${featureId}.yml"
-        target="_top"
+        target="_blank"
         >Learn More</a
       >
     </div>

@@ -23,12 +23,6 @@
               Scalable Vector Graphics, known as <code>SVG</code>, is an XML-based image format used to create sharp,
               resolution-independent graphics on the web.
             </p>
-            <!-- <div>
-              <goto-slide goto-index="2" data-theme="fill" style="min-width: 10rem;">
-                <span>Learn more</span>
-                <arrow-right size="20"></arrow-right>
-              </goto-slide>
-            </div> -->
           </hero-card>
         </article-slide-item>
         <article-slide-item>
@@ -246,6 +240,411 @@
       </article-slide>
 
       <section>
+        <h2 id="attribute">Attributes</h2>
+        <p>
+          SVG elements use attributes to control their rendering. Here's a list of the most commonly used attributes.
+        </p>
+      </section>
+
+      <article-details>
+        <article-summary summary-title="viewBox" open>
+          <p>
+            The <code>viewBox</code> defines the internal coordinate system of the SVG.
+            It controls how the graphic scales inside its container.
+          </p>
+          <article-code language="html" mini overscroll>
+            <template>
+              <svg viewBox="0 0 24 24">...</svg>
+            </template>
+          </article-code>
+        </article-summary>
+        <article-summary summary-title="fill">
+          <p>
+            The <code>fill</code> attribute sets a shape's paint color and gradients.
+          </p>
+          <div data-flex="start" data-gap="m">
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-width="1" fill="var(--red)">
+                <circle cx="12" cy="12" r="10" stroke="var(--red)" />
+                <line x1="6" y1="12" x2="18" y2="12" stroke="var(--surface)" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <circle fill="url(#example-fill-gradient:001)" cx="12" cy="12" r="10" stroke-width="0" />
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <circle fill="url(#example-fill-gradient:002)" cx="12" cy="12" r="10" stroke-width="0" />
+            </svg>
+          </div>
+          <article-code language="html" mini overscroll>
+            <template>
+              <svg viewBox="0 0 24 24" width="48">
+                <circle fill="var(--yellow)" cx="12" cy="12" r="10"></circle>
+              </svg>
+            </template>
+          </article-code>
+        </article-summary>
+        <article-summary summary-title="stroke">
+          <p>
+            The <code>stroke</code> attribute sets the outline color of a shape, including gradients and patterns.
+          </p>
+          <div data-flex="start" data-gap="m">
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-width="1" stroke="var(--green)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="7" y1="12" x2="17" y2="12" />
+                <line x1="12" y1="7" x2="12" y2="17" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-width="1" stroke="url(#example-fill-gradient:001)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="7" y1="12" x2="17" y2="12" />
+                <line x1="12" y1="7" x2="12" y2="17" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-width="1" stroke="url(#example-fill-gradient:002)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="7" y1="12" x2="17" y2="12" />
+                <line x1="12" y1="7" x2="12" y2="17" />
+              </g>
+            </svg>
+          </div>
+          <article-code language="html" mini overscroll>
+            <template>
+              <svg viewBox="0 0 24 24" width="48">
+                <circle stroke="var(--green)" stroke-width="1" ...></circle>
+              </svg>
+            </template>
+          </article-code>
+        </article-summary>
+        <article-summary summary-title="stroke-width">
+          <p>
+            The <code>stroke-width</code> attribute sets the width of a shape or text outline and can be inherited from elements like <g>.
+          </p>
+          <div data-flex="start" data-gap="m">
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-width="1" stroke="var(--yellow)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="6" y1="12" x2="18" y2="12" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-width="1" stroke="url(#example-fill-gradient:001)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="6" y1="12" x2="18" y2="12" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-width="1" stroke="url(#example-fill-gradient:002)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="6" y1="12" x2="18" y2="12" />
+              </g>
+            </svg>
+          </div>
+          <article-code language="html" mini overscroll>
+            <template>
+              <svg viewBox="0 0 24 24" width="48">
+                <circle stroke-width="1" stroke="var(--yellow)" ...></circle>
+              </svg>
+            </template>
+          </article-code>
+        </article-summary>
+        <article-summary summary-title="stroke-dasharray">
+          <p>
+            The <code>stroke-dasharray</code> attribute defines the dash and gap pattern of a shape's outline.
+          </p>
+          <div data-flex="start" data-gap="m">
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-dasharray="4" stroke-width="1" stroke="var(--indigo)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="6" y1="12" x2="18" y2="12" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-dasharray="4 1" stroke-width="1" stroke="var(--indigo)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="6" y1="12" x2="18" y2="12" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <g stroke-dasharray="4 1 1 1" stroke-width="1" stroke="var(--indigo)">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <line x1="6" y1="12" x2="18" y2="12" />
+              </g>
+            </svg>
+          </div>
+          <article-code language="html" mini overscroll>
+            <template>
+              <svg viewBox="0 0 24 24" width="48">
+                <circle stroke-dasharray="4" stroke-width="1" stroke="var(--indigo)" ...></circle>
+                <circle stroke-dasharray="4 1" stroke-width="1" stroke="var(--indigo)" ...></circle>
+                <circle stroke-dasharray="4 1 1 1" stroke-width="1" stroke="var(--indigo)" ...></circle>
+              </svg>
+            </template>
+          </article-code>
+        </article-summary>
+        <article-summary summary-title="stroke-linecap">
+          <p>
+            The <code>stroke-linecap</code> attribute defines the shape of the ends of stroked lines.
+          </p>
+          <div data-flex="start" data-gap="l">
+            <svg viewBox="0 0 24 24" width="48">
+              <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
+              <g stroke-width="6" stroke="var(--blue)">
+                <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="butt" />
+              </g>
+              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
+              <g stroke-width="6" stroke="var(--blue)">
+                <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round" />
+              </g>
+              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+            </svg>
+            <svg viewBox="0 0 24 24" width="48">
+              <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
+              <g stroke-width="6" stroke="var(--blue)">
+                <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="square" />
+              </g>
+              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+            </svg>
+          </div>
+          <article-code language="html" mini overscroll>
+            <template>
+              <svg viewBox="0 0 24 24" width="48">
+                <line stroke-linecap="butt" stroke-width="8" stroke="var(--blue)" ...></line>
+                <line stroke-linecap="round" stroke-width="8" stroke="var(--blue)" ...></line>
+                <line stroke-linecap="square" stroke-width="8" stroke="var(--blue)" ...></line>
+              </svg>
+            </template>
+          </article-code>
+        </article-summary>
+      </article-details>
+
+      <div class="detail-group">
+        <svg viewBox="0 0 24 24" height="0">
+          <defs>
+            <linearGradient id="example-fill-gradient:001" x1="12" y1="0" x2="12" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="var(--green)" />
+              <stop offset="100%" stop-color="var(--blue)" />
+            </linearGradient>
+            <radialGradient id="example-fill-gradient:002" cx="12" cy="12" r="10" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="var(--green)" />
+              <stop offset="100%" stop-color="var(--blue)" />
+            </radialGradient>
+          </defs>
+        </svg>
+        <details name="attributes">
+          <summary>
+            viewBox
+          </summary>
+          <div class="details">
+            <p>
+              The <code>viewBox</code> defines the internal coordinate system of the SVG.
+              It controls how the graphic scales inside its container.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">...</svg>
+              </template>
+            </article-code>
+          </div>
+        </details>
+        <details name="attributes">
+          <summary>
+            fill
+          </summary>
+          <div class="details">
+            <p>
+              The <code>fill</code> attribute sets a shape's paint color and gradients.
+            </p>
+            <div data-flex="start" data-gap="m">
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-width="1" fill="var(--red)">
+                  <circle cx="12" cy="12" r="10" stroke="var(--red)" />
+                  <line x1="6" y1="12" x2="18" y2="12" stroke="var(--surface)" />
+                </g>
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <circle fill="url(#example-fill-gradient:001)" cx="12" cy="12" r="10" stroke-width="0" />
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <circle fill="url(#example-fill-gradient:002)" cx="12" cy="12" r="10" stroke-width="0" />
+              </svg>
+            </div>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24" width="48">
+                  <circle fill="var(--yellow)" cx="12" cy="12" r="10"></circle>
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </details>
+        <details name="attributes">
+          <summary>
+            stroke
+          </summary>
+          <div class="details">
+            <p>
+              The <code>stroke</code> attribute sets the outline color of a shape, including gradients and patterns.
+            </p>
+            <div data-flex="start" data-gap="m">
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-width="1" stroke="var(--green)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="7" y1="12" x2="17" y2="12" />
+                  <line x1="12" y1="7" x2="12" y2="17" />
+                </g>
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-width="1" stroke="url(#example-fill-gradient:001)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="7" y1="12" x2="17" y2="12" />
+                  <line x1="12" y1="7" x2="12" y2="17" />
+                </g>
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-width="1" stroke="url(#example-fill-gradient:002)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="7" y1="12" x2="17" y2="12" />
+                  <line x1="12" y1="7" x2="12" y2="17" />
+                </g>
+              </svg>
+            </div>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24" width="48">
+                  <circle stroke="var(--green)" stroke-width="1" ...></circle>
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </details>
+        <details name="attributes">
+          <summary>
+            stroke-width
+          </summary>
+          <div class="details">
+            <p>
+              The <code>stroke-width</code> attribute sets the width of a shape or text outline and can be inherited from elements like <g>.
+            </p>
+            <div data-flex="start" data-gap="m">
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-width="1" stroke="var(--yellow)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="6" y1="12" x2="18" y2="12" />
+                </g>
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-width="1" stroke="url(#example-fill-gradient:001)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="6" y1="12" x2="18" y2="12" />
+                </g>
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-width="1" stroke="url(#example-fill-gradient:002)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="6" y1="12" x2="18" y2="12" />
+                </g>
+              </svg>
+            </div>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24" width="48">
+                  <circle stroke-width="1" stroke="var(--yellow)" ...></circle>
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </details>
+        <details name="attributes">
+          <summary>
+            stroke-dasharray
+          </summary>
+          <div class="details">
+            <p>
+              The <code>stroke-dasharray</code> attribute defines the dash and gap pattern of a shape's outline.
+            </p>
+            <div data-flex="start" data-gap="m">
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-dasharray="4" stroke-width="1" stroke="var(--indigo)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="6" y1="12" x2="18" y2="12" />
+                </g>
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-dasharray="4 1" stroke-width="1" stroke="var(--indigo)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="6" y1="12" x2="18" y2="12" />
+                </g>
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <g stroke-dasharray="4 1 1 1" stroke-width="1" stroke="var(--indigo)">
+                  <circle cx="12" cy="12" r="10" fill="none" />
+                  <line x1="6" y1="12" x2="18" y2="12" />
+                </g>
+              </svg>
+            </div>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24" width="48">
+                  <circle stroke-dasharray="4" stroke-width="1" stroke="var(--indigo)" ...></circle>
+                  <circle stroke-dasharray="4 1" stroke-width="1" stroke="var(--indigo)" ...></circle>
+                  <circle stroke-dasharray="4 1 1 1" stroke-width="1" stroke="var(--indigo)" ...></circle>
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </details>
+        <details name="attributes">
+          <summary>
+            stroke-linecap
+          </summary>
+          <div class="details">
+            <p>
+              The <code>stroke-linecap</code> attribute defines the shape of the ends of stroked lines.
+            </p>
+            <div data-flex="start" data-gap="l">
+              <svg viewBox="0 0 24 24" width="48">
+                <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
+                <g stroke-width="6" stroke="var(--blue)">
+                  <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="butt" />
+                </g>
+                <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
+                <g stroke-width="6" stroke="var(--blue)">
+                  <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round" />
+                </g>
+                <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+              </svg>
+              <svg viewBox="0 0 24 24" width="48">
+                <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
+                <g stroke-width="6" stroke="var(--blue)">
+                  <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="square" />
+                </g>
+                <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+              </svg>
+            </div>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24" width="48">
+                  <line stroke-linecap="butt" stroke-width="8" stroke="var(--blue)" ...></line>
+                  <line stroke-linecap="round" stroke-width="8" stroke="var(--blue)" ...></line>
+                  <line stroke-linecap="square" stroke-width="8" stroke="var(--blue)" ...></line>
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </details>
+      </div>
+
+      <section>
         <p>
           Let's create a sample SVG menu icon using <code>&lt;rect&gt;</code> and <code>&lt;line&gt;</code>.
         </p>
@@ -256,8 +655,8 @@
           <slide-demo-card data-about="01">
             <div slot="description">
               <p>
-                First, create an <code>&lt;svg&gt;</code> element with a viewBox of <code>0 0 24 24</code>.
-                This means the drawing area starts at <code>x=0, y=0</code> and has a width and height of <code>24 units</code>.
+                Create an <code>&lt;svg&gt;</code> element with a viewBox of <code>0 0 24 24</code>,
+                defining a <code>24x24</code> drawing area starting at <code>(0, 0)</code>.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -274,8 +673,8 @@
           <slide-demo-card data-about="02">
             <div slot="description">
               <p>
-                Add a <code>&lt;line&gt;</code> element from <code>x1="5" y1="12"</code> to <code>x2="19" y2="12"</code>,
-                then set its <code>stroke</code> color and <code>stroke-width</code>.
+                Draw a <code>&lt;line&gt;</code> from <code>(5, 12)</code> to <code>(19, 12)</code>,
+                then set its stroke color and width.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -294,7 +693,7 @@
           <slide-demo-card data-about="03">
             <div slot="description">
               <p>
-                And then add two more <code>&lt;line&gt;</code>s width difference <code>y</code> units.
+                Duplicate two more <code>&lt;line&gt;</code>s with different <code>y</code> values.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -315,9 +714,9 @@
           <slide-demo-card data-about="04">
             <div slot="description">
               <p>
-                Add a <code>&lt;rect&gt;</code> element for the border box with <code>x="1", y="1"</code>, and a width and height of <code>22 units</code>.
+                Add a <rect> element at <code>(1, 1)</code>, width and height of <code>22</code> for the border.
               </p>
-              <article-code language="html" mini overscroll mobile-max-height="8rem">
+              <article-code language="html" mini overscroll>
                 <template>
                   <svg viewBox="0 0 24 24">
                     <line x1="5" y1="7" x2="19" y2="7" stroke="CanvasText" stroke-width="1"></line>
@@ -337,10 +736,10 @@
           <slide-demo-card data-about="05">
             <div slot="description">
               <p>
-                Finally, group the duplicated attributes using <code>&lt;g&gt;</code>, then add <code>stroke-linecap="round"</code> and
-                <code>rx="4"</code> to the <code>&lt;rect&gt;</code> for a rounded look.
+                Group shared attributes with <code>&lt;g&gt;</code>, apply <code>stroke-linecap="round"</code>,
+                and set redius of <code>4</code> to <code>&lt;rect&gt;</code>.
               </p>
-              <article-code language="html" mini overscroll mobile-max-height="8rem">
+              <article-code language="html" mini overscroll>
                 <template>
                   <svg viewBox="0 0 24 24">
                     <g stroke="CanvasText" stroke-width="1" stroke-linecap="round">
@@ -370,22 +769,12 @@
         file-path="/live-codes/svg/elements" styles-path="/live-codes/styels/utils.css"></live-code>
 
       <section>
-        <h2>Gradient</h2>
+        <h2 id="gradient">Gradient</h2>
         <p>
           Put reusable gradients in <code>&lt;defs&gt;</code>, give each one a unique <code>id</code>,
           and reference it with <code>url(#id)</code>. <code>gradientUnits="userSpaceOnUse"</code> keeps
           the gradient coordinates aligned with the SVG viewBox.
         </p>
-        <!-- <p>
-          Use
-          <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient" target="_blank" rel="noopener noreferrer">
-            <code>&lt;radialGradient&gt;</code>
-            <external-link></external-link>
-          </a>
-          when the color should spread outward from a center point.
-          The <code>cx</code>, <code>cy</code>, and <code>r</code> attributes control the outer circle of the gradient,
-          while <code>fx</code>, <code>fy</code>, and <code>fr</code> can move or resize the starting point.
-        </p> -->
         <div data-flex="start">
           <svg viewBox="0 0 24 24" width="32" height="32">
             <defs>
@@ -445,8 +834,8 @@
         </template>
       </article-code>
 
-      <section id="mask">
-        <h2>Mask</h2>
+      <section>
+        <h2 id="mask">Mask</h2>
         <p>
           Creating masks in SVG can be a little tricky. Start by drawing the mask shapes
           outside the <code>&lt;mask&gt;</code> so you can preview them, then move those
@@ -460,7 +849,7 @@
             <div slot="description">
               <h2 style="color:var(--cyan)">Masking</h2>
               <p>
-                Let's create a reload icon using <code>&lt;mask&gt;</code>. Check out the step-by-step implementation.
+                Let's design a reset icon whit the help of <code>&lt;mask&gt;</code>.
               </p>
             </div>
             <div slot="demo">
@@ -472,9 +861,7 @@
           <slide-demo-card data-about="02">
             <div slot="description">
               <p>
-                Start by creating a circle with <code>&lt;circle&gt;</code>, using <code>cx="12"</code> and
-                <code>cy="12"</code> to center it in the 24 by 24 viewBox, and <code>r="10"</code> to set
-                its radius.
+                Draw a <code>&lt;circle&gt;</code> centered at <code>(12, 12)</code> with a radius of <code>10</code>.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -493,8 +880,8 @@
           <slide-demo-card data-about="03">
             <div slot="description">
               <p>
-                Then draw the area to keep with a <code>&lt;rect&gt;</code>. Make it cover the whole view box from
-                <code>x="0", y="0"</code> with a width and height of <code>24 units</code> and fill it with <code>white</code>.
+                Cover the entire viewBox with a white rectangle <code>(x=0, y=0, width=24, height=24)</code>
+                using <code>&lt;rect&gt;</code>.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -514,9 +901,8 @@
           <slide-demo-card data-about="04">
             <div slot="description">
               <p>
-                Then draw the area to cut out. Here, use <code>&lt;polygon&gt;</code>, set the
-                <code>points</code> in viewport coordinates like <code>x y | x y | ...</code>,
-                and fill it with <code>black</code>.
+                Use <code>&lt;polygon&gt;</code> to set the area to cut in coordinates
+                like <code>(x y, x y, ...)</code>, and fill with <code>black</code>.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -537,8 +923,8 @@
           <slide-demo-card data-about="05">
             <div slot="description">
               <p>
-                Wrap the <code>&lt;rect&gt; and &lt;polygon&gt;</code> inside a <code>&lt;mask&gt;</code>
-                with a unique <code>id</code>, then apply it to the <code>&lt;circle&gt;</code> with <code>mask="url(#id)"</code>.
+                Wrap the <code>&lt;rect&gt;</code> and <code>&lt;polygon&gt;</code> in a <code>&lt;mask&gt;</code>,
+                then apply it to the <code>&lt;circle&gt;</code>.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -559,9 +945,8 @@
           <slide-demo-card data-about="06">
             <div slot="description">
               <p>
-                Draw a triangle with a <code>&lt;polygon&gt;</code> by passing three coordinate pairs to
-                <code>points</code>, such as <code>points="x1 y1 x2 y2 x3 y3"</code>. Then rotate it around a
-                left center point with <code>transform="rotate(degree x y)"</code>.
+                Create a triangle with <code>&lt;polygon&gt;</code> using three coordinate pairs,
+                then rotate it around the left center.
               </p>
               <article-code language="html" mini overscroll>
                 <template>
@@ -579,9 +964,9 @@
           <slide-demo-card data-about="07">
             <div slot="description">
               <p>
-                Finally, add another <code>&lt;polygon&gt;</code> to complete the reload SVG icon.
+                Finally, add another <code>&lt;polygon&gt;</code> to finish the reload icon.
               </p>
-              <article-code language="html" mini overscroll mobile-max-height="9rem">
+              <article-code language="html" mini overscroll>
                 <template>
                   <svg viewBox="0 0 24 24">
                     <mask id="reload-circle-mas:001">

@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  border-radius: 1.5rem;
+}
+
+/* :host([open]) {
+  border-radius: 1.5rem;
+} */
+
+.opener {
+  padding: 0.5rem 1rem;
+}
+
+
+.details {
+  display: none;
+  padding: 2rem;
+  place-items: flex-start;
+}
+
+:host([open]) .opener {
+  display: none;
+}
+
+:host([open]) .details {
+  display: grid;
+}

@@ -27,7 +27,7 @@ export class SvgMaskDisplay extends LitElement {
   render() {
     return svg`
       <svg viewBox="0 0 240 240">
-        <g stroke="oklch(from currentColor l c h / 0.2)" stroke-width="0.5" fill="none">
+        <g stroke="var(--gray)" stroke-width="0.5" fill="none">
           <path d=${gridPath} />
         </g>
         <mask id="cut-out-for-reload:001">
@@ -35,10 +35,12 @@ export class SvgMaskDisplay extends LitElement {
           <polygon points="120 0 165 0 75 240 120 240" fill="black" />
         </mask>
         ${this.stepNumber === 0 ? svg`
-          <circle mask="url(#cut-out-for-reload:001)" cx="120" cy="120" r="100"
-            stroke="color-mix(in oklab, CanvasText, Canvas 15%)" stroke-width="10" fill="none" />
-          <polygon points="100 0 100 40 140 20" fill="color-mix(in oklab, CanvasText, Canvas 15%)" transform="rotate(4 100 20)" />
-          <polygon points="140 240 140 200 100 220" fill="color-mix(in oklab, CanvasText, Canvas 15%)" transform="rotate(4 140 220)" />
+          <g color="color-mix(in oklab, CanvasText, Canvas 20%)">
+            <circle mask="url(#cut-out-for-reload:001)" cx="120" cy="120" r="100"
+              stroke="currentColor" stroke-width="10" fill="none" />
+            <polygon points="100 0 100 40 140 20" fill="currentColor" transform="rotate(4 100 20)" />
+            <polygon points="140 240 140 200 100 220" fill="currentColor" transform="rotate(4 140 220)" />
+          </g>
         ` : nothing}
         ${this.stepNumber === 1 ? svg`
           <circle cx="120" cy="120" r="100" stroke="currentColor" stroke-width="10" fill="none" />

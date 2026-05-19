@@ -104,15 +104,19 @@ export class BaselineStatus extends LitElement {
         ? "Fetching browser support information from WebStatus."
         : getDescription(status, date);
 
+    this.dataset.status = status;
+
     return html`
       <h3>${feature.name}</h3>
-      <details data-status=${status}>
+      <details>
         <summary>
-          <div class="baseline-status-title">
-            ${getBaselineStatusTitle(status, date)}
-          </div>
-          <div class="baseline-status-browsers">
-            ${getBaselineBrowsers(feature, status)}
+          <div class="baseline-status">
+            <div class="baseline-status-title">
+              ${getBaselineStatusTitle(status, date)}
+            </div>
+            <div class="baseline-status-browsers">
+              ${getBaselineBrowsers(feature, status)}
+            </div>
           </div>
         </summary>
         <div class="information">

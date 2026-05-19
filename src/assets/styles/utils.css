@@ -4,12 +4,16 @@
 @import "open-props/style";
 @import url(./reset.css);
 @import url(./colors.css);
+@import url(./details.css);
 
 :root {
   color-scheme: dark;
-  --accent: light-dark(deeppink, var(--blue));
-  --border-color: oklch(from CanvasText l c h / 0.4);
   --padding: clamp(1.5rem, 4vw, 4rem);
+  --border-color: var(--gray);
+  --border-radius: 2px;
+  --header-font-size: clamp(2rem, 6vw, 2.5rem);
+  --paragraph-font-size: 1.05rem;
+  --paragraph-max-width: 68ch;
 }
 
 :where(html, body) {

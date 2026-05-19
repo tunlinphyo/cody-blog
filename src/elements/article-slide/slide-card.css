@@ -10,10 +10,10 @@
   padding: var(--padding);
 
   border: 1px solid var(--bg, var(--border-color));
-  border-radius: 0.2rem;
+  border-radius: var(--border-radius);
 
-  background-color: var(--bg, Canvas);
-  color: contrast-color(var(--bg, Canvas));
+  background-color: var(--bg, var(--surface));
+  color: contrast-color(var(--bg, var(--surface)));
 }
 
 :host([data-about])::before {
@@ -21,7 +21,7 @@
   position: absolute;
   top: 0.5rem;
   right: 1.5rem;
-  opacity: 0.15;
+  color: var(--lightgray);
   font-size: clamp(5rem, 15vw, 8rem);
   font-weight: 700;
   line-height: 1;
@@ -30,7 +30,7 @@
 
 .card-container {
   width: 100%;
-  max-width: var(--paragraph-max-width);
+  max-width: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +39,7 @@
 }
 
 ::slotted(*:not(goto-slide)) {
-  color: contrast-color(var(--bg, Canvas));
+  color: contrast-color(var(--bg, var(--surface)));
   margin: 0;
 }
 
@@ -65,7 +65,7 @@
 
 ::slotted(*:not(h2)) {
   width: 100%;
-  max-width: var(--paragraph-max-width);
+  max-width: 30rem;
 }
 
 ::slotted(article-code) {

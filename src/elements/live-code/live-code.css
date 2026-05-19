@@ -1,24 +1,22 @@
 :host {
-  --pause-path: path("M 2 4 Q 2 2 4 2 L 16 2 Q 18 2 18 4 L 18 16 Q 18 18 16 18 L 4 18 Q 2 18 2 16 Z");
-  --play-path: path("M 3 3 Q 3 0 6 2 L 18 9 Q 20 10 18 11 L 6 18 Q 3 20 3 17 L 3 11 Q 3 10 3 9 Z");
   --toolbar-height: 2.5rem;
   --editor-height: 20rem;
   --block-height: calc(var(--editor-height) + var(--toolbar-height));
 
-  color: CanvasText;
+  color: var(--text-color);
   position: relative;
   overflow: hidden;
 
   width: 100%;
   height: var(--block-height);
-  border: 1px solid var(--border-color, CanvasText);
-  background: Canvas;
+  border: 1px solid var(--border-color, var(--text-color));
+  background: var(--surface);
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
-  border-radius: 0.2rem;
+  border-radius: var(--border-radius);
 }
 
 :host([ui-view="full"]) {
@@ -54,7 +52,7 @@
 
   .editor-panel {
     border-right: 0;
-    border-bottom: 1px solid var(--border-color, CanvasText);
+    border-bottom: 1px solid var(--border-color, var(--text-color));
   }
 }
 
@@ -62,8 +60,8 @@
   display: grid;
   grid-template-rows: var(--toolbar-height) 1fr;
   min-width: 0;
-  border-right: 1px solid var(--border-color, CanvasText);
-  background-color: Canvas;
+  border-right: 1px solid var(--border-color, var(--text-color));
+  background-color: var(--surface);
   overflow: hidden;
 }
 
@@ -73,7 +71,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding-inline: 1rem;
-  border-bottom: 1px solid var(--border-color, CanvasText);
+  border-bottom: 1px solid var(--border-color, var(--text-color));
 }
 
 .tabs {
@@ -92,7 +90,7 @@
 .tab {
   padding: 0.25rem;
   background: transparent;
-  color: oklch(from CanvasText l c h / 0.5);
+  color: var(--gray);
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -115,7 +113,7 @@
 
   display: grid;
   place-content: center;
-  color: oklch(from CanvasText l c h / 0.8);
+  color: var(--text-color);
 
   &:is(:hover, :focus-visible) {
     animation: shake-custom-z 1s var(--ease-in-out-3);
@@ -142,7 +140,6 @@ article-toast {
   min-height: 0;
   height: 100%;
   overflow: hidden;
-  /* background: #10141f; */
   padding: 0;
 }
 

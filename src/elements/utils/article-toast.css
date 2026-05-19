@@ -8,13 +8,12 @@
 
 .toast-message {
   transform: translate(-50%, 0);
-  padding: 0.5rem 1.5rem;
+  padding: 0.65rem 1.5rem;
   border: 1px solid var(--border-color);
   border-radius: 100vh;
-  background: oklch(from CanvasText l c h / 0.2);
-  backdrop-filter: blur(5px);
-  color: oklch(from CanvasText l c h / 0.8);
-  font-size: 0.85rem;
+  background: var(--toast-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
   white-space: nowrap;
 
   transition:

@@ -6,5 +6,5 @@
 }
 
 a, svg {
-  color: color-mix(in oklab, CanvasText, Canvas 50%);
+  color: var(--gray);
 }

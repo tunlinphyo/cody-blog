@@ -1,4 +1,4 @@
-import { LitElement, html, nothing, svg } from "lit";
+import { LitElement, nothing, svg } from "lit";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import previewStyles from "./svg-display.css?inline";
 import { litStaticStyles } from "../utils.js";

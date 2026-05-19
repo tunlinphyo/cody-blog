@@ -5,13 +5,18 @@
 
 :root {
   color-scheme: dark;
+  --border-color: var(--gray);
+  --border-radius: 2px;
+  --header-font-size: clamp(2rem, 6vw, 2.5rem);
+  --paragraph-font-size: 1.05rem;
+  --paragraph-max-width: 68ch;
 }
 
 :where(html, body) {
   margin: 0;
   padding: 0;
-  background: Canvas;
-  color: color-mix(in oklab, CanvasText, Canvas 10%);
+  background: var(--surface);
+  color: var(--text-color);
 
   font-family: "Google Sans", sans-serif;
   font-optical-sizing: auto;

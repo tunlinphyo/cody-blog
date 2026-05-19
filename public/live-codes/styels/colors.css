@@ -11,4 +11,12 @@
   --purple: rgb(203,48,224);
   --pink: rgb(255,45,85);
   --brown: rgb(172,127,94);
+
+  --surface: Canvas;
+  --text-color: color-mix(in oklab, CanvasText, Canvas 5%);
+  --accent: light-dark(var(--orange), var(--blue));
+
+  --gray: color-mix(in oklab, CanvasText, Canvas 50%);
+  --darkgray: color-mix(in oklab, Canvas, CanvasText 6%);
+  --lightgray: color-mix(in oklab, CanvasText, Canvas 90%);
 }

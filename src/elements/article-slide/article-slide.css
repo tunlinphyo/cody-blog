@@ -15,13 +15,13 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  
+
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
   grid-auto-columns: 100%;
   padding-inline: 1px;
-  
+
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -45,7 +45,7 @@
     width: 10px;
     height: 10px;
     border-radius: 100vh;
-    background-color: oklch(from CanvasText l c h / 0.5);
+    background-color: var(--gray);
     transition: width 0.3s var(--ease-1);
 
     &[aria-current="true"] {
@@ -69,15 +69,14 @@
   place-content: center;
   border-radius: 50%;
   border: 1px solid oklch(from CanvasText l c h / 0.1);
-  background-color: color-mix(in oklab, Canvas, CanvasText 5%);
   color: contrast-color(var(--active-slide-card-bg, Canvas));
-  border-color: oklch(from contrast-color(var(--active-slide-card-bg, Canvas)) l c h / 0.1);
+  border-color: oklch(from contrast-color(var(--active-slide-card-bg, Canvas)) l c h / 0.2);
   background-color: oklch(from contrast-color(var(--active-slide-card-bg, Canvas)) l c h / 0.1);
 
   opacity: 0.25;
   bottom: 2.75rem;
   right: 1rem;
-  
+
   .top-arrow,
   .bottom-arrow {
     transform-box: view-box;

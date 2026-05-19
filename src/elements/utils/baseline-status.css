@@ -1,27 +1,69 @@
 :host {
   display: block;
-  border: 1px solid var(--border-color);
-  border-radius: 0.2rem;
-  padding: 1rem;
+}
+
+:host([data-status="limited"]) {
+  --_theme: var(--yellow);
+
+  summary::before {
+    background-image: url(../../assets/baseline/limited.svg);
+  }
+}
+:host([data-status="widely"]) {
+  --_theme: var(--green);
+
+  summary::before {
+    background-image: url(../../assets/baseline/high.svg);
+  }
+}
+:host([data-status="newly"]) {
+  --_theme: var(--blue);
+
+  summary::before {
+    background-image: url(../../assets/baseline/low.svg);
+  }
+}
+:host([data-status="no_data"]) {
+  --_theme: var(--gray);
+
+  summary::before {
+    background-image: url(../../assets/baseline/unknow.svg);
+  }
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--_theme);
+  padding-inline: 1rem;
 }
 
 details {
   interpolate-size: allow-keywords;
   overflow: clip;
 
+  width: 100%;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+
+  background-color: color-mix(in oklab, var(--_theme), var(--surface) 90%);
+  background-color: var(--surface);
+  border: 1px solid color-mix(in oklab, var(--_theme), var(--surface) 50%);
+
   &::details-content {
     height: 0;
+    padding-inline: calc(40px + 1rem) 1rem;
     transition: all 0.3s var(--ease-sine-out);
     transition-behavior: allow-discrete;
   }
 
   &[open] {
     summary::after {
-      transform: rotate(90deg);
+      transform: rotateX(180deg);
     }
 
     &::details-content {
       padding: 1rem;
+      padding-left: calc(40px + 1rem);
       height: auto;
 
       @starting-style {
@@ -32,13 +74,140 @@ details {
 }
 
 summary {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
   &::after {
-    content: ">";
+    content: "";
+    width: 1.5rem;
+    height: 2.5rem;
+    background-color: var(--gray);
+    mask-image: url(../../assets/baseline/arrow.svg);
+    mask-size: 1rem;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
     transition: transform 0.3s var(--ease-sine-out);
   }
+}
+
+.baseline-status {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  padding: 0 1rem;
+}
+
+.baseline-status-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 2.5rem;
+  gap: 0.25rem;
+
+  & strong {
+    font-weight: 450;
+  }
+  & em {
+    display: inline-block;
+    background-color: var(--accent);
+    color: contract-color(var(--accent));
+    font-style: normal;
+    font-size: 0.85rem;
+    padding-inline: 0.4rem;
+    border-radius: var(--border-radius);
+  }
+}
+
+.baseline-status-browsers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  .browser-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 100vh;
+    background-color: color-mix(in oklab, var(--_theme), var(--surface) 80%);
+    border: 1px solid color-mix(in oklab, var(--_theme), var(--surface) 50%);
+  }
+
+  .browser {
+    display: flex;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 1.4rem;
+      aspect-ratio: 1;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 1.2rem;
+      height: 1.4rem;
+      /* background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; */
+
+      background-color: var(--_theme);
+      mask-size: 1.1rem;
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
+
+    &:is([data-support="unknown"], [data-support="not-available"])::after {
+      mask-image: url(../../assets/baseline/browser-cross.svg);
+    }
+
+    &:is([data-support="available"])::after {
+      mask-image: url(../../assets/baseline/browser-check.svg);
+    }
+  }
+
+  .browser[data-browser="chrome"]::before {
+    background-image: url(../../assets/baseline/chrome.svg);
+  }
+  .browser[data-browser="edge"]::before {
+    background-image: url(../../assets/baseline/edge.svg);
+  }
+  .browser[data-browser="firefox"]::before {
+    background-image: url(../../assets/baseline/firefox.svg);
+  }
+  .browser[data-browser="safari"]::before {
+    background-image: url(../../assets/baseline/safari.svg);
+  }
+}
+
+
+:host(:not([data-status="newly"])) .browser:is([data-support="available"]) {
+  --_theme: var(--green);
+}
+
+
+.information {
+
 }

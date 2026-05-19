@@ -14,5 +14,5 @@
   aspect-ratio: 1;
   display: grid;
   place-content: center;
-  outline: 1px dotted oklch(from CanvasText l c h / 0.2);
+  outline: 1px dotted var(--gray);
 }

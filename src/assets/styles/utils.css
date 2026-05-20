@@ -6,20 +6,25 @@
 @import url(./colors.css);
 
 :root {
-  color-scheme: dark;
   --padding: clamp(1.5rem, 4vw, 4rem);
   --border-color: var(--gray);
-  --border-radius: 2px;
+  --border-radius: 1px;
   --header-font-size: clamp(2rem, 6vw, 2.5rem);
   --paragraph-font-size: 1.05rem;
-  --paragraph-max-width: 68ch;
+  --paragraph-max-width: 44rem;
+
+  --card-content-max-width: 36rem;
+  --card-shadow: 2px 2px 0 0 var(--gray);
+
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 :where(html, body) {
   margin: 0;
   padding: 0;
-  background: Canvas;
-  color: color-mix(in oklab, CanvasText, Canvas 10%);
+  background: var(--surface);
+  color: var(--text-color);
 
   font-family: "Google Sans Flex", sans-serif;
   font-optical-sizing: auto;
@@ -32,9 +37,26 @@
     "ROND" 0;
 }
 
+:where(body) {
+  background-color: transparent;
+}
+
+:where(body)::before {
+  content: '';
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(var(--bg-gray) 1px, transparent 1px),
+    linear-gradient(to right, var(--bg-gray) 1px, var(--surface) 1px);
+  background-size: 40px 40px;
+}
+
 :where(h1,h2,h3,h4,h5,h6) {
   margin: 0;
-  color: oklch(from CanvasText l c h / 0.9);
+  color: var(--text-color);
   font-variation-settings:
     "slnt" 0,
     "wdth" 103,

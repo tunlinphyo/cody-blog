@@ -19,7 +19,7 @@
     max-width: 20rem;
     flex: 1;
     height: 1.5rem;
-    background-color: var(--lightgray);
+    background-color: var(--darkgray);
     border-radius: 100vh;
   }
 

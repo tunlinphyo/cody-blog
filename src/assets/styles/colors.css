@@ -15,11 +15,30 @@
   --brown: rgb(172,127,94);
 
   --surface: Canvas;
-  --text-color: color-mix(in oklab, CanvasText, Canvas 5%);
-  --accent: light-dark(var(--orange), var(--blue));
+  --text-color: CanvasText;
+  --accent: light-dark(var(--pink), var(--blue));
 
-  --gray: color-mix(in oklab, Canvas 60%, CanvasText 40%);
-  --darkgray: oklch(from CanvasText l c h / 0.1);
-  --lightgray: oklch(from CanvasText l c h / 0.05);
-  --toast-bg: color-mix(in oklab, CanvasText, Canvas 70%);
+  --gray: color-mix(in oklab, Canvas 50%, white 50%);
+  --darkgray: oklch(from CanvasText l c h / 0.10);
+  --bg-gray: oklch(from CanvasText l c h / 0.05);
+  --toast-bg: color-mix(in oklab, Canvas, white 10%);
+
+  /* --surface: #1F150C;
+  --text-color: #E1DCC9;
+  --accent: #306D29;
+
+  --gray: #412D15;
+  --darkgray: oklch(from CanvasText l c h / 0.15);
+  --bg-gray: oklch(from CanvasText l c h / 0.05);
+  --toast-bg: color-mix(in oklab, Canvas, CanvasText 10%); */
+
+
+  /* --surface: light-dark(#222, #111);
+  --bg-gray: light-dark(#181818, #181818);
+  --text-color: light-dark(#fff, #eee);
+  --accent: var(--blue);
+
+  --gray: light-dark(#888, #666);
+  --toast-bg: rgb(75,75,75);
+  --darkgray: light-dark(#444, #333); */
 }

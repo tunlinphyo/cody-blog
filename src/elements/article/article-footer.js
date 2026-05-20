@@ -16,7 +16,7 @@ export class ArticleFooter extends LitElement {
   render() {
     return html`
       <a href="/">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="72">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="68">
           <g stroke="currentColor" fill="none">
             <line x1="9" y1="1" x2="4" y2="15" stroke-width="1.6" />
             <line x1="1" y1="6" x2="20" y2="2" stroke-width="1.6" />

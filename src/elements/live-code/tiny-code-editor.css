@@ -1,4 +1,6 @@
 :host {
+  color-scheme: dark;
+
   --tiny-code-editor-min-height: 460px;
   --tiny-code-editor-padding: 1rem;
   --tiny-code-editor-border: 0;
@@ -9,14 +11,14 @@
   --tiny-code-editor-caret-color: var(--accent, #fff);
   --tiny-code-editor-font: 14px/1.5 "Google Sans Code", monospace;
   --tiny-code-editor-focus-border-color: transparent;
-  --tiny-code-token-comment: light-dark(#6a737d, #7f8ea3);
-  --tiny-code-token-keyword: light-dark(#d73a49, #ff7b72);
-  --tiny-code-token-string: light-dark(#032f62, #a5d6ff);
-  --tiny-code-token-number: light-dark(#005cc5, #79c0ff);
-  --tiny-code-token-tag: light-dark(#119a26, #7ee787);
-  --tiny-code-token-attr: light-dark(#6f42c1, #d2a8ff);
-  --tiny-code-token-punctuation: light-dark(#119a26, #7ee787);
-  --tiny-code-token-color: light-dark(#e36209, #ffa657);
+  --tiny-code-token-comment: #7f8ea3;
+  --tiny-code-token-keyword: #ff7b72;
+  --tiny-code-token-string: #a5d6ff;
+  --tiny-code-token-number: #79c0ff;
+  --tiny-code-token-tag: #7ee787;
+  --tiny-code-token-attr: #d2a8ff;
+  --tiny-code-token-punctuation: #7ee787;
+  --tiny-code-token-color: #ffa657;
 
   display: block;
   min-width: 0;

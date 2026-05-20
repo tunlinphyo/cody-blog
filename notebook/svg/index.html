@@ -19,6 +19,14 @@
         <stop offset="0%" stop-color="var(--green)" />
         <stop offset="100%" stop-color="var(--blue)" />
       </radialGradient>
+      <linearGradient id="example-fill-gradient:003" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="var(--yellow)" />
+        <stop offset="100%" stop-color="var(--purple)" />
+      </linearGradient>
+      <linearGradient id="example-fill-gradient:004" x1="20" y1="0" x2="10" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="var(--brown)" />
+        <stop offset="100%" stop-color="var(--indigo)" />
+      </linearGradient>
     </defs>
   </svg>
 
@@ -253,7 +261,7 @@
       </article-slide>
 
       <section>
-        <h2 id="attribute">Attributes</h2>
+        <h2 id="attributes">Attributes</h2>
         <p>
           SVG elements use attributes to control their rendering. Here's a list of the most commonly used attributes.
         </p>
@@ -262,7 +270,7 @@
       <article-details>
         <article-summary summary-title="viewBox">
           <p>
-            The <code>viewBox</code> defines internal coordinate system and 
+            The <code>viewBox</code> defines internal coordinate system and
             determines how graphics scale within the container.
           </p>
           <article-code language="html" mini overscroll>
@@ -553,36 +561,30 @@
         </p>
         <div data-flex="start">
           <svg viewBox="0 0 24 24" width="32" height="32">
-            <defs>
-              <linearGradient id="example-icon-gradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="var(--blue)" />
-                <stop offset="100%" stop-color="var(--green)" />
-              </linearGradient>
-            </defs>
-            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+            <g stroke="url(#example-fill-gradient:001)" stroke-width="1">
               <rect x="2" y="3" width="20" height="5" rx="2" fill="none" />
               <line x1="4" y1="5.5" x2="8" y2="5.5" />
               <circle cx="19" cy="5.5" r="0.5" fill="var(--pink)" stroke="var(--pink)" class="on-off" />
             </g>
-            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+            <g stroke="url(#example-fill-gradient:001)" stroke-width="1">
               <rect x="2" y="9.5" width="20" height="5" rx="2" fill="none" />
               <line x1="4" y1="12" x2="8" y2="12" />
             </g>
-            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+            <g stroke="url(#example-fill-gradient:001)" stroke-width="1">
               <rect x="2" y="16" width="20" height="5" rx="2" fill="none" />
               <line x1="4" y1="18.5" x2="8" y2="18.5" />
             </g>
           </svg>
           <svg viewBox="0 0 24 24" width="32" height="32">
-            <rect x="2" y="2" width="20" height="20" rx="4" stroke="url(#example-icon-gradient)" stroke-width="1" fill="none" />
-            <line x1="7" y1="2" x2="7" y2="22" stroke="url(#example-icon-gradient)" stroke-width="1" />
-            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+            <rect x="2" y="2" width="20" height="20" rx="4" stroke="url(#example-fill-gradient:003)" stroke-width="1" fill="none" />
+            <line x1="7" y1="2" x2="7" y2="22" stroke="url(#example-fill-gradient:003)" stroke-width="1" />
+            <g stroke="url(#example-fill-gradient:003)" stroke-width="1">
               <line x1="10" y1="7" x2="18" y2="7" />
               <line x1="10" y1="10" x2="14" y2="10" />
             </g>
           </svg>
           <svg viewBox="0 0 24 24" width="32" height="32" class="clock">
-            <g stroke="url(#example-icon-gradient)" stroke-width="1">
+            <g stroke="url(#example-fill-gradient:004)" stroke-width="1">
               <circle cx="12" cy="12" r="11" fill="none" />
               <line x1="12" y1="12" x2="12" y2="6" class="hour-hand" />
               <line x1="12" y1="12" x2="12" y2="4" class="minute-hand" />

@@ -34,7 +34,7 @@
 h3 {
   font-size: 1.2rem;
   color: var(--_theme);
-  padding-inline: 1rem;
+  /* padding-inline: 1rem; */
 }
 
 details {
@@ -51,7 +51,7 @@ details {
 
   &::details-content {
     height: 0;
-    padding-inline: calc(40px + 1rem) 1rem;
+    padding-inline: calc(2.5rem + 0.5rem) 1rem;
     transition: all 0.3s var(--ease-sine-out);
     transition-behavior: allow-discrete;
   }
@@ -63,7 +63,7 @@ details {
 
     &::details-content {
       padding: 1rem;
-      padding-left: calc(40px + 1rem);
+      padding-left: calc(2.5rem + 0.5rem);
       height: auto;
 
       @starting-style {
@@ -110,7 +110,7 @@ summary {
   justify-content: space-between;
   align-items: center;
   gap: 0;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .baseline-status-title {

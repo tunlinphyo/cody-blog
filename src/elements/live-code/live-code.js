@@ -23,7 +23,7 @@ export class LiveCode extends LitElement {
     filePath: { type: String, attribute: "file-path" },
     stylesPath: { type: String, attribute: "styles-path" },
     modulesPath: { type: String, attribute: "modules-path" },
-    uiView: { type: String, attribute: "ui-view", reflect: true },
+    uiView: { type: String, attribute: "ui-view", reflect: true }, // mini | full | closed
     height: { type: String },
     autorun: { type: Boolean },
     activeTab: { state: true },

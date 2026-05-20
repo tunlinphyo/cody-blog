@@ -27,7 +27,7 @@ export class SvgMaskDisplay extends LitElement {
   render() {
     return svg`
       <svg viewBox="0 0 240 240">
-        <g stroke="oklch(from currentColor l c h / 0.2)" stroke-width="0.5" fill="none">
+        <g stroke="var(--gray)" stroke-width="0.5" fill="none">
           <path d=${gridPath} />
         </g>
         <mask id="cut-out-for-reload:001">
@@ -35,7 +35,7 @@ export class SvgMaskDisplay extends LitElement {
           <polygon points="120 0 165 0 75 240 120 240" fill="black" />
         </mask>
         ${this.stepNumber === 0 ? svg`
-          <g color="color-mix(in oklab, CanvasText, Canvas 20%)">
+          <g color="color-mix(in oklab, var(--text-color), var(--surface) 20%)">
             <circle mask="url(#cut-out-for-reload:001)" cx="120" cy="120" r="100"
               stroke="currentColor" stroke-width="10" fill="none" />
             <polygon points="100 0 100 40 140 20" fill="currentColor" transform="rotate(4 100 20)" />
@@ -47,12 +47,12 @@ export class SvgMaskDisplay extends LitElement {
         ` : nothing}
         ${this.stepNumber === 2 ? svg`
           <circle cx="120" cy="120" r="100" stroke="currentColor" stroke-width="10" fill="none" />
-          <rect x="0" y="0" width="240" height="240" fill="#fff9" />
+          <rect x="0" y="0" width="240" height="240" fill="oklch(from #fff l c h / 0.6)" />
         ` : nothing}
         ${this.stepNumber === 3 ? svg`
           <circle cx="120" cy="120" r="100" stroke="currentColor" stroke-width="10" fill="none" />
-          <rect x="0" y="0" width="240" height="240" fill="#fff9" />
-          <polygon points="120 0 165 0 75 240 120 240" fill="#0009" />
+          <rect x="0" y="0" width="240" height="240" fill="oklch(from #fff l c h / 0.6)" />
+          <polygon points="120 0 165 0 75 240 120 240" fill="oklch(from #000 l c h / 0.6)" />
         ` : nothing}
         ${this.stepNumber === 4 ? svg`
           <circle mask="url(#cut-out-for-reload:001)" cx="120" cy="120" r="100" stroke="currentColor" stroke-width="10" fill="none" />

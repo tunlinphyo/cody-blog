@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit";
+import { LitElement, html } from "lit";
 import utilsStyles from "../../assets/styles/utils.css?inline";
 import resetButtonStyles from "./article-toast.css?inline";
 import { litStaticStyles } from "../utils.js";

@@ -49,7 +49,7 @@ article-slide-item {
   code {
     display: inline;
     font-family: "Google Sans Code", monospace;
-    padding: 0 0.5rem;
+    padding: 0 0.25rem;
     background-color: var(--darkgray);
     border-radius: 0.3rem;
     color: var(--accent);

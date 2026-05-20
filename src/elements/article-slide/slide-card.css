@@ -11,7 +11,9 @@
 
   border: 1px solid var(--bg, var(--border-color));
   border-radius: var(--border-radius);
+  /* box-shadow: var(--card-shadow); */
 
+  /* background-color: oklch(from var(--bg, var(--surface)) l c h / 0.8); */
   background-color: var(--bg, var(--surface));
   color: contrast-color(var(--bg, var(--surface)));
 }
@@ -21,7 +23,7 @@
   position: absolute;
   top: 0.5rem;
   right: 1.5rem;
-  color: var(--lightgray);
+  color: var(--darkgray);
   font-size: clamp(5rem, 15vw, 8rem);
   font-weight: 700;
   line-height: 1;
@@ -29,14 +31,19 @@
   /* background-color: #f00; */
 }
 
+:host([data-pattern="dotted"]) {
+  background-image: radial-gradient(var(--darkgray) 0.5px, transparent 0.5px);
+  background-size: 12px 12px;
+}
+
 .card-container {
   width: 100%;
-  max-width: 30rem;
+  max-width: 34rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 ::slotted(*:not(goto-slide)) {
@@ -66,7 +73,7 @@
 
 ::slotted(*:not(h2)) {
   width: 100%;
-  max-width: 30rem;
+  max-width: var(--card-content-max-width);
 }
 
 ::slotted(article-code) {

@@ -2,13 +2,16 @@
   display: block;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  border-radius: 1.5rem;
+  /* border-radius: 1.5rem; */
   overflow: clip;
   background-color: var(--surface);
+  box-shadow: none;
+  box-shadow: var(--card-shadow);
 }
 
-/* :host([open]) {
-  border-radius: 1.5rem;
+/* :host([open]),
+:host(:hover) {
+  box-shadow: var(--card-shadow);
 } */
 
 .opener {
@@ -28,7 +31,7 @@
   & svg line {
     transform-origin: 12px 12px;
     transform-box: view-box;
-    transition: transform 0.3s var(--ease-out-1);
+    transition: transform 0.2s var(--ease-out-2);
   }
 
   &:is(:hover) svg line {
@@ -60,12 +63,9 @@
   animation: show-ui 0.6s var(--ease-out-2);
 }
 
-::slotted(p) {
-  max-width: 30rem;
-}
-
+::slotted(p),
 ::slotted(article-code) {
-  max-width: 36rem;
+  max-width: var(--card-content-max-width);
 }
 
 @media (max-width: 35rem) {
@@ -73,7 +73,7 @@
     margin-inline: -1.25rem !important;
   }
   :host([open]) .details {
-    padding: 1.5rem;
+    padding-inline: 1.5rem;
   }
 }
 

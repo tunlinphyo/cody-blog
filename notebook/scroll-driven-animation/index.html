@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js-project</title>
+</head>
+
+<body>
+  <main>
+    <article-header date="2026-05-05">
+      Scroll-driven Animations
+    </article-header>
+
+    <article>
+      <article-slide>
+        <article-slide-item>
+          <hero-card data-pattern="dotted" data-about="SDA">
+            <h2 style="color:var(--blue);">What are Scroll-driven Animations?</h2>
+            <p>
+              Scroll-driven animations animate elements based on scroll position instead of
+              the default time-based timeline.
+            </p>
+          </hero-card>
+        </article-slide-item>
+        <!-- <article-slide-item>
+          <slide-card>
+            <h3>Can I use?</h3>
+            <div class="baseline-container">
+              <baseline-status feature-id="scroll-driven-animations"></baseline-status>
+            </div>
+          </slide-card>
+        </article-slide-item> -->
+        <article-slide-item>
+          <slide-card>
+            <h3 style="color:var(--pink)">Scroll() Timeline</h3>
+            <p>
+              The <code>scroll()</code> timeline tracks the scroll progress of a scroll container or the
+              page itself.
+            </p>
+            <article-code language="css" mini overscroll>
+              <template>
+                .reading-bar {
+                  animation: expand linear;
+                  animation-timeline: scroll();
+                }
+                @keyframes expand {
+                  from { scale: 0 1; }
+                  to { scale: 1 1; }
+                }
+              </template>
+            </article-code>
+          </slide-card>
+        </article-slide-item>
+        <article-slide-item>
+          <slide-card>
+            <h3 style="color:var(--yellow)">View() Timeline</h3>
+            <p>
+              The <code>view()</code> timeline links an animation to an element's visibility
+              inside the scrollport.
+            </p>
+            <article-code language="css" mini overscroll>
+              <template>
+                .card {
+                  animation: fade-in linear;
+                  animation-timeline: view();
+                }
+                @keyframes fade-in {
+                  from {
+                    opacity: 0;
+                    scale: 0.9;
+                  }
+                  to {
+                    opacity: 1;
+                    scale: 1;
+                  }
+                }
+              </template>
+            </article-code>
+          </slide-card>
+        </article-slide-item>
+        <article-slide-item>
+          <slide-card>
+            <h3 style="color:var(--mint)">Animation-range</h3>
+            <p>
+              <code>animation-range</code> controls when a scroll-driven animation starts and ends.
+              This lets you animate only during a specific part of the element's visibility.
+            </p>
+            <article-code language="css" mini overscroll>
+              <template>
+                .card {
+                  animation: fade-up linear;
+                  animation-timeline: view();
+                  animation-range: entry 0% cover 40%;
+                }
+              </template>
+            </article-code>
+          </slide-card>
+        </article-slide-item>
+      </article-slide>
+
+      <section>
+        <!-- <p>
+          Check out the demo first to get a feel for what scroll-driven animations can do.
+        </p> -->
+        <div class="baseline-container">
+          <baseline-status feature-id="scroll-driven-animations"></baseline-status>
+        </div>
+        <p>
+          This feature is not Baseline yet, so please use a supported browser to test the demo in this article.
+        </p>
+      </section>
+
+      <live-code ui-view="full" height="25rem" file-path="/live-codes/animation-timeline"
+        styles-path="/live-codes/animation-timeline/keyframes.css" modules-path="/live-codes/modules/index.js"></live-code>
+
+    </article>
+
+    <article-footer></article-footer>
+  </main>
+  <script type="module" src="/src/notebook/scroll-driven-animation.js"></script>
+</body>
+
+</html>

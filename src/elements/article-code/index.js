@@ -150,8 +150,8 @@ export class ArticleCode extends LitElement {
         <div class="language">${this.lang}</div>
         <button class="copy-code" type="button" @click=${this.handleCopyClick}>
           <svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-            <rect class="shake-1" x="7" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="Canvas" />
-            <rect class="shake-2" x="2" y="7" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="Canvas" />
+            <rect class="shake-1" x="7" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="var(--surface)" />
+            <rect class="shake-2" x="2" y="7" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="var(--surface)" />
           </svg>
           <span>Copy</span>
         </button>

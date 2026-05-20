@@ -21,6 +21,10 @@
   opacity: 1;
   white-space: nowrap;
 
+  & svg {
+    color: var(--gray);
+  }
+
   & svg line {
     transform-origin: 12px 12px;
     transform-box: view-box;

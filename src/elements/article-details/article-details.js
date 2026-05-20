@@ -70,7 +70,7 @@ export class ArticleDetails extends LitElement {
       <div class="button-container">
         <button type="button" ?disabled=${this.activeIndex === null} @click=${this.handleCloseClick}>
           <svg viewBox="0 0 24 24" width="24">
-            <g  stroke="currentColor" stroke-width="1.4" fill="none">
+            <g stroke="currentColor" stroke-width="1.4" fill="none">
               <line class="top-line" x1="5" y1="5" x2="19" y2="19" />
               <line class="bottom-line" x1="19" y1="5" x2="5" y2="19" />
             </g>

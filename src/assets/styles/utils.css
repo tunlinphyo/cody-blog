@@ -23,7 +23,7 @@
 :where(html, body) {
   margin: 0;
   padding: 0;
-  background: var(--surface);
+  background: var(--background);
   color: var(--text-color);
 
   font-family: "Google Sans Flex", sans-serif;
@@ -39,11 +39,6 @@
 
 :where(body) {
   background-color: transparent;
-
-  /* background-image:
-    linear-gradient(var(--bg-gray) 1px, transparent 1px),
-    linear-gradient(to right, var(--bg-gray) 1px, var(--surface) 1px);
-  background-size: 40px 40px; */
 }
 
 :where(body)::before {
@@ -53,10 +48,10 @@
   inset: 0;
   z-index: -1;
 
-  background-image:
-    linear-gradient(var(--bg-gray) 1px, transparent 1px),
-    linear-gradient(to right, var(--bg-gray) 1px, var(--surface) 1px);
-  background-size: 50px 50px;
+  /* background-image:
+    linear-gradient(var(--surface) 1px, transparent 1px),
+    linear-gradient(to right, var(--surface) 1px, var(--background) 1px);
+  background-size: 40px 40px; */
 }
 
 :where(h1,h2,h3,h4,h5,h6) {

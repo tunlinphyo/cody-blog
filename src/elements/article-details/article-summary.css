@@ -26,11 +26,12 @@
   & svg line {
     transform-origin: 12px 12px;
     transform-box: view-box;
-    transition: transform 0.2s var(--ease-out-2);
+    /* transition: transform 0.2s var(--ease-out-2); */
   }
 
-  &:is(:hover) svg line {
-    transform: rotate(90deg);
+  &:is(:hover) svg .vertical {
+    /* transform: scale(1, 0); */
+    animation: toggle-height 0.3s var(--ease-out-2);
   }
 }
 
@@ -75,4 +76,9 @@
 @keyframes show-ui {
   0%, 60% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@keyframes toggle-height {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1, 0.5); }
 }

@@ -11,12 +11,12 @@
   align-items: flex-start;
   padding: var(--padding);
 
-  /* background-color: var(--surface);
+  background-color: var(--background);
   background:
-    radial-gradient(circle, transparent 20%, var(--surface) 20%, var(--surface) 80%, transparent 80%, transparent),
-    radial-gradient(circle, transparent 20%, var(--surface) 20%, var(--surface) 80%, transparent 80%, transparent) 25px 25px,
-    linear-gradient(var(--bg-gray) 2px, transparent 2px) 0 -1px, linear-gradient(90deg, var(--bg-gray) 2px, var(--surface) 2px) -1px 0;
-  background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px; */
+    radial-gradient(circle, transparent 10%, var(--background) 10%, var(--background) 90%, transparent 90%, transparent),
+    radial-gradient(circle, transparent 10%, var(--background) 10%, var(--background) 90%, transparent 90%, transparent) 40px 40px,
+    linear-gradient(var(--surface) 1px, transparent 1px) 0 -1px, linear-gradient(90deg, var(--surface) 1px, var(--background) 1px) -0.5px 0;
+  background-size: 80px 80px, 80px 80px, 40px 40px, 40px 40px;
 }
 
 @media (max-width: 40rem) {

@@ -54,7 +54,7 @@ export class ArticleSummary extends LitElement {
           <g stroke="currentColor" stroke-width="1.7" fill="none">
             <circle cx="12" cy="12" r="10" stroke-width="1.5" />
             <line x1="7" y1="12" x2="17" y2="12" />
-            <line x1="12" y1="7" x2="12" y2="17" />
+            <line class="vertical" x1="12" y1="7" x2="12" y2="17" />
           </g>
         </svg>
         ${this.summaryTitle}

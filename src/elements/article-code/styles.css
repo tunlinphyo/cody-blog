@@ -33,7 +33,7 @@
   display: inline-grid;
   max-height: 8rem;
   border-top-width: 1px;
-  /* background-color: color-mix(in oklab, var(--surface), var(--text-color) 5%); */
+  background-color: var(--background);
 }
 
 .header {
@@ -44,10 +44,10 @@
   padding-block: 0.5rem;
   border-block: 1px solid var(--border-color);
 
-  position: sticky;
+  /* position: sticky;
   z-index: 2;
-  top: 0;
-  background-color: var(--surface);
+  top: 1rem;
+  background-color: var(--surface); */
 
   .language {
     font-size: 0.85rem;

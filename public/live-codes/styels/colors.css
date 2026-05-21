@@ -14,13 +14,12 @@
   --pink: light-dark(rgb(255, 45, 85), rgb(255, 55, 95));
   --brown: light-dark(rgb(172, 127, 94), rgb(183, 138, 102));
   
-  --surface: light-dark(rgb(10, 10, 10), rgb(5, 5, 5));
-  --text-color: light-dark(rgb(220, 220, 220), rgb(200, 200, 200));
+  --surface: light-dark(rgb(30, 30, 30), rgb(25, 25, 25));
+  --text-color: light-dark(rgb(240, 240, 240), rgb(220, 220, 220));
   --accent: var(--blue);
 
   --gray: color-mix(in oklab, var(--surface), var(--text-color) 50%);
   --darkgray: oklch(from var(--text-color) l c h / 0.1);
   --bg-gray: oklch(from var(--text-color) l c h / 0.05);
-  --bg-gray: light-dark(rgb(16, 16, 16), rgb(13, 13, 13));
   --toast-bg: color-mix(in oklab, var(--surface), var(--text-color) 10%);
 }

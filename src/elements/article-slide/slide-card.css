@@ -11,11 +11,10 @@
 
   border: 1px solid var(--bg, var(--border-color));
   border-radius: var(--border-radius);
-  /* box-shadow: var(--card-shadow); */
 
-  /* background-color: oklch(from var(--bg, var(--surface)) l c h / 0.8); */
   background-color: var(--bg, var(--surface));
-  color: contrast-color(var(--bg, var(--surface)));
+  --_color: contrast-color(var(--bg));
+  color: var(--_color, var(--text-color));
 }
 
 :host([data-about])::before {
@@ -33,7 +32,7 @@
 
 :host([data-pattern="dotted"]) {
   background-image: radial-gradient(var(--darkgray) 0.5px, transparent 0.5px);
-  background-size: 12px 12px;
+  background-size: 30px 30px;
 }
 
 .card-container {
@@ -47,7 +46,7 @@
 }
 
 ::slotted(*:not(goto-slide)) {
-  color: contrast-color(var(--bg, var(--surface)));
+  color: var(--_color, var(--text-color));
   margin: 0;
 }
 
@@ -78,6 +77,8 @@
 
 ::slotted(article-code) {
   width: auto;
+  min-width: 75%;
+  --_border-color: var(--bg, var(--border-color));
 }
 
 @media (max-width: 40rem) {

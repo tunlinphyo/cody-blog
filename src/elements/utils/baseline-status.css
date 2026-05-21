@@ -1,5 +1,8 @@
 :host {
-  display: block;
+  display: grid;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
 }
 
 :host([data-status="limited"]) {
@@ -40,6 +43,8 @@ h3 {
 details {
   interpolate-size: allow-keywords;
   overflow: clip;
+  box-sizing: border-box;
+  min-width: 0;
 
   width: 100%;
   border-radius: var(--border-radius);
@@ -51,7 +56,6 @@ details {
 
   &::details-content {
     height: 0;
-    padding-inline: calc(2.5rem + 0.5rem) 1rem;
     transition: all 0.3s var(--ease-sine-out);
     transition-behavior: allow-discrete;
   }
@@ -62,8 +66,6 @@ details {
     }
 
     &::details-content {
-      padding: 1rem;
-      padding-left: calc(2.5rem + 0.5rem);
       height: auto;
 
       @starting-style {
@@ -78,6 +80,7 @@ summary {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  min-width: 0;
 
   &::before {
     content: '';
@@ -109,7 +112,8 @@ summary {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 0;
+  gap: 0.5rem;
+  min-width: 0;
   padding: 0 0.5rem;
 }
 
@@ -118,6 +122,7 @@ summary {
   justify-content: flex-start;
   align-items: center;
   min-height: 2.5rem;
+  min-width: 0;
   gap: 0.25rem;
 
   & strong {
@@ -136,15 +141,17 @@ summary {
 
 .baseline-status-browsers {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  min-width: 0;
 
   .browser-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     padding: 0.5rem;
     border-radius: 100vh;
     background-color: color-mix(in oklab, var(--_theme), var(--surface) 80%);
@@ -209,5 +216,6 @@ summary {
 
 
 .information {
-
+  padding: 1rem;
+  padding-inline: calc(2.5rem + 0.5rem) 1rem;
 }

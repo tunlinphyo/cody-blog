@@ -4,54 +4,252 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>js-project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tun's Blog</title>
 </head>
 
 <body>
   <main>
     <header>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="72">
-        <g stroke="currentColor" fill="none">
-          <line x1="9" y1="1" x2="4" y2="15" stroke-width="1.6" />
-          <line x1="1" y1="6" x2="20" y2="2" stroke-width="1.6" />
-          <path stroke-width="1.2" d="M9 6L8 9Q7 13 11 8T12.5 8T14 8Q18 2 17 7T18.5 8" />
-          <text
-            x="12.5"
-            y="15"
-            text-anchor="middle"
-            font-family="Google Sans Flex, sans-serif"
-            font-size="2.8"
-            font-weight="900"
-            letter-spacing="0.15"
-            fill="currentColor"
-            stroke="none"
-            pathLength="100">UI.DEV</text>
-        </g>
-      </svg>
-      </svg>
-      <h1>Cody</h1>
+      <div>
+        <div class="logo-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="68">
+            <g stroke="currentColor" fill="none">
+              <line x1="9" y1="1" x2="4" y2="15" stroke-width="1.6" />
+              <line x1="1" y1="6" x2="20" y2="2" stroke-width="1.6" />
+              <path stroke-width="1.2" d="M9 6L8 9Q7 13 11 8T12.5 8T14 8Q18 2 17 7T18.5 8" />
+              <text
+                x="12.5"
+                y="15"
+                text-anchor="middle"
+                font-family="Google Sans Flex, sans-serif"
+                font-size="2.8"
+                font-weight="900"
+                letter-spacing="0.15"
+                fill="currentColor"
+                style="color: var(--text-color);"
+                stroke="none"
+                pathLength="100">UI.DEV</text>
+            </g>
+          </svg>
+        </div>
+        <h1>Frontend Engineer</h1>
+        <p>focused on design systems, accessibility, and modern web technologies.</p>
+      </div>
+
+      <div class="contact-list">
+        <ul>
+          <li>
+            <a  id="github" href="https://github.com/tunlinphyo" target="_blank" rel="noopener noreferrer">
+              <svg width="36" viewBox="0 0 32 24" role="img" aria-labelledby="githubIconTitle">
+                <title id="githubIconTitle">Visit Tun's GitHub profile</title>
+                <g stroke="currentColor" stroke-width="0" fill="currentColor">
+                  <desc>Cat head</desc>
+                  <rect id="head" x="5" y="2" width="22" height="14" rx="10">
+                    <animateTransform attributeName="transform" type="translate" 
+                      values="0 0; 0 1.6; 0 0; 0 0" 
+                      keyTimes="0; .222222; .444444; 1" 
+                      dur=".9s" 
+                      begin="github.mouseenter" 
+                      end="github.mouseleave"
+                      repeatCount="indefinite" 
+                      fill="remove" />
+                  </rect>
+                  <path d="M 1 8 Q 0 4 1 1 Q 5 2 7 4.5" transform="translate(6, 0)" />
+                  <path d="M 7 8 Q 8 4 7 1 Q 3 2 1 4.5" transform="translate(18, 0)" />
+                  <rect x="11" y="15" width="10" height="20" rx="8" />
+                  <path id="tail" d="M 8 4 Q 4 5 3 3 Q 2 1 0 1" stroke-width="2" stroke-linecap="round" fill="none" transform="translate(4, 16)">
+                    <desc>Cat tale</desc>
+                    <animateTransform attributeName="transform" type="rotate" 
+                      additive="sum" 
+                      values="0 7 4; 25 7 4; -5 7 4; 0 7 4; 0 7 4" 
+                      keyTimes="0; .218182; .436364; .545455; 1" 
+                      dur="1.1s" 
+                      begin="github.mouseenter" 
+                      end="github.mouseleave"
+                      repeatCount="indefinite" 
+                      fill="remove" />
+                  </path>
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a id="linkedin" href="https://www.linkedin.com/in/tunlinphyo" target="_blank" rel="noopener noreferrer">
+              <svg width="36" viewBox="0 0 32 24" role="img" aria-labelledby="linkedinIconTitle">
+                <title id="linkedinIconTitle">Connect with Tun on LinkedIn</title>
+                <g fill="currentColor">
+                  <ellipse cx="5.75" cy="3" ry="3" rx="3.5">
+                    <desc>Top part of i</desc>
+                    <animateTransform
+                      attributeName="transform"
+                      type="scale"
+                      values="1 1; 1.2 1.4"
+                      dur=".2s"
+                      begin="linkedin.mouseenter"
+                      repeatCount="1" 
+                      fill="freeze"
+                    />
+                    <animateTransform
+                      attributeName="transform"
+                      type="scale"
+                      values="1.2 1.4; 1 1"
+                      dur=".2s"
+                      begin="linkedin.mouseleave"
+                      repeatCount="1" 
+                      fill="freeze"
+                    />
+                  </ellipse>
+                  <g transform="translate(0 24)">
+                    <rect x="2.5" y="-17" width="6" height="17">
+                      <desc>Bottom part of i</desc>
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        values="1 1; 1.2 .8"
+                        dur=".2s"
+                        begin="linkedin.mouseenter"
+                        repeatCount="1" 
+                        fill="freeze"
+                      />
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        values="1.2 .8; 1 1"
+                        dur=".2s"
+                        begin="linkedin.mouseleave"
+                        repeatCount="1" 
+                        fill="freeze"
+                      />
+                    </rect>
+                  </g>
+                  <g transform="translate(29.1 24)">
+                    <g>
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        values="1 1; .9 .8"
+                        dur=".2s"
+                        begin="linkedin.mouseenter"
+                        repeatCount="1" 
+                        fill="freeze"
+                      />
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        values=".9 .8; 1 1"
+                        dur=".2s"
+                        begin="linkedin.mouseleave"
+                        repeatCount="1" 
+                        fill="freeze"
+                      />
+                      <path
+                        fill="currentColor"
+                        transform="translate(-29.1 -24)"
+                        d="M22.5 6.4c-2.9 0-4.45 1.45-5.1 2.62V7h-5.9
+                          c.08 1.45 0 17 0 17h5.9v-9.05
+                          c0-.5.05-1 .2-1.35.44-.98 1.33-1.93 2.8-1.93
+                          2 0 2.8 1.43 2.8 3.5V24h5.9v-9.35
+                          c0-5.05-2.42-8.25-6.6-8.25z"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a id="email" href="mailto:tunlinphyo.it@gmail.com" target="_blank" rel="noopener noreferrer">
+              <svg width="36" viewBox="0 0 32 24" role="img" aria-labelledby="emailIconTitle">
+                <title id="emailIconTitle">Send email to Tun</title>
+                <mask id="envload-cut">
+                  <rect x="0" y="0" width="32" height="24" fill="white" />
+                  <polygon points="0 0 0 4.5 16 17.5 32 4.5 32 0" fill="black" />
+                </mask>
+                <g stroke="currentColor" stroke-width="0" fill="white">
+                  <g transform="translate(16 18)">
+                    <rect x="-11.5" y="-16" width="23" height="16" rx="1" transform="scale(1 0)">
+                      <desc>Paper</desc>
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        values="1 0; 1 0; 1 1"
+                        keyTimes="0; .3; 1"
+                        dur=".25s"
+                        begin="email.mouseenter"
+                        fill="freeze"
+                      />
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        values="1 1; 1 0"
+                        dur=".15s"
+                        begin="email.mouseleave"
+                        fill="freeze"
+                      />
+                    </rect>
+                  </g>
+                </g>
+                <g stroke="currentColor" stroke-width="0" fill="currentColor">
+                  <rect mask="url(#envload-cut)" x="2.5" y="5" width="27" height="19" rx="3"></rect>
+                  <g transform="translate(16 5)">
+                    <polygon id="email-flap" points="-12.5 0 12.5 0 0 10.5">
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        values="1 1; 1 0;"
+                        dur=".2s"
+                        begin="email.mouseenter"
+                        fill="freeze"
+                      />
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        values="1 0; 1 1"
+                        dur=".2s"
+                        begin="email.mouseleave"
+                        repeatCount="1"
+                        fill="freeze"
+                      />
+                    </polygon>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
-    <ul>
+
+    <ul class="article-list">
       <li>
-        <a href="/notebook/anchor/index.html">Anchor</a>
+        <a href="/notebook/svg/index.html">
+          <h2>Scalable Vector Graphics</h2>
+          <p>
+            Learn how SVG uses elements, attributes, paths, gradients, masks, and animation to create sharp,
+            responsive graphics for the web.
+          </p>
+        </a>
       </li>
       <li>
-        <a href="/notebook/scroll-driven-animation/index.html">Scroll-driven Animations</a>
+        <a href="/notebook/scroll-driven-animation/index.html">
+          <h2>Scroll-driven Animations</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit maiores repellendus ex 
+            laborum dicta quos consectetur possimus iste alias.
+          </p>
+        </a>
       </li>
       <li>
-        <a href="/notebook/svg/index.html">Scalable Vector Graphics</a>
+        <a href="/notebook/anchor/index.html">
+          <h2>Anchor</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint temporibus consectetur 
+            voluptates delectus blanditiis exercitationem laudantium quasi.
+          </p>
+        </a>
       </li>
     </ul>
-    <!-- <article>
-      <div class="baseline-container">
-        <baseline-status feature-id="anchor-positioning"></baseline-status>
-        <baseline-status feature-id="container-anchor-position-queries"></baseline-status>
-        <baseline-status feature-id="details"></baseline-status>
-        <baseline-status feature-id="has"></baseline-status>
-        <baseline-status feature-id="no"></baseline-status>
-      </div>
-    </article> -->
     <article-footer></article-footer>
   </main>
   <script type="module" src="/src/main.js"></script>

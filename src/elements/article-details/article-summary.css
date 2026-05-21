@@ -9,11 +9,6 @@
   box-shadow: var(--card-shadow);
 }
 
-/* :host([open]),
-:host(:hover) {
-  box-shadow: var(--card-shadow);
-} */
-
 .opener {
   padding-inline: 0.5rem 1rem;
   height: 2.5rem;

@@ -8,8 +8,6 @@
   --article-code-token-punctuation: light-dark(#119a26, #7ee787);
   --article-code-token-color: light-dark(#e36209, #ffa657); */
 
-  color-scheme: dark;
-
   --article-code-token-comment: #7f8ea3;
   --article-code-token-keyword: #ff7b72;
   --article-code-token-string: #a5d6ff;
@@ -22,20 +20,20 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--_border-color, var(--border-color));
   border-top-width: 0;
-  /* position: relative;
-  overflow: hidden; */
   background-color: var(--surface);
 
   border-radius: var(--border-radius);
-  /* box-shadow: var(--card-shadow); */
+
+  position: relative;
 }
 
 :host([mini]) {
   display: inline-grid;
   max-height: 8rem;
   border-top-width: 1px;
+  /* background-color: color-mix(in oklab, var(--surface), var(--text-color) 5%); */
 }
 
 .header {
@@ -47,6 +45,7 @@
   border-block: 1px solid var(--border-color);
 
   position: sticky;
+  z-index: 2;
   top: 0;
   background-color: var(--surface);
 
@@ -103,7 +102,7 @@
 
 pre {
   width: max-content;
-  color: CanvasText;
+  color: var(--text-color);
   font-family:
     "Google Sans Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     monospace;
@@ -163,7 +162,7 @@ code {
 }
 
 .token-punctuation {
-  color: var(--article-code-token-punctuation, color-mix(in srgb, CanvasText 72%, transparent));
+  color: var(--article-code-token-punctuation, color-mix(in srgb, var(--text-color) 72%, transparent));
 }
 
 .token-color {

@@ -2,7 +2,7 @@
 :host {
   display: grid;
   place-content: center;
-  padding-block: 5vh 20vh;
+  padding-block: 0 25vh;
 }
 
 a, svg {

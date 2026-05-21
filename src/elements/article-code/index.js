@@ -136,9 +136,45 @@ export class ArticleCode extends LitElement {
     return languages[this.language?.toLowerCase()] || "Unknow";
   }
 
-  handleCopyClick = async () => {
-    await navigator.clipboard.writeText(this.code);
-    this.showToast("Code copied");
+  copyCodeToClipboard = async () => {
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(this.code);
+        return;
+      } catch {
+        // Fall through to the textarea fallback when the Clipboard API is blocked.
+      }
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = this.code;
+    textarea.readOnly = true;
+    textarea.tabIndex = -1;
+    textarea.style.position = "fixed";
+    textarea.style.inset = "0 auto auto 0";
+    textarea.style.opacity = "0";
+
+    document.body.append(textarea);
+    textarea.select();
+
+    try {
+      if (!document.execCommand("copy")) {
+        throw new Error("Unable to copy code");
+      }
+    } finally {
+      textarea.remove();
+    }
+  };
+
+  async handleCopyClick(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    try {
+      await this.copyCodeToClipboard();
+      this.showToast("Code copied");
+    } catch {
+      this.showToast("Unable to copy code");
+    }
   };
 
   showToast(message) {
@@ -148,19 +184,19 @@ export class ArticleCode extends LitElement {
   render() {
     return html`${!this.mini ? html`<div class="header">
         <div class="language">${this.lang}</div>
-        <button class="copy-code" type="button" @click=${this.handleCopyClick}>
+        <button class="copy-code" @click=${this.handleCopyClick}>
           <svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
             <rect class="shake-1" x="7" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="var(--surface)" />
             <rect class="shake-2" x="2" y="7" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="var(--surface)" />
           </svg>
           <span>Copy</span>
         </button>
+        <article-toast></article-toast>
       </div>` : ""}
       <div class="scroll-view ${this.mini ? 'mini' : ''}">
-        <pre><code><slot hidden @slotchange=${this.handleSlotChange}>
+        <pre><code><slot hidden style="display: none; pointer-events: none;" @slotchange=${this.handleSlotChange}>
           </slot>${unsafeHTML(this.highlightedCode)}</code></pre>
-      </div>
-      <article-toast></article-toast>`;
+      </div>`;
   }
 }
 

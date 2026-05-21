@@ -1,44 +1,26 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
 
-  --red: rgb(255,56,60);
-  --orange: rgb(255,141,40);
-  --yellow: rgb(255,204,0);
-  --green: rgb(52,199,89);
-  --mint: rgb(0,200,179);
-  --teal: rgb(0,195,208);
-  --cyan: rgb(0,192,232);
-  --blue: rgb(0,136,255);
-  --indigo: rgb(97,85,245);
-  --purple: rgb(203,48,224);
-  --pink: rgb(255,45,85);
-  --brown: rgb(172,127,94);
+  --red: light-dark(rgb(255, 56, 60), rgb(255, 66, 69));
+  --orange: light-dark(rgb(255, 141, 40), rgb(255, 146, 48));
+  --yellow: light-dark(rgb(255, 204, 0), rgb(255, 214, 0));
+  --green: light-dark(rgb(52, 199, 89), rgb(48, 209, 88));
+  --mint: light-dark(rgb(0, 200, 179), rgb(0, 218, 195));
+  --teal: light-dark(rgb(0, 195, 208), rgb(0, 210, 224));
+  --cyan: light-dark(rgb(0, 192, 232), rgb(60, 211, 254));
+  --blue: light-dark(rgb(0, 136, 255), rgb(0, 145, 255));
+  --indigo: light-dark(rgb(97, 85, 245), rgb(109, 124, 255));
+  --purple: light-dark(rgb(203, 48, 224), rgb(219, 52, 242));
+  --pink: light-dark(rgb(255, 45, 85), rgb(255, 55, 95));
+  --brown: light-dark(rgb(172, 127, 94), rgb(183, 138, 102));
 
-  --surface: Canvas;
-  --text-color: CanvasText;
-  --accent: light-dark(var(--pink), var(--blue));
-
-  --gray: color-mix(in oklab, Canvas 50%, white 50%);
-  --darkgray: oklch(from CanvasText l c h / 0.10);
-  --bg-gray: oklch(from CanvasText l c h / 0.05);
-  --toast-bg: color-mix(in oklab, Canvas, white 10%);
-
-  /* --surface: #1F150C;
-  --text-color: #E1DCC9;
-  --accent: #306D29;
-
-  --gray: #412D15;
-  --darkgray: oklch(from CanvasText l c h / 0.15);
-  --bg-gray: oklch(from CanvasText l c h / 0.05);
-  --toast-bg: color-mix(in oklab, Canvas, CanvasText 10%); */
-
-
-  /* --surface: light-dark(#222, #111);
-  --bg-gray: light-dark(#181818, #181818);
-  --text-color: light-dark(#fff, #eee);
+  --surface: light-dark(rgb(10, 10, 10), rgb(5, 5, 5));
+  --text-color: light-dark(rgb(220, 220, 220), rgb(200, 200, 200));
   --accent: var(--blue);
 
-  --gray: light-dark(#888, #666);
-  --toast-bg: rgb(75,75,75);
-  --darkgray: light-dark(#444, #333); */
+  --gray: color-mix(in oklab, var(--surface), var(--text-color) 50%);
+  --darkgray: oklch(from var(--text-color) l c h / 0.1);
+  --bg-gray: oklch(from var(--text-color) l c h / 0.05);
+  --bg-gray: light-dark(rgb(16, 16, 16), rgb(13, 13, 13));
+  --toast-bg: color-mix(in oklab, var(--surface), var(--text-color) 10%);
 }

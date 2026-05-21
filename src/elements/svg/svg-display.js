@@ -27,7 +27,7 @@ export class SvgDisplay extends LitElement {
   render() {
     return svg`
       <svg viewBox="0 0 240 240">
-        <g stroke="var(--gray)" stroke-width="0.5" fill="none">
+        <g stroke="oklch(from var(--gray) l c h / 0.7)" stroke-width="0.5" fill="none">
           <path d=${gridPath} />
         </g>
         ${this.stepNumber === 1 ? svg`

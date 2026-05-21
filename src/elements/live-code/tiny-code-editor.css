@@ -39,8 +39,8 @@
   overflow-y: auto;
   overflow-wrap: normal;
   overscroll-behavior-x: none;
-  background: var(--tiny-code-editor-background, Canvas);
-  color: var(--tiny-code-editor-color, CanvasText);
+  background: var(--tiny-code-editor-background, var(--surface));
+  color: var(--tiny-code-editor-color, var(--text-color));
   caret-color: var(--tiny-code-editor-caret-color, currentColor);
   font: var(--tiny-code-editor-font,
       14px/1.6 ui-monospace,
@@ -72,7 +72,7 @@
 
 .editor:focus {
   border-color: var(--tiny-code-editor-focus-border-color,
-      color-mix(in srgb, CanvasText 55%, transparent));
+      color-mix(in srgb, var(--text-color) 55%, transparent));
 }
 
 .editor::selection {
@@ -109,7 +109,7 @@
 }
 
 .token-punctuation {
-  color: var(--tiny-code-token-punctuation, color-mix(in srgb, CanvasText 72%, transparent));
+  color: var(--tiny-code-token-punctuation, color-mix(in srgb, var(--text-color) 72%, transparent));
 }
 
 .token-color {

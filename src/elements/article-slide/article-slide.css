@@ -68,12 +68,13 @@
   display: grid;
   place-content: center;
   border-radius: 50%;
-  border: 1px solid oklch(from CanvasText l c h / 0.1);
-  color: contrast-color(var(--active-slide-card-bg, Canvas));
-  border-color: oklch(from contrast-color(var(--active-slide-card-bg, Canvas)) l c h / 0.2);
-  background-color: oklch(from contrast-color(var(--active-slide-card-bg, Canvas)) l c h / 0.1);
+  border: 1px solid oklch(from var(--text-color) l c h / 0.1);
+  --_color: contrast-color(var(--bg));
+  color: var(--_color, var(--text-color));
+  border-color: oklch(from contrast-color(var(--active-slide-card-bg, var(--surface))) l c h / 0.2);
+  background-color: oklch(from contrast-color(var(--active-slide-card-bg, var(--surface))) l c h / 0.1);
 
-  opacity: 0.25;
+  opacity: 0;
   bottom: 2.75rem;
   right: 1rem;
 
@@ -147,11 +148,9 @@
   }
 }
 
-:host(:hover),
-:host(:focus-visible) {
-  .scroll-button {
-    opacity: 1;
-  }
+:host(:hover) .scroll-button,
+:host(:focus-visible) .scroll-button {
+  opacity: 1;
 }
 
 @media (hover: none) and (pointer: coarse) {

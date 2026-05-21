@@ -17,8 +17,8 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: Canvas;
-  color: CanvasText;
+  background-color: var(--surface);
+  color: var(--surface)Text;
 }
 
 :where(html) {
@@ -60,7 +60,7 @@
     outline-offset: -4px; */
 
     &::scroll-marker {
-      --bg-color: oklch(from CanvasText l c h / 0.8);
+      --bg-color: oklch(from var(--surface)Text l c h / 0.8);
       content: '';
       display: block;
       width: 1.5rem;
@@ -118,7 +118,7 @@
     position: absolute;
     width: 80%;
     height: 0;
-    border-top: 2px solid CanvasText;
+    border-top: 2px solid var(--surface)Text;
     scale: 0 1;
 
     &.line--one {
@@ -154,7 +154,7 @@
     width: 4rem;
     aspect-ratio: 1;
     border-radius: 50%;
-    background-color: Canvas;
+    background-color: var(--surface);
     scale: 0;
 
     animation: bgScale auto linear forwards;
@@ -162,27 +162,27 @@
 
     &.bg-1 {
       width: 40rem;
-      background-color: color-mix(in oklab, Canvas, CanvasText 2%);
+      background-color: color-mix(in oklab, var(--surface), var(--surface)Text 2%);
       animation-range: 50% 90%;
     }
     &.bg-2 {
       width: 28rem;
-      background-color: color-mix(in oklab, Canvas, CanvasText 4%);
+      background-color: color-mix(in oklab, var(--surface), var(--surface)Text 4%);
       animation-range: 51% 89%;
     }
     &.bg-3 {
       width: 20rem;
-      background-color: color-mix(in oklab, Canvas, CanvasText 6%);
+      background-color: color-mix(in oklab, var(--surface), var(--surface)Text 6%);
       animation-range: 52% 88%;
     }
     &.bg-4 {
       width: 13rem;
-      background-color: color-mix(in oklab, Canvas, CanvasText 4%);
+      background-color: color-mix(in oklab, var(--surface), var(--surface)Text 4%);
       animation-range: 53% 87%;
     }
     &.bg-5 {
       width: 8rem;
-      background-color: color-mix(in oklab, Canvas, CanvasText 2%);
+      background-color: color-mix(in oklab, var(--surface), var(--surface)Text 2%);
       animation-range: 54% 86%;
     }
     &.bg-6 {
@@ -438,7 +438,7 @@
 
     & svg {
       width: 3rem;
-      color: color-mix(in oklab, CanvasText, Canvas 40%);
+      color: color-mix(in oklab, var(--surface)Text, var(--surface) 40%);
 
       .draw {
         stroke-dasharray: 105;

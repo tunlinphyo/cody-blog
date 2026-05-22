@@ -27,13 +27,13 @@
   border-radius: var(--border-radius);
 
   position: relative;
+  background-color: var(--background);
 }
 
 :host([mini]) {
   display: inline-grid;
   max-height: 8rem;
   border-top-width: 1px;
-  background-color: var(--background);
 }
 
 .header {
@@ -43,6 +43,7 @@
   padding: 1rem;
   padding-block: 0.5rem;
   border-block: 1px solid var(--border-color);
+  background-color: var(--surface);
 
   /* position: sticky;
   z-index: 2;

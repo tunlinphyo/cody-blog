@@ -4,7 +4,6 @@
 @import url(./colors.css);
 
 :root {
-  color-scheme: dark;
   --border-color: var(--gray);
   --border-radius: 2px;
   --header-font-size: clamp(2rem, 6vw, 2.5rem);

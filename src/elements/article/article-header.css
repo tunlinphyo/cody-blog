@@ -1,10 +1,9 @@
 :host {
   width: 100%;
-  padding-block-start: 20vh;
   padding-inline: 1rem;
   display: grid;
   gap: 5vh;
-  padding-block-end: 5vh;
+  padding-block: 25vh 5vh;
 }
 
 

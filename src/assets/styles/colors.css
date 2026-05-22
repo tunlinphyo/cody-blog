@@ -14,8 +14,8 @@
   --pink: light-dark(rgb(255, 45, 85), rgb(255, 55, 95));
   --brown: light-dark(rgb(172, 127, 94), rgb(183, 138, 102));
 
-  --background: light-dark(rgb(15, 15, 15), rgb(10, 10, 10));
-  --surface: light-dark(rgb(30, 30, 30), rgb(25, 25, 25));
+  --background: light-dark(rgb(20, 20, 20), rgb(10, 10, 10));
+  --surface: light-dark(rgb(35, 35, 35), rgb(25, 25, 25));
   --text-color: light-dark(rgb(220, 220, 220), rgb(200, 200, 200));
 
   /* --background: light-dark(rgb(245, 245, 245), rgb(10, 10, 10));

@@ -27,7 +27,7 @@
 :where(img,
   picture,
   video,
-  var(--surface),
+  canvas,
   svg) {
   display: block;
   max-width: 100%;

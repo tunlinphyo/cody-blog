@@ -10,6 +10,11 @@ export class HeroCard extends LitElement {
 
   static styles = litStaticStyles(utilsStyles, previewStyles);
 
+  constructor() {
+    super()
+    this.background = ''
+  }
+
   willUpdate(changedProperties) {
     if (!changedProperties.has("background")) {
       return;

@@ -1,6 +1,4 @@
 :host {
-  --block-height: calc(var(--editor-height) + var(--toolbar-height));
-
   display: grid;
   grid-template-rows: var(--toolbar-height) 1fr;
   min-width: 0;
@@ -105,7 +103,15 @@
   }
 }
 
+.iframe-container {
+  position: relative;
+  background-color: #f00;
+}
+
 iframe {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   display: block;
   width: 100%;
   height: 100%;

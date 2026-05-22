@@ -45,13 +45,13 @@
                 <g stroke="currentColor" stroke-width="0" fill="currentColor">
                   <desc>Cat head</desc>
                   <rect id="head" x="5" y="2" width="22" height="14" rx="10">
-                    <animateTransform attributeName="transform" type="translate" 
-                      values="0 0; 0 1.6; 0 0; 0 0" 
-                      keyTimes="0; .222222; .444444; 1" 
-                      dur=".9s" 
-                      begin="github.mouseenter" 
+                    <animateTransform attributeName="transform" type="translate"
+                      values="0 0; 0 1.6; 0 0; 0 0"
+                      keyTimes="0; .222222; .444444; 1"
+                      dur=".9s"
+                      begin="github.mouseenter"
                       end="github.mouseleave"
-                      repeatCount="indefinite" 
+                      repeatCount="indefinite"
                       fill="remove" />
                   </rect>
                   <path d="M 1 8 Q 0 4 1 1 Q 5 2 7 4.5" transform="translate(6, 0)" />
@@ -59,14 +59,14 @@
                   <rect x="11" y="15" width="10" height="20" rx="8" />
                   <path id="tail" d="M 8 4 Q 4 5 3 3 Q 2 1 0 1" stroke-width="2" stroke-linecap="round" fill="none" transform="translate(4, 16)">
                     <desc>Cat tale</desc>
-                    <animateTransform attributeName="transform" type="rotate" 
-                      additive="sum" 
-                      values="0 7 4; 25 7 4; -5 7 4; 0 7 4; 0 7 4" 
-                      keyTimes="0; .218182; .436364; .545455; 1" 
-                      dur="1.1s" 
-                      begin="github.mouseenter" 
+                    <animateTransform attributeName="transform" type="rotate"
+                      additive="sum"
+                      values="0 7 4; 25 7 4; -5 7 4; 0 7 4; 0 7 4"
+                      keyTimes="0; .218182; .436364; .545455; 1"
+                      dur="1.1s"
+                      begin="github.mouseenter"
                       end="github.mouseleave"
-                      repeatCount="indefinite" 
+                      repeatCount="indefinite"
                       fill="remove" />
                   </path>
                 </g>
@@ -79,7 +79,7 @@
                 <title id="linkedinIconTitle">Connect with Tun on LinkedIn</title>
                 <!-- <rect x="0" y="0" width="32" height="24" fill="#f005" /> -->
                 <g fill="currentColor">
-                  <ellipse cx="4.75" cy="3.5" ry="3.5" rx="4">
+                  <ellipse cx="5.25" cy="3.5" ry="3.5" rx="4">
                     <desc>Top part of i</desc>
                     <animateTransform
                       attributeName="transform"
@@ -87,7 +87,7 @@
                       values="1 1; 1.2 1.4"
                       dur=".2s"
                       begin="linkedin.mouseenter"
-                      repeatCount="1" 
+                      repeatCount="1"
                       fill="freeze"
                     />
                     <animateTransform
@@ -96,12 +96,12 @@
                       values="1.2 1.4; 1 1"
                       dur=".2s"
                       begin="linkedin.mouseleave"
-                      repeatCount="1" 
+                      repeatCount="1"
                       fill="freeze"
                     />
                   </ellipse>
                   <g transform="translate(0 24)">
-                    <rect x="1" y="-16.5" width="7" height="16.5">
+                    <rect x="1.75" y="-16.5" width="6.5" height="16.5">
                       <desc>Bottom part of i</desc>
                       <animateTransform
                         attributeName="transform"
@@ -109,7 +109,7 @@
                         values="1 1; 1.2 .8"
                         dur=".2s"
                         begin="linkedin.mouseenter"
-                        repeatCount="1" 
+                        repeatCount="1"
                         fill="freeze"
                       />
                       <animateTransform
@@ -118,7 +118,7 @@
                         values="1.2 .8; 1 1"
                         dur=".2s"
                         begin="linkedin.mouseleave"
-                        repeatCount="1" 
+                        repeatCount="1"
                         fill="freeze"
                       />
                     </rect>
@@ -131,7 +131,7 @@
                         values="1 1; .9 .8"
                         dur=".2s"
                         begin="linkedin.mouseenter"
-                        repeatCount="1" 
+                        repeatCount="1"
                         fill="freeze"
                       />
                       <animateTransform
@@ -140,7 +140,7 @@
                         values=".9 .8; 1 1"
                         dur=".2s"
                         begin="linkedin.mouseleave"
-                        repeatCount="1" 
+                        repeatCount="1"
                         fill="freeze"
                       />
                       <path
@@ -166,7 +166,13 @@
                   <rect x="0" y="0" width="32" height="24" fill="white" />
                   <polygon points="0 0 0 4.5 16 17.5 32 4.5 32 0" fill="black" />
                 </mask>
-                <g stroke="currentColor" stroke-width="0" fill="var(--text-color)">
+                <mask id="envload-radius-cut">
+                  <g transform="translate(-16 0)">
+                    <rect x="0" y="0" width="32" height="24" fill="black" />
+                    <rect x="2.5" y="0" width="27" height="19" rx="3" fill="white" />
+                  </g>
+                </mask>
+                <g stroke="currentColor" stroke-width="0" fill="white">
                   <g transform="translate(16 18)">
                     <rect x="-11.5" y="-16" width="23" height="16" rx="1" transform="scale(1 0)">
                       <desc>Paper</desc>
@@ -193,7 +199,7 @@
                 <g stroke="currentColor" stroke-width="0" fill="currentColor">
                   <rect mask="url(#envload-cut)" x="2.5" y="5" width="27" height="19" rx="3"></rect>
                   <g transform="translate(16 5)">
-                    <polygon id="email-flap" points="-12.5 0 12.5 0 0 10.5">
+                    <polygon mask="url(#envload-radius-cut)" id="email-flap" points="-12.5 0 12.5 0 0 10.5">
                       <animateTransform
                         attributeName="transform"
                         type="scale"
@@ -235,7 +241,7 @@
         <a href="/notebook/scroll-driven-animation/index.html">
           <h2>Scroll-driven Animations</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit maiores repellendus ex 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit maiores repellendus ex
             laborum dicta quos consectetur possimus iste alias.
           </p>
         </a>
@@ -244,7 +250,7 @@
         <a href="/notebook/anchor/index.html">
           <h2>Anchor</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint temporibus consectetur 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint temporibus consectetur
             voluptates delectus blanditiis exercitationem laudantium quasi.
           </p>
         </a>

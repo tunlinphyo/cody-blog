@@ -7,6 +7,7 @@
   --article-code-token-attr: light-dark(#6f42c1, #d2a8ff);
   --article-code-token-punctuation: light-dark(#119a26, #7ee787);
   --article-code-token-color: light-dark(#e36209, #ffa657); */
+  color-scheme: dark;
 
   --article-code-token-comment: #7f8ea3;
   --article-code-token-keyword: #ff7b72;
@@ -20,7 +21,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  border: 1px solid var(--_border-color, var(--border-color));
+  border: 1px solid var(--_border-color, var(--background));
   border-top-width: 0;
   background-color: var(--surface);
 
@@ -37,6 +38,7 @@
 }
 
 .header {
+  color-scheme: light dark;
   display: flex;
   justify-content: space-between;
   align-items: center;

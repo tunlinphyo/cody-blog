@@ -41,10 +41,12 @@ export class LiveCodePreview extends LitElement {
           </button>
         </div>
       </div>
-      <iframe
-        title="Live code preview"
-        .srcdoc=${this.srcdoc}
-      ></iframe>
+      <div class="iframe-container">
+        <iframe
+          title="Live code preview"
+          .srcdoc=${this.srcdoc}
+        ></iframe>
+      </div>
     `;
   }
 

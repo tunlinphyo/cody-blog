@@ -8,7 +8,7 @@
 :root {
   --padding: clamp(1.5rem, 4vw, 4rem);
   --border-color: var(--gray);
-  --border-radius: 0px;
+  --border-radius: 0;
   --header-font-size: clamp(2rem, 6vw, 2.5rem);
   --paragraph-font-size: 1.05rem;
   --paragraph-max-width: 44rem;

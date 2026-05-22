@@ -1,7 +1,9 @@
 :host {
   width: 100%;
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   border-radius: var(--border-radius);
+  /* border-radius: 1rem; */
+
   padding: 1rem;
   height: 34rem;
 
@@ -11,12 +13,14 @@
   align-items: flex-start;
   padding: var(--padding);
 
+  --background: light-dark(rgb(250,245,200), rgb(0,0,0));
+
   background-color: var(--background);
-  background:
+  /* background:
     radial-gradient(circle, transparent 10%, var(--background) 10%, var(--background) 90%, transparent 90%, transparent),
     radial-gradient(circle, transparent 10%, var(--background) 10%, var(--background) 90%, transparent 90%, transparent) 40px 40px,
     linear-gradient(var(--surface) 1px, transparent 1px) 0 -1px, linear-gradient(90deg, var(--surface) 1px, var(--background) 1px) -0.5px 0;
-  background-size: 80px 80px, 80px 80px, 40px 40px, 40px 40px;
+  background-size: 80px 80px, 80px 80px, 40px 40px, 40px 40px; */
 }
 
 @media (max-width: 40rem) {
@@ -40,10 +44,15 @@
 
 .summary-container {
   position: absolute;
-  left: var(--padding);
-  right: var(--padding);
+  left: 50%;
   top: 50%;
-  translate: 0 -50%;
+  translate: -50% -50%;
+
+  width: min(
+    calc(100% - 2rem),
+    calc(var(--paragraph-max-width) - 2rem),
+    30rem
+  );
 
   display: flex;
   flex-direction: column;
@@ -72,14 +81,11 @@ button {
   position: sticky;
   top: 1rem;
   opacity: 1;
-  transition: opacity 0.25s var(--ease-1);
+  scale: 1;
+  transition: scale 0.4s var(--ease-spring-1), opacity 0.25s var(--ease-1);
   background-color: color-mix(in oklab, var(--red) 30%, var(--surface));
   /* box-shadow: 2px 2px 0 0 var(--red); */
-
-  & svg {
-    scale: 1;
-    transition: scale 0.4s var(--ease-spring-1);
-  }
+  box-shadow: oklch(from var(--red) l c h / 0.2) 0px 2px 4px 0px;
 
   & .top-line,
   & .bottom-line {
@@ -96,10 +102,7 @@ button {
 
   &:disabled {
     opacity: 0;
-
-    & svg {
-      scale: 0;
-    }
+    scale: 0;
   }
 }
 

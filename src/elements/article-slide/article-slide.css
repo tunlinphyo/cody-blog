@@ -21,6 +21,7 @@
   grid-auto-flow: column;
   grid-auto-columns: 100%;
   padding-inline: 1px;
+  scroll-padding-inline: 1px;
 
   overflow-x: auto;
   scroll-snap-type: x mandatory;

@@ -50,9 +50,9 @@ article-slide-item {
     display: inline;
     font-family: "Google Sans Code", monospace;
     padding: 0 0.25rem;
-    background-color: var(--darkgray);
+    background-color: oklch(from var(--accent) l c h / 0.5);
     border-radius: 0.3rem;
-    color: var(--accent);
+    /* color: var(--accent); */
   }
 
   [data-flex] {

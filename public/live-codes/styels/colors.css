@@ -13,10 +13,10 @@
   --purple: light-dark(rgb(203, 48, 224), rgb(219, 52, 242));
   --pink: light-dark(rgb(255, 45, 85), rgb(255, 55, 95));
   --brown: light-dark(rgb(172, 127, 94), rgb(183, 138, 102));
-  
+
   --surface: light-dark(rgb(30, 30, 30), rgb(25, 25, 25));
   --text-color: light-dark(rgb(220, 220, 220), rgb(200, 200, 200));
-  
+
   --accent: var(--blue);
 
   --gray: color-mix(in oklab, var(--surface), var(--text-color) 40%);

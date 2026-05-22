@@ -7,9 +7,10 @@
   position: relative;
   gap: 2rem;
   overflow: clip;
-  padding: var(--padding);
+  padding: 1.25rem;
 
-  border: 1px solid var(--bg, var(--border-color));
+  /* border: 1px solid var(--bg, var(--border-color)); */
+  border: 1px solid color-mix(in oklab, var(--bg, var(--surface)), var(--text-color) 10%);
   border-radius: var(--border-radius);
 
   background-color: var(--bg, var(--surface));

@@ -3,7 +3,7 @@
   padding-inline: 1rem;
   display: grid;
   gap: 5vh;
-  padding-block: 25vh 5vh;
+  padding-block: 25vh 0;
 }
 
 

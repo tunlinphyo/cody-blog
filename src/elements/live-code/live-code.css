@@ -2,6 +2,7 @@
   --toolbar-height: 2.5rem;
   --editor-height: 20rem;
   --block-height: calc(var(--editor-height) + var(--toolbar-height));
+  --border-color: color-mix(in oklab, var(--surface), var(--text-color) 10%);
 
   color: var(--text-color);
   position: relative;

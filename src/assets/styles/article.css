@@ -18,7 +18,7 @@ article {
 
   p {
     font-size: var(--paragraph-font-size);
-    color: var(--text-color);
+    color: var(--foreground);
   }
 
   a {
@@ -77,7 +77,7 @@ article-slide-item {
 }
 
 details code {
-  background-color: var(--surface);
+  background-color: var(--background);
 }
 
 .baseline-container {
@@ -90,5 +90,22 @@ details code {
   & baseline-status {
     width: 100%;
     max-width: var(--paragraph-max-width);
+  }
+}
+
+.toturial-grid {
+  height: 100%;
+  display: grid;
+  padding-block: 2rem;
+  padding-inline: 0 2rem;
+  gap: 2rem;
+  align-content: center;
+}
+
+@media (max-width: 40rem) {
+  .toturial-grid {
+    padding-block: 0 2rem;
+    padding-inline: 1rem;
+    align-content: flex-start;
   }
 }

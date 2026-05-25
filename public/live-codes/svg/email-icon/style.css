@@ -1,7 +1,7 @@
 :where(html, body, main) {
   width: 100%;
   height: 100%;
-  background-color: light-dark(rgb(235,235,235),rgb(60, 60, 60));
+  background-color: var(--darkgray);
 }
 
 :where(body) {
@@ -14,7 +14,7 @@
   place-content: center;
   gap: 2rem;
 
-  background-color: light-dark(rgb(210,210,210),rgb(40,40,40));
+  background-color: var(--background);
   border-radius: 0.5rem;
   @supports(corner-shape: squircle) {
     border-radius: 1rem;
@@ -48,10 +48,10 @@
 }
 
 :where(#github) {
-  color: rgb(177,132,248);
+  color: var(--purple);
 }
 :where(#email) {
-  color: rgb(103,130,188);
+  color: var(--blue);
 }
 
 @media (hover: hover) and (pointer: fine) {

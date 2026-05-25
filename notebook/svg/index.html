@@ -39,14 +39,14 @@
       <section>
         <p>
           I usually don’t pay much attention to Scalable Vector Graphics <code>(SVG)</code>, just copying it from an external
-          source and pasting it into my code. I’m just trying to get the job done. But I always wonder how
-          something so complicated with a bunch of numbers can be so hard to understand.
+          source and pasting it into my code. I’m just trying to get the job done. But I’ve always wondered why something with 
+          so many numbers can be so hard to understand.
         </p>
         <p>
           Once you get a little more familiar with the basics, SVG becomes pretty fun. You can create some really cool effects
-          with it! Take a look at the mail icon below. When you hover over it, the envelope pops open and the paper appears
-          from inside. Or check out the GitHub logo with the animated cat. You can build effects like these with only SVG, or
-          use CSS if you prefer.
+          with it! Take a look at the mail icon below. When you hover over it, the envelope pops open and the paper slides out. 
+          Or check out the GitHub logo with the animated cat. You can create effects like these using only SVG, 
+          or with CSS if you prefer.
         </p>
       </section>
 
@@ -64,49 +64,25 @@
       <section>
         <h2>Elements</h2>
         <p>
-          First, let’s explore some basic SVG elements. Don’t worry if SVG looks a little confusing at first.
-          Once you understand a few core pieces, it becomes much easier to create icons, illustrations, and
-          small animations.
+          First, let’s explore some basic SVG elements. It might look a little confusing at first, 
+          but once you learn a few core concepts, it becomes much easier to create icons, illustrations, 
+          and simple animations.
+        </p>
+        <p>
+          SVG includes many elements for everything from basic shapes to complex diagrams and animations. 
+          You’ll learn some of the essentials here, and if you want to dive deeper, check out the 
+          <a href="https://yqnn.github.io/svg-path-editor/" target="_blank" rel="noopener noreferrer">
+            MDN SVG element reference
+            <external-link></external-link>
+          </a>.
         </p>
       </section>
 
       <article-slide id="svg">
         <article-slide-item>
-          <hero-card data-about="SVG" background="c-accent">
+          <hero-card data-about="SVG">
             <h2>Elements</h2>
           </hero-card>
-        </article-slide-item>
-        <article-slide-item>
-          <slide-card>
-            <p>
-              SVG stays crisp at any size, supports CSS styling and animations, and is perfect for icons, logos,
-              illustrations, and charts.
-            </p>
-
-            <div data-mb-0>
-              <svg viewBox="0 0 24 24" width="24" height="24">
-                <rect x="1" y="2" width="22" height="20" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
-                <g fill="currentColor">
-                  <circle cx="6" cy="6" r="1.5"></circle>
-                  <circle cx="10" cy="6" r="1.5" style="animation-delay: 0.1s"></circle>
-                  <circle cx="14" cy="6" r="1.5" style="animation-delay: 0.2s"></circle>
-                </g>
-              </svg>
-            </div>
-
-            <article-code language="html" mini overscroll>
-              <template>
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                  <rect x="1" y="2" rx="4" width="22" height="20" stroke="currentColor" stroke-width="2" fill="none" />
-                  <g fill="currentColor">
-                    <circle cx="6" cy="6" r="1.5"></circle>
-                    <circle cx="10" cy="6" r="1.5"></circle>
-                    <circle cx="14" cy="6" r="1.5"></circle>
-                  </g>
-                </svg>
-              </template>
-            </article-code>
-          </slide-card>
         </article-slide-item>
         <article-slide-item>
           <slide-card>
@@ -303,6 +279,9 @@
             The <code>viewBox</code> defines internal coordinate system and
             determines how graphics scale within the container.
           </p>
+          <p>
+            The <code>width</code> and <code>height</code> control how large the SVG appears on the page.
+          </p>
           <article-code language="html" mini overscroll>
             <template>
               <svg viewBox="0 0 24 24">...</svg>
@@ -433,21 +412,21 @@
               <g stroke-width="6" stroke="var(--blue)">
                 <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="butt" />
               </g>
-              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--background)" />
             </svg>
             <svg viewBox="0 0 24 24" width="42">
               <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
               <g stroke-width="6" stroke="var(--blue)">
                 <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round" />
               </g>
-              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--background)" />
             </svg>
             <svg viewBox="0 0 24 24" width="42">
               <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
               <g stroke-width="6" stroke="var(--blue)">
                 <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="square" />
               </g>
-              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--surface)" />
+              <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--background)" />
             </svg>
           </div>
           <article-code language="html" mini overscroll>
@@ -464,114 +443,92 @@
         </p>
       </section>
 
-      <article-slide id="menu-icon">
+      <article-toturial>
+        <div slot="toturial">
+          <svg-display></svg-display>
+        </div>
         <article-slide-item>
-          <slide-demo-card data-about="01">
-            <div slot="description">
-              <p>
-                Create an <code>&lt;svg&gt;</code> element with a viewBox of <code>0 0 24 24</code>,
-                defining a <code>24x24</code> drawing area starting at <code>(0, 0)</code>.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 24 24"></svg>
-                </template>
-              </article-code>
-            </div>
-            <div slot="demo">
-              <svg-display></svg-display>
-            </div>
-          </slide-demo-card>
+          <div class="toturial-grid">
+            <p>
+              Create an <code>&lt;svg&gt;</code> element with a viewBox of <code>0 0 24 24</code>,
+              defining a <code>24x24</code> drawing area starting at <code>(0, 0)</code>.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24"></svg>
+              </template>
+            </article-code>
+          </div>
         </article-slide-item>
         <article-slide-item>
-          <slide-demo-card data-about="02">
-            <div slot="description">
-              <p>
-                Draw a <code>&lt;line&gt;</code> from <code>(5, 12)</code> to <code>(19, 12)</code>,
-                then set its stroke color and width.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 24 24">
-                    <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-            <div slot="demo">
-              <svg-display step="1"></svg-display>
-            </div>
-          </slide-demo-card>
+          <div class="toturial-grid">
+            <p>
+              Draw a <code>&lt;line&gt;</code> from <code>(5, 12)</code> to <code>(19, 12)</code>,
+              then set its stroke color and width.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
+                </svg>
+              </template>
+            </article-code>
+          </div>
         </article-slide-item>
         <article-slide-item>
-          <slide-demo-card data-about="03">
-            <div slot="description">
-              <p>
-                Duplicate two more <code>&lt;line&gt;</code>s with different <code>y</code> values.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 24 24">
-                    <line x1="5" y1="7" x2="19" y2="7" stroke="CanvasText" stroke-width="1"></line>
-                    <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
-                    <line x1="5" y1="17" x2="19" y2="17" stroke="CanvasText" stroke-width="1"></line>
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-            <div slot="demo">
-              <svg-display step="2"></svg-display>
-            </div>
-          </slide-demo-card>
+          <div class="toturial-grid">
+            <p>
+              Duplicate two more <code>&lt;line&gt;</code>s with different <code>y</code> values.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="7" x2="19" y2="7" stroke="CanvasText" stroke-width="1"></line>
+                  <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
+                  <line x1="5" y1="17" x2="19" y2="17" stroke="CanvasText" stroke-width="1"></line>
+                </svg>
+              </template>
+            </article-code>
+          </div>
         </article-slide-item>
         <article-slide-item>
-          <slide-demo-card data-about="04">
-            <div slot="description">
-              <p>
-                Add a <rect> element at <code>(1, 1)</code>, width and height of <code>22</code> for the border.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 24 24">
-                    <line x1="5" y1="7" x2="19" y2="7" stroke="CanvasText" stroke-width="1"></line>
-                    <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
-                    <line x1="5" y1="17" x2="19" y2="17" stroke="CanvasText" stroke-width="1"></line>
-                    <rect x="1" y="1" width="22" height="22" stroke="CanvasText" stroke-width="1" fill="none"></rect>
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-            <div slot="demo">
-              <svg-display step="3"></svg-display>
-            </div>
-          </slide-demo-card>
+          <div class="toturial-grid">
+            <p>
+              Add a <rect> element at <code>(1, 1)</code>, width and height of <code>22</code> for the border.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="7" x2="19" y2="7" stroke="CanvasText" stroke-width="1"></line>
+                  <line x1="5" y1="12" x2="19" y2="12" stroke="CanvasText" stroke-width="1"></line>
+                  <line x1="5" y1="17" x2="19" y2="17" stroke="CanvasText" stroke-width="1"></line>
+                  <rect x="1" y="1" width="22" height="22" stroke="CanvasText" stroke-width="1" fill="none"></rect>
+                </svg>
+              </template>
+            </article-code>
+          </div>
         </article-slide-item>
         <article-slide-item>
-          <slide-demo-card data-about="05">
-            <div slot="description">
-              <p>
-                Group shared attributes with <code>&lt;g&gt;</code>, apply <code>stroke-linecap="round"</code>,
-                and set redius of <code>4</code> to <code>&lt;rect&gt;</code>.
-              </p>
-              <article-code language="html" mini overscroll>
-                <template>
-                  <svg viewBox="0 0 24 24">
-                    <g stroke="CanvasText" stroke-width="1" stroke-linecap="round">
-                      <line x1="5" y1="7" x2="19" y2="7" />
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <line x1="5" y1="17" x2="19" y2="17" />
-                      <rect x="1" y="1" width="22" height="22" rx="4" fill="none" />
-                    </g>
-                  </svg>
-                </template>
-              </article-code>
-            </div>
-            <div slot="demo">
-              <svg-display step="4"></svg-display>
-            </div>
-          </slide-demo-card>
+          <div class="toturial-grid">
+            <p>
+              Group shared attributes with <code>&lt;g&gt;</code>, apply <code>stroke-linecap="round"</code>,
+              and set redius of <code>4</code> to <code>&lt;rect&gt;</code>.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">
+                  <g stroke="CanvasText" stroke-width="1" stroke-linecap="round">
+                    <line x1="5" y1="7" x2="19" y2="7" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <line x1="5" y1="17" x2="19" y2="17" />
+                    <rect x="1" y="1" width="22" height="22" rx="4" fill="none" />
+                  </g>
+                </svg>
+              </template>
+            </article-code>
+          </div>
         </article-slide-item>
-      </article-slide>
+      </article-toturial>
 
       <section>
         <p>
@@ -655,7 +612,119 @@
         </p>
       </section>
 
-      <article-slide>
+      <article-toturial>
+        <div slot="toturial">
+          <svg-mask-display></svg-mask-display>
+        </div>
+        <article-slide-item>
+          <div class="toturial-grid">
+            <h2 style="color:var(--cyan)">Masking</h2>
+            <p>
+              Let's design a reset icon whit the help of <code>&lt;mask&gt;</code>.
+            </p>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="toturial-grid">
+            <p>
+              Draw a <code>&lt;circle&gt;</code> centered at <code>(12, 12)</code> with a radius of <code>10</code>.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" stroke="CanvasText" stroke-width="1" fill="none"></circle>
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="toturial-grid">
+            <p>
+              Cover the entire viewBox with a white rectangle <code>(x=0, y=0, width=24, height=24)</code>
+              using <code>&lt;rect&gt;</code>.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">
+                  ...
+                  <rect x="0" y="0" width="24" height="24" fill="white"></rect>
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="toturial-grid">
+            <p>
+              Use <code>&lt;polygon&gt;</code> to set the area to cut in coordinates
+              like <code>(x y, x y, ...)</code>, and fill with <code>black</code>.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">
+                  ...
+                  <rect x="0" y="0" width="24" height="24" fill="white"></rect>
+                  <polygon points="12 0 16.5 0 7.5 24 12 24" fill="black"></polygon>
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="toturial-grid">
+            <p>
+              Wrap the <code>&lt;rect&gt;</code> and <code>&lt;polygon&gt;</code> in a <code>&lt;mask&gt;</code>,
+              then apply it to the <code>&lt;circle&gt;</code>.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <mask id="reload-circle-mas:001">
+                  <rect x="0" y="0" width="24" height="24" fill="white"></rect>
+                  <polygon points="12 0 16.5 0 7.5 24 12 24" fill="black"></polygon>
+                </mask>
+                <circle mask="url(#reload-circle-mas:001)" ...></circle>
+              </template>
+            </article-code>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="toturial-grid">
+            <p>
+              Create a triangle with <code>&lt;polygon&gt;</code> using three coordinate pairs,
+              then rotate it around the left center.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                ...
+                <polygon points="10 0 10 4 14 2" fill="CanvasText" transform="rotate(4 10 2)"></polygon>
+              </template>
+            </article-code>
+          </div>
+        </article-slide-item>
+        <article-slide-item>
+          <div class="toturial-grid">
+            <p>
+              Finally, add another <code>&lt;polygon&gt;</code> to finish the reload icon.
+            </p>
+            <article-code language="html" mini overscroll>
+              <template>
+                <svg viewBox="0 0 24 24">
+                  <mask id="reload-circle-mas:001">
+                    <rect x="0" y="0" width="24" height="24" fill="white" />
+                    <polygon points="12 0 16.5 0 7.5 24 12 24" fill="black" />
+                  </mask>
+                  <circle mask="url(#reload-circle-mas:001)" cx="12" cy="12" r="10" stroke="CanvasText" stroke-width="1" fill="none" />
+                  <polygon points="10 0 10 4 14 2" fill="CanvasText" transform="rotate(4 10 2)" />
+                  <polygon points="14 24 14 20 10 22" fill="CanvasText" transform="rotate(4 14 22)" />
+                </svg>
+              </template>
+            </article-code>
+          </div>
+        </article-slide-item>
+      </article-toturial>
+
+      <!-- <article-slide>
         <article-slide-item>
           <slide-demo-card data-about="01">
             <div slot="description">
@@ -797,7 +866,7 @@
             </div>
           </slide-demo-card>
         </article-slide-item>
-      </article-slide>
+      </article-slide> -->
 
       <section>
         <p>

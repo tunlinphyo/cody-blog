@@ -6,7 +6,7 @@
   --tiny-code-editor-border: 0;
   --tiny-code-editor-border-radius: 0;
   --tiny-code-editor-background: transparent;
-  --tiny-code-editor-color: var(--text-color);
+  --tiny-code-editor-color: var(--foreground);
   --tiny-code-editor-background: var(--background);
   --tiny-code-editor-caret-color: var(--accent, #fff);
   --tiny-code-editor-font: 14px/1.5 "Google Sans Code", monospace;
@@ -39,8 +39,8 @@
   overflow-y: auto;
   overflow-wrap: normal;
   overscroll-behavior-x: none;
-  background: var(--tiny-code-editor-background, var(--surface));
-  color: var(--tiny-code-editor-color, var(--text-color));
+  background: var(--tiny-code-editor-background, var(--background));
+  color: var(--tiny-code-editor-color, var(--foreground));
   caret-color: var(--tiny-code-editor-caret-color, currentColor);
   font: var(--tiny-code-editor-font,
       14px/1.6 ui-monospace,
@@ -56,13 +56,13 @@
   tab-size: 2;
 }
 
-@media (max-width: 47rem) {
+/* @media (max-width: 47rem) {
   @supports (-webkit-touch-callout: none) {
     :host {
       --tiny-code-editor-font: 16px/1.5 "Google Sans Code", monospace;
     }
   }
-}
+} */
 
 .editor * {
   overflow-wrap: normal;
@@ -72,7 +72,7 @@
 
 .editor:focus {
   border-color: var(--tiny-code-editor-focus-border-color,
-      color-mix(in srgb, var(--text-color) 55%, transparent));
+      color-mix(in srgb, var(--foreground) 55%, transparent));
 }
 
 .editor::selection {
@@ -109,7 +109,7 @@
 }
 
 .token-punctuation {
-  color: var(--tiny-code-token-punctuation, color-mix(in srgb, var(--text-color) 72%, transparent));
+  color: var(--tiny-code-token-punctuation, color-mix(in srgb, var(--foreground) 72%, transparent));
 }
 
 .token-color {

@@ -8,10 +8,10 @@
 :root {
   --padding: clamp(1.5rem, 4vw, 4rem);
   --border-color: var(--gray);
-  --border-radius: 0;
+  --border-radius: 2px;
   --header-font-size: clamp(2rem, 6vw, 2.5rem);
-  --paragraph-font-size: 1.05rem;
-  --paragraph-max-width: 44rem;
+  --paragraph-font-size: 1rem;
+  --paragraph-max-width: 42rem;
 
   --card-content-max-width: 36rem;
   --card-shadow: 2px 2px 0 0 var(--gray);
@@ -24,11 +24,11 @@
   margin: 0;
   padding: 0;
   background: var(--background);
-  color: var(--text-color);
+  color: var(--foreground);
 
   font-family: "Google Sans Flex", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 450;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings:
     "slnt" 0,
@@ -49,14 +49,14 @@
   z-index: -1;
 
   /* background-image:
-    linear-gradient(var(--surface) 1px, transparent 1px),
-    linear-gradient(to right, var(--surface) 1px, var(--background) 1px);
+    linear-gradient(var(--background) 1px, transparent 1px),
+    linear-gradient(to right, var(--background) 1px, var(--background) 1px);
   background-size: 40px 40px; */
 }
 
 :where(h1,h2,h3,h4,h5,h6) {
   margin: 0;
-  color: var(--text-color);
+  color: var(--foreground);
   font-variation-settings:
     "slnt" 0,
     "wdth" 103,
@@ -64,12 +64,19 @@
     "ROND" 0;
 }
 
-:where(h1,h2) {
-  font-weight: 400;
+:where(h1) {
+  font-weight: 380;
 }
 
-:where(h3,h4,h5,h6) {
-  font-weight: 480;
+:where(h2,h3,h4,h5,h6) {
+  font-weight: 420;
+}
+
+:where(p) {
+  /* text-align: justify; */
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
 }
 
 :where([screenreader-only]) {

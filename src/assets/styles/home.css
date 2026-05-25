@@ -54,10 +54,13 @@
     }
 
     & a {
-      display: grid;
-      padding: 0.5rem;
       background-image: none;
       border-radius: var(--border-radius);
+
+      > * {
+        display: grid;
+        padding: 0.5rem;
+      }
 
       &:focus-visible {
         outline: 1px solid var(--accent);
@@ -118,7 +121,7 @@
     }
 
     & p {
-      color: var(--text-color);
+      color: var(--foreground);
       max-width: 54ch;
     }
   }

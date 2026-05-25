@@ -35,7 +35,7 @@ export class SvgMaskDisplay extends LitElement {
           <polygon points="120 0 165 0 75 240 120 240" fill="black" />
         </mask>
         ${this.stepNumber === 0 ? svg`
-          <g color="color-mix(in oklab, var(--text-color), var(--surface) 20%)">
+          <g color="color-mix(in srgb, var(--foreground), var(--background) 20%)">
             <circle mask="url(#cut-out-for-reload:001)" cx="120" cy="120" r="100"
               stroke="currentColor" stroke-width="10" fill="none" />
             <polygon points="100 0 100 40 140 20" fill="currentColor" transform="rotate(4 100 20)" />

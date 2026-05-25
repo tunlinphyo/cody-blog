@@ -50,9 +50,9 @@ details {
   border-radius: var(--border-radius);
   padding: 0.5rem 1rem;
 
-  background-color: color-mix(in oklab, var(--_theme), var(--surface) 90%);
-  background-color: var(--surface);
-  border: 1px solid color-mix(in oklab, var(--_theme), var(--surface) 50%);
+  background-color: color-mix(in srgb, var(--_theme), var(--background) 90%);
+  background-color: var(--background);
+  border: 1px solid color-mix(in srgb, var(--_theme), var(--background) 50%);
 
   &::details-content {
     height: 0;
@@ -154,8 +154,8 @@ summary {
     gap: 0.4rem;
     padding: 0.5rem;
     border-radius: 100vh;
-    background-color: color-mix(in oklab, var(--_theme), var(--surface) 80%);
-    border: 1px solid color-mix(in oklab, var(--_theme), var(--surface) 50%);
+    background-color: color-mix(in srgb, var(--_theme), var(--background) 80%);
+    border: 1px solid color-mix(in srgb, var(--_theme), var(--background) 50%);
   }
 
   .browser {

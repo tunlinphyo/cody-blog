@@ -1,17 +1,18 @@
 :host {
   --toolbar-height: 2.5rem;
   --editor-height: 20rem;
+  --border-radius: 3px;
   --block-height: calc(var(--editor-height) + var(--toolbar-height));
-  --border-color: color-mix(in oklab, var(--surface), var(--text-color) 10%);
+  /* --border-color: color-mix(in srgb, var(--background), var(--foreground) 10%); */
 
-  color: var(--text-color);
+  color: var(--foreground);
   position: relative;
   overflow: hidden;
 
   width: 100%;
   height: var(--block-height);
-  border: 1px solid var(--border-color, var(--text-color));
-  background: var(--surface);
+  border: 1px solid var(--border-color, var(--foreground));
+  background: var(--background);
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,7 +54,7 @@
 
   .editor-panel {
     border-right: 0;
-    border-bottom: 1px solid var(--border-color, var(--text-color));
+    border-bottom: 1px solid var(--border-color, var(--foreground));
   }
 }
 
@@ -61,8 +62,8 @@
   display: grid;
   grid-template-rows: var(--toolbar-height) 1fr;
   min-width: 0;
-  border-right: 1px solid var(--border-color, var(--text-color));
-  background-color: var(--surface);
+  border-right: 1px solid var(--border-color, var(--foreground));
+  background-color: var(--background);
   overflow: hidden;
 }
 
@@ -72,7 +73,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding-inline: 1rem;
-  border-bottom: 1px solid var(--border-color, var(--text-color));
+  border-bottom: 1px solid var(--border-color, var(--foreground));
 }
 
 .tabs {
@@ -114,7 +115,7 @@
 
   display: grid;
   place-content: center;
-  color: var(--text-color);
+  color: var(--foreground);
 
   &:is(:hover, :focus-visible) {
     animation: shake-custom-z 1s var(--ease-in-out-3);

@@ -1,10 +1,11 @@
 :host {
   display: block;
   aspect-ratio: 1;
+  /* background-color: var(--background); */
 }
 
 svg {
   width: 100%;
   max-width: 15rem;
-  color: oklch(from var(--text-color) l c h / 0.7);
+  color: oklch(from var(--foreground) l c h / 0.7);
 }

@@ -11,8 +11,8 @@
   padding: 0.65rem 1.5rem;
   border: 1px solid var(--border-color);
   border-radius: 100vh;
-  background: var(--toast-bg);
-  color: var(--text-color);
+  background: var(--darkgray);
+  color: var(--foreground);
   font-size: 0.9rem;
   white-space: nowrap;
 

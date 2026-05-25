@@ -1,5 +1,5 @@
 :host {
-  --default-theme: oklch(from var(--text-color) l c h / 0.2);
+  --default-theme: oklch(from var(--foreground) l c h / 0.2);
   --show-opacity: 0.7;
   --_theme: var(--theme, var(--default-theme));
   --_opacity: var(--opacity, 0);
@@ -12,7 +12,7 @@ button {
   padding: 0;
   display: grid;
   place-content: center;
-  color: light-dark(var(--text-color), var(--surface));
+  color: light-dark(var(--foreground), var(--background));
   background-color: var(--_theme);
   border: 1px solid var(--_theme);
 
@@ -43,7 +43,7 @@ button {
     pointer-events: none;
 
     &:is(:hover, :focus-visible) {
-      --_theme: oklch(from var(--text-color) l c h / 0.2);
+      --_theme: oklch(from var(--foreground) l c h / 0.2);
       --_opacity: 0;
     }
   }

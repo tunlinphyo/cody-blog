@@ -14,31 +14,12 @@
   --pink: light-dark(rgb(255, 45, 85), rgb(255, 55, 95));
   --brown: light-dark(rgb(172, 127, 94), rgb(183, 138, 102));
 
-  --c-orange: rgb(227,174,150);
-  --c-blue: rgb(170,212,238);
-  --c-yellow: rgb(251,234,101);
-  --c-purple: rgb(177,132,248);
-  --c-gray: rgb(162,164,158);
-  --c-brown: rgb(82,84,100);
-  --c-ogray: rgb(224,213,204);
-  --c-gold: rgb(225,221,159);
-  --c-purpleblue: rgb(199,199,238);
-  --c-papaer: rgb(233, 232, 223);
-  --c-accent: rgb(103,130,188);
+  --background: oklch(from Canvas l c h / 1);
+  --foreground: oklch(from CanvasText l c h / 1);
 
-  --background: light-dark(rgb(20, 20, 20), rgb(10, 10, 10));
-  --surface: light-dark(rgb(30, 30, 30), rgb(25, 25, 25));
-  --text-color: light-dark(rgb(220, 220, 220), rgb(200, 200, 200));
+  --accent: light-dark(#4AAAB8, #59B9C7);
 
-  --background: light-dark(rgb(255, 254, 240), rgb(30, 30, 30));
-  --surface: light-dark(rgb(255, 255, 255), rgb(50, 50, 50));
-  --text-color: light-dark(rgb(30, 30, 30), rgb(220, 220, 220));
-  --code-background: light-dark(rgb(0, 0, 0), var(--background));
-
-  --accent: light-dark(var(--c-accent), var(--c-accent));
-
-  --gray: color-mix(in oklab, var(--surface), var(--text-color) 40%);
-  --darkgray: color-mix(in oklab, var(--background), var(--text-color) 20%);
-  --bg-gray: oklch(from var(--text-color) l c h / 0.05);
-  --toast-bg: color-mix(in oklab, var(--surface), var(--text-color) 10%);
+  --gray: color-mix(in srgb, var(--background), var(--foreground) 50%);
+  --darkgray: color-mix(in srgb, var(--background), var(--foreground) 10%);
+  --lightgray: color-mix(in srgb, var(--background), var(--foreground) 60%);
 }

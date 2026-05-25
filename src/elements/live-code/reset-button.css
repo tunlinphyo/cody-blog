@@ -12,7 +12,7 @@
   border-radius: 50%;
   display: grid;
   place-content: center;
-  color: var(--text-color);
+  color: var(--foreground);
   cursor: pointer;
   font: inherit;
 }

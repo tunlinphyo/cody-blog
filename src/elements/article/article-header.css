@@ -37,6 +37,18 @@
 
 h1 {
   margin: 0;
-  line-height: 1.15;
+  line-height: 1.2;
   font-size: clamp(2.5rem, 10vw, 4rem);
+
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.25em;
+    width: min(20vw, 5rem);
+    height: 3px;
+    background-color: var(--accent);
+  }
 }

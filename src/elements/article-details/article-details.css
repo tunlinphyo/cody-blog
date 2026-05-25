@@ -2,7 +2,6 @@
   width: 100%;
   /* border: 1px solid var(--border-color); */
   border-radius: var(--border-radius);
-  /* border-radius: 1rem; */
 
   padding: 1rem;
   height: 34rem;
@@ -13,14 +12,11 @@
   align-items: flex-start;
   padding: var(--padding);
 
-  --background: light-dark(rgb(250,245,200), rgb(0,0,0));
-
-  background-color: var(--background);
-  /* background:
-    radial-gradient(circle, transparent 10%, var(--background) 10%, var(--background) 90%, transparent 90%, transparent),
-    radial-gradient(circle, transparent 10%, var(--background) 10%, var(--background) 90%, transparent 90%, transparent) 40px 40px,
-    linear-gradient(var(--surface) 1px, transparent 1px) 0 -1px, linear-gradient(90deg, var(--surface) 1px, var(--background) 1px) -0.5px 0;
-  background-size: 80px 80px, 80px 80px, 40px 40px, 40px 40px; */
+  --_background: light-dark(
+    color-mix(in srgb, var(--accent), var(--background) 90%),
+    color-mix(in srgb, var(--foreground), var(--background) 95%)
+  );
+  background-color: var(--_background);
 }
 
 @media (max-width: 40rem) {
@@ -34,8 +30,7 @@
   overflow: clip;
 
   h2 {
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    color: var(--darkgray);
+    color: var(--background);
     font-size: clamp(3.5rem, 10vw, 5rem);
     font-weight: 700;
     line-height: 1;
@@ -75,7 +70,7 @@ button {
   border-radius: 50%;
   display: grid;
   place-content: center;
-  background-color: var(--surface);
+  background-color: var(--background);
   border: 1px solid var(--red);
   color: var(--red);
   position: sticky;
@@ -83,7 +78,7 @@ button {
   opacity: 1;
   scale: 1;
   transition: scale 0.4s var(--ease-spring-1), opacity 0.25s var(--ease-1);
-  background-color: color-mix(in oklab, var(--red) 30%, var(--surface));
+  background-color: color-mix(in srgb, var(--red), var(--background) 70%);
   /* box-shadow: 2px 2px 0 0 var(--red); */
   box-shadow: oklch(from var(--red) l c h / 0.2) 0px 2px 4px 0px;
 

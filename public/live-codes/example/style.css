@@ -30,7 +30,7 @@
 
 :where(.ui-view) {
   padding: 1px 1rem;
-  background-color: oklch(from var(--surface)Text l c h / 0.1);
+  background-color: oklch(from var(--background)Text l c h / 0.1);
   border-radius: 2rem;
   corner-shape: squircle;
 

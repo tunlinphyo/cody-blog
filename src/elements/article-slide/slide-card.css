@@ -80,7 +80,7 @@
 ::slotted(article-code) {
   width: auto;
   min-width: 75%;
-  --_border-color: var(--bg, var(--border-color));
+  --_border-color: var(--foreground);
 }
 
 @media (max-width: 40rem) {

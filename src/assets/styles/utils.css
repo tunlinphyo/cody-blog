@@ -4,6 +4,7 @@
 @import "open-props/style";
 @import url(./reset.css);
 @import url(./colors.css);
+@import url(./details.css);
 
 :root {
   --padding: clamp(1.5rem, 4vw, 4rem);
@@ -26,7 +27,7 @@
   background: var(--background);
   color: var(--foreground);
 
-  font-family: "Google Sans Flex", sans-serif;
+  /* font-family: "Google Sans Flex", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -34,7 +35,10 @@
     "slnt" 0,
     "wdth" 100,
     "GRAD" 0,
-    "ROND" 0;
+    "ROND" 0; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 :where(body) {
@@ -57,19 +61,19 @@
 :where(h1,h2,h3,h4,h5,h6) {
   margin: 0;
   color: var(--foreground);
-  font-variation-settings:
+  /* font-variation-settings:
     "slnt" 0,
     "wdth" 103,
     "GRAD" 0,
-    "ROND" 0;
+    "ROND" 0; */
 }
 
 :where(h1) {
-  font-weight: 380;
+  font-weight: 400;
 }
 
 :where(h2,h3,h4,h5,h6) {
-  font-weight: 420;
+  font-weight: 500;
 }
 
 :where(p) {
@@ -77,6 +81,7 @@
   overflow-wrap: break-word;
   word-break: normal;
   hyphens: auto;
+  line-height: 1.75;
 }
 
 :where([screenreader-only]) {
@@ -95,7 +100,7 @@ a {
 
 a[href^="http"] {
   text-decoration: none;
-  background-image: linear-gradient(var(--accent), var(--accent));
+  background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: calc(100% - 5px) 1px;

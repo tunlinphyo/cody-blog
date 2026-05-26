@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
 
   --red: light-dark(rgb(255, 56, 60), rgb(255, 66, 69));
   --orange: light-dark(rgb(255, 141, 40), rgb(255, 146, 48));
@@ -14,12 +14,23 @@
   --pink: light-dark(rgb(255, 45, 85), rgb(255, 55, 95));
   --brown: light-dark(rgb(172, 127, 94), rgb(183, 138, 102));
 
-  --background: oklch(from Canvas l c h / 1);
-  --foreground: oklch(from CanvasText l c h / 1);
+  --background: Canvas;
+  --foreground: CanvasText;
+  --lighter: light-dark(Canvas, CanvasText);
+
+  /* --light: #DAC8AA;
+  --dark: #183140;
+  --lighter: light-dark(#FFFFFF, var(--light));
+
+  --background: light-dark(var(--light), var(--dark));
+  --foreground: light-dark(var(--dark), var(--light)); */
+
+  --card-background: color-mix(in srgb, var(--background), CanvasText 5%);
 
   --accent: light-dark(#4AAAB8, #59B9C7);
+  --accent: var(--blue);
 
-  --gray: color-mix(in srgb, var(--background), var(--foreground) 50%);
+  --gray: color-mix(in srgb, var(--background), var(--foreground) 40%);
   --darkgray: color-mix(in srgb, var(--background), var(--foreground) 10%);
   --lightgray: color-mix(in srgb, var(--background), var(--foreground) 60%);
 }

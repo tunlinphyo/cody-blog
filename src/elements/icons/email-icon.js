@@ -29,7 +29,7 @@ export class EmailIcon extends LitElement {
             <rect x="2.5" y="0" width="27" height="19" rx="3" fill="white" />
           </g>
         </mask>
-        <g stroke="currentColor" stroke-width="0.6" fill="white">
+        <g stroke="light-dark(currentColor, white)" stroke-width="0.6" fill="white">
           <g transform="translate(16 18)">
             <rect x="-11.5" y="-16" width="23" height="16" rx="1" transform="scale(1 0)">
               <desc>Paper</desc>

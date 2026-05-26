@@ -10,12 +10,10 @@
   max-width: 100%;
   min-width: 0;
   position: relative;
+  padding-inline: 1rem;
 
-  --_background: light-dark(
-    color-mix(in srgb, var(--accent), var(--background) 90%),
-    color-mix(in srgb, var(--foreground), var(--background) 95%)
-  );
-  /* --_background: light-dark(); */
+  --_background: var(--card-background);
+  --_border-color: Canvas;
 }
 
 .slider {
@@ -24,13 +22,16 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
-  /* border: 1px solid var(--border-color); */
-  border-radius: var(--border-radius);
+  /* border: 1px solid var(--foreground); */
   background-color: var(--_background);
-  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
   overflow: clip;
-
   height: 30rem;
+
+  border-radius: 1rem;
+  @supports(corner-shape: squircle) {
+    border-radius: 2rem;
+    corner-shape: squircle;
+  }
 }
 
 .toturial-view {
@@ -38,8 +39,8 @@
   grid-row: 1 / 2;
   position: relative;
   pointer-events: none;
-  background-color: var(--_background);
   border-radius: var(--border-radius);
+  background-image: linear-gradient(to right, var(--_background) 50%, transparent 0);
 
   display: flex;
   justify-content: center;
@@ -49,10 +50,10 @@
 .step {
   content: attr(data-about);
   position: absolute;
-  z-index: 0;
+  z-index: 2;
   top: 0.5rem;
   left: 1.5rem;
-  color: var(--darkgray);
+  color: oklch(from var(--foreground) l c h / 0.1);
   font-size: clamp(5rem, 15vw, 8rem);
   font-weight: 700;
   line-height: 1;
@@ -124,6 +125,7 @@ slot[name="toturial"]::slotted(*) {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  display: none;
 
   & button {
     width: 10px;
@@ -152,15 +154,13 @@ slot[name="toturial"]::slotted(*) {
   display: grid;
   place-content: center;
   border-radius: 50%;
-  border: 1px solid oklch(from var(--foreground) l c h / 0.1);
-  --_color: contrast-color(var(--bg));
+  /* border: 1px solid oklch(from var(--foreground) l c h / 0.1); */
   color: var(--_color, var(--foreground));
-  border-color: oklch(from contrast-color(var(--_background)) l c h / 0.2);
-  background-color: oklch(from contrast-color(var(--_background)) l c h / 0.1);
+  background-color: var(--background);
+  /* background-color: oklch(from contrast-color(var(--_background)) l c h / 0.1); */
 
-  opacity: 0;
-  bottom: 2.75rem;
-  right: 1rem;
+  bottom: 1rem;
+  right: 2rem;
 
   .top-arrow,
   .bottom-arrow {
@@ -169,7 +169,7 @@ slot[name="toturial"]::slotted(*) {
   }
 
   &[data-type="prev"] {
-    right: 4.5rem;
+    right: 5.5rem;
 
     .top-arrow {
       transform-origin: 2px 12px;
@@ -237,11 +237,11 @@ slot[name="toturial"]::slotted(*) {
   opacity: 1;
 }
 
-@media (hover: none) and (pointer: coarse) {
+/* @media (hover: none) and (pointer: coarse) {
   .scroll-button {
     display: none;
   }
-}
+} */
 
 @keyframes arrow-plus-move {
   0%,100% { transform: rotate(0deg); }

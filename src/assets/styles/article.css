@@ -7,10 +7,10 @@ article-header {
   margin: 0 auto;
 }
 
-article {
+:where(article) {
   margin-block: 20vh;
   display: grid;
-  gap: 20vh;
+  gap: 10vh;
 
   & h2 {
     font-size: var(--header-font-size);
@@ -50,8 +50,10 @@ article-slide-item {
     display: inline;
     font-family: "Google Sans Code", monospace;
     padding: 0 0.25rem;
-    background-color: oklch(from var(--accent) l c h / 0.5);
+    background-color: oklch(from var(--accent) l c h / 0.25);
+    background-color: var(--accent);
     border-radius: 0.3rem;
+    color: var(--background);
     /* color: var(--accent); */
   }
 
@@ -74,11 +76,14 @@ article-slide-item {
   [data-gap="l"] {
     gap: 1.25rem;
   }
+  /* [data-flex-1] {
+    flex: 1;
+  } */
 }
 
-details code {
+/* details code {
   background-color: var(--background);
-}
+} */
 
 .baseline-container {
   display: flex;
@@ -100,6 +105,12 @@ details code {
   padding-inline: 0 2rem;
   gap: 2rem;
   align-content: center;
+
+  article-code {
+    --_bg: light-dark(var(--foreground), var(--foreground));
+    --_border-color: transparent;
+    --_background: var(--background);
+  }
 }
 
 @media (max-width: 40rem) {

@@ -13,7 +13,8 @@
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   line-height: 1;
-  font-family: "Google Sans Code", monospace;
+  /* font-family: "Google Sans Code", monospace; */
+  font-family: "DM Mono", monospace;
   text-align: center;
   gap: 0 0.2rem;
   color: var(--gray);

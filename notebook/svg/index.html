@@ -6,6 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scalable Vector Graphics</title>
+
 </head>
 
 <body>
@@ -39,13 +40,13 @@
       <section>
         <p>
           I usually don’t pay much attention to Scalable Vector Graphics <code>(SVG)</code>, just copying it from an external
-          source and pasting it into my code. I’m just trying to get the job done. But I’ve always wondered why something with 
+          source and pasting it into my code. I’m just trying to get the job done. But I’ve always wondered why something with
           so many numbers can be so hard to understand.
         </p>
         <p>
           Once you get a little more familiar with the basics, SVG becomes pretty fun. You can create some really cool effects
-          with it! Take a look at the mail icon below. When you hover over it, the envelope pops open and the paper slides out. 
-          Or check out the GitHub logo with the animated cat. You can create effects like these using only SVG, 
+          with it! Take a look at the mail icon below. When you hover over it, the envelope pops open and the paper slides out.
+          Or check out the GitHub logo with the animated cat. You can create effects like these using only SVG,
           or with CSS if you prefer.
         </p>
       </section>
@@ -64,13 +65,13 @@
       <section>
         <h2>Elements</h2>
         <p>
-          First, let’s explore some basic SVG elements. It might look a little confusing at first, 
-          but once you learn a few core concepts, it becomes much easier to create icons, illustrations, 
+          First, let’s explore some basic SVG elements. It might look a little confusing at first,
+          but once you learn a few core concepts, it becomes much easier to create icons, illustrations,
           and simple animations.
         </p>
         <p>
-          SVG includes many elements for everything from basic shapes to complex diagrams and animations. 
-          You’ll learn some of the essentials here, and if you want to dive deeper, check out the 
+          SVG includes many elements for everything from basic shapes to complex diagrams and animations.
+          You’ll learn some of the essentials here, and if you want to dive deeper, check out the
           <a href="https://yqnn.github.io/svg-path-editor/" target="_blank" rel="noopener noreferrer">
             MDN SVG element reference
             <external-link></external-link>
@@ -269,7 +270,9 @@
       <section>
         <h2 id="attributes">Attributes</h2>
         <p>
-          SVG elements use attributes to control their rendering. Here's a list of the most commonly used attributes.
+          SVG elements have attributes that help them look the way you want. Here are some of the most
+          popular ones. Keep in mind that many attributes are made for particular elements, so you might
+          want to peek at the MDN SVG attribute reference for more details.
         </p>
       </section>
 
@@ -289,9 +292,6 @@
           </article-code>
         </article-summary>
         <article-summary summary-title="fill">
-          <p>
-            The <code>fill</code> applies colors or gradients to a shape.
-          </p>
           <div data-flex="start" data-gap="m">
             <svg viewBox="0 0 24 24" width="42">
               <circle cx="12" cy="12" r="10" stroke-width="0" fill="var(--red)" />
@@ -303,6 +303,9 @@
               <circle fill="url(#example-fill-gradient:002)" cx="12" cy="12" r="10" stroke-width="0" />
             </svg>
           </div>
+          <p>
+            The <code>fill</code> applies colors or gradients to a shape.
+          </p>
           <article-code language="html" mini overscroll>
             <template>
               <circle fill="var(--yellow)" cx="12" cy="12" r="10"></circle>
@@ -310,9 +313,6 @@
           </article-code>
         </article-summary>
         <article-summary summary-title="stroke">
-          <p>
-            The <code>stroke</code> specifies the outline color of a shape, including gradients.
-          </p>
           <div data-flex="start" data-gap="m">
             <svg viewBox="0 0 24 24" width="42">
               <g stroke-width="1" stroke="var(--green)">
@@ -336,6 +336,9 @@
               </g>
             </svg>
           </div>
+          <p>
+            The <code>stroke</code> specifies the outline color of a shape, including gradients.
+          </p>
           <article-code language="html" mini overscroll>
             <template>
               <circle stroke="var(--green)" stroke-width="1" ...></circle>
@@ -343,9 +346,6 @@
           </article-code>
         </article-summary>
         <article-summary summary-title="stroke-width">
-          <p>
-            The <code>stroke-width</code> determines the thickness of a shape or text outline.
-          </p>
           <div data-flex="start" data-gap="m">
             <svg viewBox="0 0 24 24" width="42">
               <g stroke-width="1" stroke="var(--yellow)">
@@ -366,6 +366,9 @@
               </g>
             </svg>
           </div>
+          <p>
+            The <code>stroke-width</code> determines the thickness of a shape or text outline.
+          </p>
           <article-code language="html" mini overscroll>
             <template>
               <circle stroke-width="1" stroke="var(--yellow)" ...></circle>
@@ -373,9 +376,6 @@
           </article-code>
         </article-summary>
         <article-summary summary-title="stroke-dasharray">
-          <p>
-            The <code>stroke-dasharray</code> creates dash and gap patterns along an outline.
-          </p>
           <div data-flex="start" data-gap="m">
             <svg viewBox="0 0 24 24" width="42">
               <g stroke-dasharray="4" stroke-width="1" stroke="var(--indigo)">
@@ -396,6 +396,9 @@
               </g>
             </svg>
           </div>
+          <p>
+            The <code>stroke-dasharray</code> creates dash and gap patterns along an outline.
+          </p>
           <article-code language="html" mini overscroll>
             <template>
               <circle stroke-dasharray="4 1 1 1" stroke-width="1" stroke="var(--indigo)" ...></circle>
@@ -403,9 +406,6 @@
           </article-code>
         </article-summary>
         <article-summary summary-title="stroke-linecap">
-          <p>
-            The <code>stroke-linecap</code> controls the appearance of the ends of stroke.
-          </p>
           <div data-flex="start" data-gap="l">
             <svg viewBox="0 0 24 24" width="42">
               <rect x="0" y="0" width="24" height="24" stroke-dasharray="1 2" stroke-width="0.5" stroke="var(--gray)" fill="none" />
@@ -429,6 +429,9 @@
               <line x1="4" y1="12" x2="20" y2="12" stroke-width="0.5" stroke="var(--background)" />
             </svg>
           </div>
+          <p>
+            The <code>stroke-linecap</code> controls the appearance of the ends of stroke.
+          </p>
           <article-code language="html" mini overscroll>
             <template>
               <line stroke-linecap="butt|round|square" stroke-width="8" stroke="var(--blue)" ...></line>

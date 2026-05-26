@@ -1,45 +1,40 @@
 :host {
-  /* --article-code-token-comment: light-dark(#6a737d, #7f8ea3);
+  --article-code-token-comment: light-dark(#6a737d, #7f8ea3);
   --article-code-token-keyword: light-dark(#d73a49, #ff7b72);
-  --article-code-token-string: light-dark(#b1cff2, #a5d6ff);
+  --article-code-token-string: light-dark(#83b6ef, #a5d6ff);
   --article-code-token-number: light-dark(#005cc5, #79c0ff);
   --article-code-token-tag: light-dark(#119a26, #7ee787);
   --article-code-token-attr: light-dark(#6f42c1, #d2a8ff);
   --article-code-token-punctuation: light-dark(#119a26, #7ee787);
-  --article-code-token-color: light-dark(#e36209, #ffa657); */
-  color-scheme: dark;
-
-  --article-code-token-comment: #7f8ea3;
-  --article-code-token-keyword: #ff7b72;
-  --article-code-token-string: #a5d6ff;
-  --article-code-token-number: #79c0ff;
-  --article-code-token-tag: #7ee787;
-  --article-code-token-attr: #d2a8ff;
-  --article-code-token-punctuation: #7ee787;
-  --article-code-token-color: #ffa657;
+  --article-code-token-color: light-dark(#e36209, #ffa657);
+  /* --_background: Canvas; */
+  /* color-scheme: dark; */
 
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   border: 1px solid var(--_border-color, var(--border-color));
   border-top-width: 0;
-  background-color: var(--background);
+  background-color: var(--_background, var(--background));
+  border-radius: 0.5rem;
+  @supports(corner-shape: squircle) {
+    border-radius: 1rem;
+    corner-shape: squircle;
+  }
 
-  border-radius: var(--border-radius);
-
+  overflow: clip;
   position: relative;
-  background-color: var(--background);
 }
 
 :host([mini]) {
   display: inline-grid;
   max-height: 8rem;
   border-top-width: 1px;
-  --_border-color: light-dark(var(--background), var(--border-color));
+  /* --_border-color: var(--border-color); */
 }
 
 .header {
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   display: flex;
   justify-content: space-between;
   align-items: center;

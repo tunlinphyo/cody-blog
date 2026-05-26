@@ -1,18 +1,23 @@
 :host {
   display: block;
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   border-radius: var(--border-radius);
   /* border-radius: 1.25rem; */
   overflow: clip;
   background-color: var(--background);
   box-shadow: none;
   /* box-shadow: var(--card-shadow); */
-  box-shadow: rgba(0,0,0,0.05) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  border-radius: 1.25rem;
 }
 
-/* :host([open]) {
-  margin-inline: -2rem !important;
-} */
+:host([open]) {
+  @supports(corner-shape: squircle) {
+    border-radius: 2.5rem;
+    corner-shape: squircle;
+  }
+}
 
 .opener {
   padding-inline: 0.5rem 1rem;
@@ -43,9 +48,12 @@
 .details {
   display: none;
   opacity: 0;
-  padding: 2rem 1rem;
-  place-items: flex-start;
-  gap: 2rem;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 14rem;
 }
 
 :host([open]) .opener {
@@ -54,7 +62,7 @@
 }
 
 :host([open]) .details {
-  display: grid;
+  display: flex;
   opacity: 1;
   animation: show-ui 1s var(--ease-out-1);
 }

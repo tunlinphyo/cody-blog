@@ -1,0 +1,77 @@
+.svg-demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.traffic-light {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+
+  &::before,
+  &::after,
+  > div {
+    content: '';
+    width: 0.8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--foreground);
+  }
+
+  &::before {
+    background-color: var(--red);
+  }
+  > div {
+    background-color: var(--yellow)
+  }
+  &::after {
+    background-color: var(--green);
+  }
+}
+
+.svg-demo-container {
+  width: 100%;
+  max-width: 26rem;
+  height: 16rem;
+  background-color: var(--card-background);
+  padding: 1rem;
+  /* padding-block-start: 1.75rem; */
+  /* border: 1px solid var(--foreground); */
+  border-radius: 1rem;
+  @supports(corner-shape: squircle) {
+    border-radius: 2rem;
+    corner-shape: squircle;
+  }
+  position: relative;
+
+  .traffic-light {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+  }
+
+  .icons {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* background-color: var(--background); */
+    /* border: 1px solid var(--foreground); */
+    border-radius: 0.75rem;
+    @supports(corner-shape: squircle) {
+      border-radius: 1.5rem;
+      corner-shape: squircle;
+    }
+
+    #github {
+      color: var(--purple);
+    }
+    #email {
+      color: var(--blue);
+    }
+  }
+}
